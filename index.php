@@ -15,8 +15,10 @@
     <li><a href="vista/verUsuarios.php">Ver usuarios</a></li>
     <li><a href="vista/verEmpleados.php">Ver empleados</a></li>
     <li><a href="vista/verPeliculas.php">Ver peliculas</a></li>
-    <li><a href="vista/verHorario.php">Ver Horarios (empleados)</a></li>      
-    <li><a href="vista/editarHorario.php">Editar horarios (admin)</a></li>
+    <li><a href="vista/verHorario.php">Ver Horarios (empleados)</a></li>
+    <li><a href="controlador/editarHorario.php">Editar horarios (admin)</a></li>
+    <li><a href="vista/login.php">login</a></li>
+    <li><a href="vista/comprarEntrada.php">Comprar entrada</a></li>
 
   </ul>
 

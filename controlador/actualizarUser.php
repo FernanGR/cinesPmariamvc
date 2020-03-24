@@ -17,7 +17,7 @@ session_start();
 
        Users::actualizarUser($usuario,$newUser,$contrasena,$email,$activo,$rol,$horario);
 
-     header("Location:verUsuarios.php");
+     header("Location:../vista/verUsuarios.php");
 
 
  ?>

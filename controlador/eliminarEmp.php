@@ -7,6 +7,6 @@ require_once '../modelo/conexion.php';
 
        $empleado = $_GET['user'];
        Users::eliminarUser($empleado);
-       header("Location:verEmpleados.php");
+       header("Location:../vista/verEmpleados.php");
 
  ?>

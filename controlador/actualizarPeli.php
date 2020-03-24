@@ -13,7 +13,7 @@ session_start();
 
        Peliculas::actualizarPelicula($sala,$nombre,$descripcion);
 
-     header("Location:verPeliculas.php");
+     header("Location:../vista/verPeliculas.php");
 
 
  ?>

@@ -21,7 +21,7 @@
         ?>
 
         <h2> Añadir Nuevo Usuario </h2>
-         <form method="GET" action= 'añadirEmp.php'>
+         <form method="GET" action= '../controlador/añadirEmp.php'>
              Usuario:<input type="text" name="usuario" value="<?php if(isset($_GET['usuario'])) echo $_GET['usuario']; ?>" />
              <?php if(isset($_GET['registrar']) && empty($_GET['usuario'])) echo "<span style='color:red'><--¡Debe introducir un nombre de usuario!</span>"; ?><br>
              Contraseña:<input type="password" name="contraseña" value="<?php if(isset($_GET['contraseña'])) echo $_GET['contraseña']; ?>" />
@@ -51,16 +51,11 @@
           </style>
 
           <?php
-        //  $conexion = new mysqli('localhost','root','','cinespmaria');
-          //$resultados = $conexion->query("SELECT * FROM usuarios WHERE ROL LIKE 'ROL_USER'");
-      //   $resultados = Users::listaUsuarios();
-         //while($resultado = $resultados->fetch_assoc()){
 
-      //  foreach ($resultados as $fila):
           foreach (Users::listaEmpleados() as $resultado) {
-
+            
             ?>
-            <form name = "formulario" method="GET" action= 'actualizarEmp.php'>
+            <form name = "formulario" method="GET" action= '../controlador/actualizarEmp.php'>
             <input type="hidden" name="user" value="<?php  echo $resultado[0] ?> " />
 
             <?php
@@ -76,7 +71,7 @@
           <input type="submit" value="Actualizar Usuario" name="editUser"/>
 
           </form>
-            <form name = "formulario" method="GET" action= 'eliminarEmp.php'>
+            <form name = "formulario" method="GET" action= '../controlador/eliminarEmp.php'>
             <input type="hidden" name="user" value="<?php  echo $resultado[0] ?> " />
             <input type="submit" value="Eliminar Usuario" name="deleteUser"/>
           </form>

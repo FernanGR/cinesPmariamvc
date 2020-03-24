@@ -51,11 +51,24 @@
     public static function añadirUsuario($user,$pass,$email,$rol){
 
       $con = new Conexion();
-
       $con->ejecutarActualizacion("INSERT INTO usuarios (usuario,contrasena,email,ROL) VALUES ('$user' , '$pass', '$email','$rol')");
       $con->cerrarConexion();
     }
 
+    public static function loginUsuario($user,$pass){
+
+      $con = new Conexion();
+      $cont = $con->ejecutarConsulta("SELECT * from usuarios WHERE usuario = '$user' AND contrasena = '$pass'");
+      $con->cerrarConexion();
+      return $cont;
+    }
+
+    public static function userActual($user){
+      $con = new Conexion();
+      $cont = $con->ejecutarConsulta("SELECT * from usuarios WHERE usuario = '$user'");
+      $con->cerrarConexion();
+      return $cont;
+    }
 
   }
 

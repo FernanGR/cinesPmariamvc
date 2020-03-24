@@ -15,7 +15,7 @@ session_start();
 
        Users::añadirUsuario($usuario, $contrasena,$email,$rol);
 
-     header("Location:verUsuarios.php");
+     header("Location:../vista/verUsuarios.php");
 
 
  ?>

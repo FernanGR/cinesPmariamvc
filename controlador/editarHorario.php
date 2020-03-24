@@ -61,14 +61,17 @@
           /*<input type="hidden" name="slunes" value="<?php  echo $slunes ?> " />*/
             echo  "<td><b>" . $resultado[0] . "</b> </td>";
 
-//POR AKI  6.24AM 22-3-2020 
-
-        $horarioEmp = $conexion->query("SELECT * FROM horarios where horario = " . $resultado[5]);
+      //  $horarioEmp = $conexion->query("SELECT * FROM horarios where horario = " . $resultado[5]);
       // while($horarioEmp = $horarioEmp->fetch_assoc()){
-        $horarioEmp = $horarioEmp->fetch_assoc();
+     //  $horarioEmp = $horarioEmp->fetch_assoc();
+      $hor = $resultado[5];
+    //  $horarioEmp2 = Horario::listaHorEmp($hor);
+      foreach (Horario::listaHorEmp($hor) as $horarioEmp){
+    //   $horarioEmp = Horario::listaHorEmp($hor);
+      //echo "<td>" . $horarioEmp['lunes'] . "</td>";
         echo  "<td> <select name=slunes>" ;
-
-            for($x = 0; $x < 5; $x++){
+    //  echo  "<td>" . $horarioEmp2[0] . "</td>";
+          for($x = 0; $x < 5; $x++){
 
             if($horarioEmp[1] == $PUESTO[$x])
             {
@@ -213,12 +216,12 @@
     <input type="submit" value="actualizar horario" name="registrar"/>
     </form>
 
-  <?php
+    <?php
 
-  echo "</td></tr>";
+    echo "</td></tr>";
 
-        }
-
+  } // fin horario foreach
+}
       ?>
 
         </table>

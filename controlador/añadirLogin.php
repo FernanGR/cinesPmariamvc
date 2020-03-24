@@ -7,15 +7,15 @@
 session_start();
 
 
-       $empleado = $_GET['usuario'];
+       $usuario = $_GET['usuario'];
        $contrasena = $_GET['contraseña'];
        $email = $_GET['email'];
-       $rol = 'ROL_EMP';
+       $rol = 'ROL_USER';
 
 
-       Users::añadirEmp($empleado, $contrasena,$email,$rol);
+       Users::añadirUsuario($usuario, $contrasena,$email,$rol);
 
-     header("Location:verEmpleados.php");
+     header("Location:../vista/login.php");
 
 
  ?>

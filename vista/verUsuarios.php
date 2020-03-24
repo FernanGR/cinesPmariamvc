@@ -21,7 +21,7 @@
         ?>
 
         <h2> Añadir Nuevo Usuario </h2>
-         <form method="GET" action= 'añadirUser.php'>
+         <form method="GET" action= '../controlador/añadirUser.php'>
              Usuario:<input type="text" name="usuario" value="<?php if(isset($_GET['usuario'])) echo $_GET['usuario']; ?>" />
              <?php if(isset($_GET['registrar']) && empty($_GET['usuario'])) echo "<span style='color:red'><--¡Debe introducir un nombre de usuario!</span>"; ?><br>
              Contraseña:<input type="password" name="contraseña" value="<?php if(isset($_GET['contraseña'])) echo $_GET['contraseña']; ?>" />
@@ -60,7 +60,7 @@
           foreach (Users::listaUsuarios() as $resultado) {
 
             ?>
-            <form name = "formulario" method="GET" action= 'actualizarUser.php'>
+            <form name = "formulario" method="GET" action= '../controlador/actualizarUser.php'>
             <input type="hidden" name="user" value="<?php  echo $resultado[0] ?> " />
 
             <?php
@@ -76,7 +76,7 @@
           <input type="submit" value="Actualizar Usuario" name="editUser"/>
 
           </form>
-            <form name = "formulario" method="GET" action= 'eliminarUser.php'>
+            <form name = "formulario" method="GET" action= '../controlador/eliminarUser.php'>
             <input type="hidden" name="user" value="<?php  echo $resultado[0] ?> " />
             <input type="submit" value="Eliminar Usuario" name="deleteUser"/>
           </form>

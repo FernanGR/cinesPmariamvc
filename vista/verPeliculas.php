@@ -42,7 +42,7 @@
              echo "<tr>";
 
             ?>
-            <form name = "formulario" method="GET" action= 'actualizarPeli.php'>
+            <form name = "formulario" method="GET" action= '../controlador/actualizarPeli.php'>
             <input type="hidden" name="sala" value="<?php  echo $resultado[0] ?> " />
 
 

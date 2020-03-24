@@ -17,7 +17,7 @@ session_start();
 
        Users::actualizarUser($empleado,$newEmp,$contrasena,$email,$activo,$rol,$horario);
 
-     header("Location:verEmpleados.php");
+     header("Location:../vista/verEmpleados.php");
 
 
  ?>

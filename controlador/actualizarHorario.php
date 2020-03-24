@@ -1,5 +1,9 @@
 <?php
 
+  require_once '../dao/horarioDao.php';
+  require_once '../dao/userDao.php';
+  require_once '../modelo/conexion.php';
+ 
 session_start();
 
 
@@ -15,7 +19,7 @@ session_start();
 
        Horario::actualizarHorario($empleado,$lunes,$martes,$miercoles,$jueves,$viernes,$sabado,$domingo);
 
-     header("Location:editarHorario.php");
+      header("Location:editarHorario.php");
 
 
  ?>
