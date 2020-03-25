@@ -7,7 +7,7 @@
  </head>
 <body>
 
-<h1> vista users<h1>
+<h1> Menu principal<h1>
   <br>
 
 
@@ -19,6 +19,7 @@
     <li><a href="controlador/editarHorario.php">Editar horarios (admin)</a></li>
     <li><a href="vista/login.php">login</a></li>
     <li><a href="vista/comprarEntrada.php">Comprar entrada</a></li>
+    <li><a href="vista/comentarEmpleado.php">Comentario al Admin</a></li>
 
   </ul>
 

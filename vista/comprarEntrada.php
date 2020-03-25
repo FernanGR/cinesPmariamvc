@@ -137,7 +137,7 @@ else
              $posicionSilla = (($fila * 20) + $silla);
              if($peliculaCompra[0][3][$posicionSilla] == "1")
              {
-                 echo "<a href='cinecomprada.php?fila=" . $fila ."&sala=" . $peliculaCompra[0][0] ."&emailuser=" . $emailuser . "&silla=" . $silla . "&dia=" . $diaActual . "&sesion=" . $sesionActual ."&pelicula=" . $peliculaCompra[0][1] . "&usuario=" . $usuario . "'><img src='../imagenes/silla_libre.jpg'></a>";
+                 echo "<a href='comprada.php?fila=" . $fila ."&sala=" . $peliculaCompra[0][0] ."&emailuser=" . $emailuser . "&silla=" . $silla . "&dia=" . $diaActual . "&sesion=" . $sesionActual ."&pelicula=" . $peliculaCompra[0][1] . "&usuario=" . $usuario . "'><img src='../imagenes/silla_libre.jpg'></a>";
                  echo "&nbsp";
              }
              else
@@ -174,7 +174,7 @@ else
              $posicionSilla = (($fila * 10) + $silla);
              if($peliculaCompra[0][3][$posicionSilla] == "1")
              {
-                 echo "<a href='cinecomprada.php?fila=" . $fila ."&sala=" . $peliculaCompra[0][0] ."&emailuser=" . $emailuser . "&silla=" . $silla . "&dia=" . $diaActual . "&sesion=" . $sesionActual ."&pelicula=" . $peliculaCompra[0][1] . "&usuario=" . $usuario . "'><img src='../imagenes/silla_libre.jpg'></a>";
+                 echo "<a href='comprada.php?fila=" . $fila ."&sala=" . $peliculaCompra[0][0] ."&emailuser=" . $emailuser . "&silla=" . $silla . "&dia=" . $diaActual . "&sesion=" . $sesionActual ."&pelicula=" . $peliculaCompra[0][1] . "&usuario=" . $usuario . "'><img src='../imagenes/silla_libre.jpg'></a>";
                  echo "&nbsp";
              }
              else
@@ -317,11 +317,10 @@ else
      <input type="submit" value="Seleccionar pelicula, hora y día">
      </form>
 
-    <a href='cineResetButacas.php'><button   id="reset" > Reseteo Butacas </button></a>
     <?php
 
 
-    echo " <a href='cineEditPerfil.php?usuario=". $usuario ."'><button> Editar Perfil </button></a>" ;
+    echo " <a href='../controlador/editPerfil.php?usuario=". $usuario ."'><button> Editar Perfil </button></a>" ;
    echo "<br>";
     ?>
 </body>

@@ -47,7 +47,7 @@
 
            foreach (Users::listaEmpleados() as $resultado) {
 
-
+             if($resultado[4] == 1){
           //while($resultado = $resultados->fetch_assoc()){
            ?>
             <tr>
@@ -166,14 +166,16 @@
   <?php
 
   echo "</tr>";
-} // fin foreach horario
-        }
 
+} // fin foreach horario
+} // if activo
+        }
       ?>
 
       </table>
 
         <br/>
+
 
     </body>
 </html>

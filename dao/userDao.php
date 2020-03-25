@@ -70,6 +70,12 @@
       return $cont;
     }
 
+    public static function actualizarPerfil($usuario, $newUser, $contrasena, $email){
+      $con = new Conexion();
+      $con->ejecutarActualizacion("UPDATE usuarios SET usuario='$newUser', contrasena= '$contrasena', email= '$email'  WHERE usuario = '$usuario'");
+      $con->cerrarConexion();
+    }
+
   }
 
 

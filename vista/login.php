@@ -11,7 +11,7 @@
         <title>Cines Login</title>
     </head>
     <body>
-        <img src="imagenes/cines_pmaria.jpg"/>
+        <img src="../imagenes/cines_pmaria.jpg"/>
         <?php
 
         session_start();

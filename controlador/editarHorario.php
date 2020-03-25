@@ -227,6 +227,7 @@
         </table>
 
         <br/>
+       <a href='../controlador/reseteoButacas.php'><button   id="reset" > Reseteo Butacas </button></a>
 
     </body>
 </html>
