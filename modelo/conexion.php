@@ -6,7 +6,6 @@
     private $base;
     private $conexion;
 
-
     public function __construct(){
       $this->servidor = "localhost";
       $this->usuario = "root";
@@ -15,7 +14,6 @@
 
       $this->conexion = new mysqli($this->servidor, $this->usuario,
       $this->clave, $this->base);
-
     }
 
     public function ejecutarConsulta( $sql){
@@ -29,13 +27,6 @@
 
     public function cerrarConexion(){
       $this->conexion->close();
-
     }
-
-
   }
-
-
-
-
  ?>

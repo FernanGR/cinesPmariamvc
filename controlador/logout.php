@@ -1,13 +1,13 @@
 <?php
 
-session_start();
+  session_start();
 
-if(isset($_SESSION['login']))
-{
-    $_SESSION = array();
-    session_destroy();
-}
+  if(isset($_SESSION['login']))
+  {
+      $_SESSION = array();
+      session_destroy();
+  }
 
-header("Location:../vista/login.php");
+  header("Location:../vista/login.php");
 
 ?>

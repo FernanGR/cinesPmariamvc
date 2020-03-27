@@ -1,29 +1,33 @@
 <?php
+require_once '../dao/horarioDao.php';
+require_once '../dao/userDao.php';
+require_once '../modelo/conexion.php';
+require_once '../dao/imagenesDao.php';
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-require '../PHPMailer/Exception.php';
-require '../PHPMailer/PHPMailer.php';
-require '../PHPMailer/SMTP.php';
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\Exception;
+  require '../PHPMailer/Exception.php';
+  require '../PHPMailer/PHPMailer.php';
+  require '../PHPMailer/SMTP.php';
 
 
-include('../tcpdf/config/tcpdf_config.php');
-include('../tcpdf/tcpdf.php');
+  include('../tcpdf/config/tcpdf_config.php');
+  include('../tcpdf/tcpdf.php');
 
-$documento = new TCPDF();
+  $documento = new TCPDF();
 
-$documento->setPrintHeader(false);
-$documento->setPrintFooter(false);
-$documento->SetTitle("Entrada Cine");
-$documento->AddPage('p','A5');
+  $documento->setPrintHeader(false);
+  $documento->setPrintFooter(false);
+  $documento->SetTitle("Entrada Cine");
+  $documento->AddPage('p','A5');
 
-$fila = $_GET['fila'];
-$silla = $_GET['silla'];
-$sesion = $_GET['sesion'];
-$usuario = $_GET['usuario'];
-$pelicula = $_GET['pelicula'];
-$dia = $_GET['dia'];
-$sala = $_GET['sala'];
+  $fila = $_GET['fila'];
+  $silla = $_GET['silla'];
+  $sesion = $_GET['sesion'];
+  $usuario = $_GET['usuario'];
+  $pelicula = $_GET['pelicula'];
+  $dia = $_GET['dia'];
+  $sala = $_GET['sala'];
 
 if (empty($_GET['email'])){
      echo "Rellena el campo del email para poder enviarte la entrada. <br/>";
@@ -31,51 +35,52 @@ if (empty($_GET['email'])){
    }
    else{
 
-$html = '
-<img  src="../imagenes/cines_pmaria.jpg" width="400" height="200" />
+   $imgPeli = Img::listaImg();
+   $html = '
+     <img  src="'. $imgPeli[(int)$sala-1][1]. '" width="400" height="200" />
 
-<br/>
-<table style="border: 1px solid black;" width="95%">
-<tr>
-<td style="border: 1px solid black;"><b>PELÍCULA</b></td>
-<td style="border: 1px solid black;">' . $pelicula  . '</td>
-</tr>
-<tr>
-<td style="border: 1px solid black;"><b>SALA</b></td>
-<td style="border: 1px solid black;">' . $sala  . '</td>
-</tr>
+  <br/>
+  <table style="border: 1px solid black;" width="95%">
+  <tr>
+  <td style="border: 1px solid black;"><b>PELÍCULA</b></td>
+  <td style="border: 1px solid black;">' . $pelicula  . '</td>
+  </tr>
+  <tr>
+  <td style="border: 1px solid black;"><b>SALA</b></td>
+  <td style="border: 1px solid black;">' . $sala  . '</td>
+  </tr>
 
-<tr>
-<td style="border: 1px solid black;"><b>FILA</b></td>
-<td style="border: 1px solid black;">' . $fila  . '</td>
-</tr>
-<tr>
-<td style="border: 1px solid black;"><b>BUTACA</b></td>
-<td style="border: 1px solid black; ">' . $silla . '</td>
-</tr>
-<tr>
-<td style="border: 1px solid black;"><b>FECHA</b></td>
-<td style="border: 1px solid black;">Día: ' .$dia. '<br>
-Hora: '. $sesion  . '</td>
-</tr>
-<tr>
-<td colspan="2" style="border: 1px solid black;">Presente esta entrada en la sala</td>
-</tr>
+  <tr>
+  <td style="border: 1px solid black;"><b>FILA</b></td>
+  <td style="border: 1px solid black;">' . $fila  . '</td>
+  </tr>
+  <tr>
+  <td style="border: 1px solid black;"><b>BUTACA</b></td>
+  <td style="border: 1px solid black; ">' . $silla . '</td>
+  </tr>
+  <tr>
+  <td style="border: 1px solid black;"><b>FECHA</b></td>
+  <td style="border: 1px solid black;">Día: ' .$dia. '<br>
+  Hora: '. $sesion  . '</td>
+  </tr>
+  <tr>
+  <td colspan="2" style="border: 1px solid black;">Presente esta entrada en la sala</td>
+  </tr>
 
-</table>
-<img  src="../imagenes/ticket3.jpg" width="400" height="200" />
+  </table>
+  <img  src="../imagenes/ticket3.jpg" width="400" height="200" />
 
-<br> ';
+  <br> ';
 
 
-$nombreEntrada = "/../entradas/entrada-" . $usuario . ".pdf";
+  $nombreEntrada = "/../entradas/entrada-" . $usuario . ".pdf";
 
-$documento->WriteHTML($html, true, false, true, false, '');
+  $documento->WriteHTML($html, true, false, true, false, '');
 
-$documento->Output(__DIR__ . $nombreEntrada,"F");
+  $documento->Output(__DIR__ . $nombreEntrada,"F");
 
-//ENVIO DE ENTRADA ADJUNTADA AL EMAIL.
-$mail = new PHPMailer(true);
+  //ENVIO DE ENTRADA ADJUNTADA AL EMAIL.
+  $mail = new PHPMailer(true);
 
 try {
     //Server settings
@@ -110,7 +115,7 @@ try {
 
     $mail->send();
     echo 'Mensaje enviado OK!<br/>';
-      echo "<a href='../vista/comprarEntrada.php?sesionActual=" .  $sesion ."&peliculaActual=" . $pelicula ."&diaActual=" . $dia . "'><img src='../imagenes/comprar-mas.png'></a>";
+      echo "<a href='../vista/comprarEntrada.php?usuario=" . $usuario . "&sesionActual=" .  $sesion ."&peliculaActual=" . $pelicula ."&diaActual=" . $dia . "'><img src='../imagenes/comprar-mas.png'></a>";
     //  echo "<a href='cinepagina.php?sesionActual=" . $sesion ."&peliculaActual=" . $pelicula ."&diaActual=" . $dia . "'><img src='imagenes/comprar-mas.png'></a>";
 
       //echo "<a href='cinecomprada.php?sesionActual=" . $GET_['sesion'] . "'><img src='imagenes/comprar-mas.png'></a>";

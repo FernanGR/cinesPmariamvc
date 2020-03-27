@@ -11,9 +11,14 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     </head>
     <body>
-        <img src="imagenes/cines_pmaria.jpg"/>
+        <img src="../imagenes/cines_pmaria.jpg"/>
         <?php
-          session_start();
+           session_start();
+          $admin = $_SESSION['usuario'];
+          echo "<br/>";
+          echo "Usuario: " . $admin;
+
+
           $_GET['usuario'] = "";
           $_GET['contraseña'] = "";
           $_GET['email'] = "";
@@ -30,6 +35,7 @@
                <?php if(isset($_GET['registrar']) && empty($_GET['email'])) echo "<span style='color:red'><--¡Debes introducir un email!</span>"; ?><br>
              <input type="submit" value="Registrar Empleado" name="registrar"/>
          </form>
+         <a href='../index.php?user=<?php echo $admin ?>&rol=ROL_ADMIN'><button>Volver al Menu</button></a>
 
         <br/>
         <table style="border: 1px solid black;" width="95%">
@@ -53,7 +59,7 @@
           <?php
 
           foreach (Users::listaEmpleados() as $resultado) {
-            
+
             ?>
             <form name = "formulario" method="GET" action= '../controlador/actualizarEmp.php'>
             <input type="hidden" name="user" value="<?php  echo $resultado[0] ?> " />

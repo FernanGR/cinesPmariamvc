@@ -73,13 +73,13 @@ try {
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Comentario sobre horarios.';
-    $mail->Body    = 'Hola, soy  ' . $usuario . '. <br/>Aqui esta mi sugerencia sobre los horarios para la semana que viene: ' . $comentario;
+    $mail->Body    = 'Hola, soy  ' . $usuario . '. <br/>Aqui esta mi sugerencia sobre los horarios para la semana que viene: <br/>' . $comentario;
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
     echo 'Mensaje enviado OK!<br/>';
   //  echo "<button><a href='../index.php>Volver al menu</a></button>";
-    echo "<a href='../index.php'><input type='button' value='Volver al menu'></a>";
+    echo "<a href='../index.php?user=$usuario&rol=ROL_EMP'><input type='button' value='Volver al menu'></a>";
 
     //  echo "<a href='cinepagina.php?sesionActual=" . $sesion ."&peliculaActual=" . $pelicula ."&diaActual=" . $dia . "'><img src='imagenes/comprar-mas.png'></a>";
 

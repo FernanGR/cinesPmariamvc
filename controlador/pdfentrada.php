@@ -1,25 +1,30 @@
 <?php
+  require_once '../dao/horarioDao.php';
+  require_once '../dao/userDao.php';
+  require_once '../modelo/conexion.php';
+  require_once '../dao/imagenesDao.php';
 
-include('../tcpdf/config/tcpdf_config.php');
-include('../tcpdf/tcpdf.php');
 
-$documento = new TCPDF();
+  include('../tcpdf/config/tcpdf_config.php');
+  include('../tcpdf/tcpdf.php');
 
-$documento->setPrintHeader(false);
-$documento->setPrintFooter(false);
-$documento->SetTitle("Entrada Cine");
-$documento->AddPage('p','A5');
+  $documento = new TCPDF();
 
-$fila = $_GET['fila'];
-$silla = $_GET['silla'];
-$sesion = $_GET['sesion'];
-$sala = $_GET['sala'];
-$peliculas = $_GET['pelicula'];
-$usuario = $_GET['usuario'];
-$dia1 = $_GET['dia'];
+  $documento->setPrintHeader(false);
+  $documento->setPrintFooter(false);
+  $documento->SetTitle("Entrada Cine");
+  $documento->AddPage('p','A5');
 
+  $fila = $_GET['fila'];
+  $silla = $_GET['silla'];
+  $sesion = $_GET['sesion'];
+  $sala = $_GET['sala'];
+  $peliculas = $_GET['pelicula'];
+  $usuario = $_GET['usuario'];
+  $dia1 = $_GET['dia'];
+  $imgPeli = Img::listaImg();
 $html = '
-  <img  src="../imagenes/cines_pmaria.jpg" width="400" height="200" />
+  <img  src="'. $imgPeli[$sala-1][1]. '" width="400" height="200" />
 
 <br/>
 <table style="border: 1px solid black;" width="95%">

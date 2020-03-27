@@ -20,7 +20,7 @@ session_start();
          //$sql = ("UPDATE usuarios SET usuario='$newUser', contrasena= '$contrasena', email= '$email' WHERE usuario = '$usuario '");
       //  $conexion->query($sql);
 
-        header("Location:logout.php");
-
+    //    header("Location:logout.php");
+          header("Location:../index.php?user=".$newUser."&rol=ROL_USER");
 
  ?>

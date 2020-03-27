@@ -10,7 +10,7 @@
         <title>Cines PMaria Register</title>
     </head>
     <body>
-        <img src="imagenes/cines_pmaria.jpg"/>
+        <img src="../imagenes/cines_pmaria.jpg"/>
         <h1>Registrarme</h1>
         <?php
 /*

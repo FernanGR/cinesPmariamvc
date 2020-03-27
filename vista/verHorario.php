@@ -12,12 +12,17 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     </head>
     <body>
-        <img src="imagenes/cines_pmaria.jpg"/>
+        <img src="../imagenes/cines_pmaria.jpg"/>
         <?php
 
         session_start();
 
+          $usuario = $_SESSION['usuario'];
+          echo "<br/>";
+          echo "Usuario: " . $usuario;
         ?>
+        <br/>
+        <a href='../index.php?user=<?php echo $usuario ?>&rol=ROL_EMP'><button>Volver al Menu</button></a>
 
         <br/>
         <table style="border: 1px solid black;" width="95%">
@@ -47,7 +52,7 @@
 
            foreach (Users::listaEmpleados() as $resultado) {
 
-             if($resultado[4] == 1){
+             if($resultado[4] == 1){ // para ver si esta activo
           //while($resultado = $resultados->fetch_assoc()){
            ?>
             <tr>
@@ -175,6 +180,8 @@
       </table>
 
         <br/>
+    <?php /*    <a href="comentarEmpleado.php">Comentario al Admin</a>
+    <?php     echo "<a href='comentarEmpleado.php'><input type='button' value='Enviar mensaje'></a>"; */  ?>
 
 
     </body>

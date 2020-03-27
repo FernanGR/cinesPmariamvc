@@ -23,7 +23,11 @@
         $sala = (int) $_GET['sala'];
         $usuario = $_GET['usuario'];
         $dia = $_GET['dia'];
-        $emailuser = $_GET['emailuser'];
+        foreach(Users::userActual($usuario) as $userA){
+          $emailuser = $userA[2];
+
+        }
+      //  $emailuser = $_GET['emailuser'];
 
         if($sala == 1 || $sala == 2){
           $sillaElegida = ($fila * 20) + $silla;
@@ -92,7 +96,7 @@
             <?php
 
 
-        echo "<a href='comprarEntrada.php?sesionActual=" . $sesion . "&peliculaActual=" . $pelicula ."&emailuser=". $emailuser . "&diaActual=" . $dia . "'><img src='../imagenes/comprar-mas.png'></a>";
+        echo "<a href='comprarEntrada.php?usuario=" . $usuario . "&sesionActual=" . $sesion . "&peliculaActual=" . $pelicula ."&emailuser=". $emailuser . "&diaActual=" . $dia . "'><img src='../imagenes/comprar-mas.png'></a>";
 
         ?>
     </body>

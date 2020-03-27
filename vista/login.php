@@ -5,6 +5,7 @@
   require_once '../modelo/conexion.php';
 
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,9 +30,11 @@
 
             if($userLogin != null)
             {
-
+                $datosUser = Users::userActual($usuario);
                 $_SESSION['usuario'] = $userLogin[0];
-                header("Location:comprarEntrada.php");
+                $us = $datosUser[0][0];
+                $rol = $datosUser[0][3];
+                header("Location:../index.php?user=" .$us. "&rol=" .$rol);
             }
           }
         }
@@ -42,7 +45,12 @@
 
         if(isset($_SESSION['login']))
         {
-            header("Location:comprarEntrada.php");
+            $datosUser = Users::userActual($_SESSION['usuario']);
+            $us = $datosUser[0][0];
+            $rol = $datosUser[0][3];
+            header("Location:../index.php?user=" .$us. "&rol=" .$rol);
+
+          //  header("Location:../index.php?user='" . $datosUser[0] . "&rol= '" . $datosUser[3]. "'");
         }
         else
         {

@@ -25,8 +25,8 @@
   $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado");
   echo "<h2>Buenos días, hoy es ".$dias[date("w")] . " y la hora es " . date("h") . " <h2>";
 
-  $usuario = $_SESSION['usuario'];
-
+  //$usuario = $_SESSION['usuario'];
+  $usuario = $_GET['usuario'];
   echo "¡Bienvenido, <b> " . $usuario . "!</b>";
   echo "(<a href='../controlador/logout.php'>logout </a> )";
 
@@ -34,11 +34,13 @@
 
 
 
-$conexion = new mysqli('localhost','root','','cinespmaria');
+//$conexion = new mysqli('localhost','root','','cinespmaria');
 
-$sesionUser = $_SESSION['usuario'];
+//$sesionUser = $_SESSION['usuario'];
+$sesionUser = $usuario;
+
 //$userActual = Users::userActual($sesionUser);
-foreach(Users::userActual($sesionUser) as $userA){
+foreach(Users::userActual($usuario) as $userA){
   $emailuser = $userA[2];
 
 }
@@ -192,12 +194,14 @@ else
 
 ?>
   <form method="get" action="<?php echo $_SERVER['PHP_SELF'] ; ?>">
-
+  <input type="hidden" name="usuario" value="<?php  echo $usuario ?> " />
     <?php
   //  $consulta = $conexion->query("SELECT email FROM usuarios where usuario = '"  . $_SESSION['usuario']. "'"   );
   //  $resultado = $consulta->fetch_assoc();
   //  $emailuser = $resultado['email'];
-    $sesionUser = $_SESSION['usuario'];
+    $sesionUser = $usuario;
+
+
     //$userActual = Users::userActual($sesionUser);
     foreach(Users::userActual($sesionUser) as $userA){
       $emailuser = $userA[2];
@@ -316,12 +320,7 @@ else
 
      <input type="submit" value="Seleccionar pelicula, hora y día">
      </form>
+     <a href='../index.php?user=<?php echo $usuario ?>&rol=ROL_USER'><button>Volver al Menu</button></a>
 
-    <?php
-
-
-    echo " <a href='../controlador/editPerfil.php?usuario=". $usuario ."'><button> Editar Perfil </button></a>" ;
-   echo "<br>";
-    ?>
 </body>
 </html>

@@ -17,8 +17,9 @@
      <body>
          <img src="../imagenes/cines_pmaria.jpg"/>
          <?php
-
-           $usuario = $_GET['usuario'];
+         //session_start();
+        // $usuario = $_SESSION['usuario'];
+            $usuario = $_GET['usuario'];
         //   $conexion = new mysqli('localhost','root','','cinespmaria');
         //   $consulta = $conexion->query("SELECT * FROM usuarios where usuario = '"  . $usuario . "'");
         //   $resultado = $consulta->fetch_assoc();
@@ -32,11 +33,13 @@
             echo "<td ><input name=newPass value =" . $userAct[0][1] . "> </td>" ;
             echo "<td> <input name=newEmail value =" . $userAct[0][2] . "></td>";
              ?>
+
               <input type="submit" value="Editar Perfil" name="registrar"/>
           </form>
 
-         <br/>
-         <a href='../vista/comprarEntrada.php'><button>Cancelar</button></a>
-
+         <a href='../index.php?user=<?php echo $usuario ?>&rol=ROL_USER'><button>Volver al Menu</button></a>
+        <?php
+         //echo " <a href='../index.php?user= $usuario&rol=ROL_USER'><button> Volver Menu </button></a>" ;
+         ?>
      </body>
  </html>
