@@ -8,7 +8,7 @@
 <html>
     <head>
         <title>Cines Peliculas</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>   -->
     </head>
     <body>
         <img src="../imagenes/cines_pmaria.jpg"/>
