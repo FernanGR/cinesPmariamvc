@@ -78,13 +78,7 @@ try {
         alert("Mensaje enviado. Muchas gracias.");
         window.location.href="../vista/indexContacta.php";
         </script>';
-  //  echo "<button><a href='../index.php>Volver al menu</a></button>";
-  //  echo "<a href='../vista/indexComEmp.php'><input type='button' value='Volver al menu'></a>";
-
-    //  echo "<a href='cinepagina.php?sesionActual=" . $sesion ."&peliculaActual=" . $pelicula ."&diaActual=" . $dia . "'><img src='imagenes/comprar-mas.png'></a>";
-
-      //echo "<a href='cinecomprada.php?sesionActual=" . $GET_['sesion'] . "'><img src='imagenes/comprar-mas.png'></a>";
-} catch (Exception $e) {
+ } catch (Exception $e) {
     echo "Mensaje NO enviado. Mailer Error: {$mail->ErrorInfo}";
 }
 
