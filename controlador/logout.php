@@ -2,12 +2,13 @@
 
   session_start();
 
-  if(isset($_SESSION['login']))
+  if(isset($_SESSION['usuario']))
   {
       $_SESSION = array();
+      unset($_SESSION["usuario"]);
       session_destroy();
   }
 
-  header("Location:../vista/login.php");
+  header("Location:../index.php");
 
 ?>

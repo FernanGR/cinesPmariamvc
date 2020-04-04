@@ -1,5 +1,5 @@
 <?php
-  require_once '../modelo/conexion.php';
+  require_once 'modelo/conexion.php';
 
   class Login {
     public static function chequear(){
@@ -10,7 +10,7 @@
       return $cont;
     }
 
-
+/*
 
     public static function actualizarPelicula($sala,$nombre, $descripcion){
       $con = new Conexion();
@@ -18,7 +18,7 @@
       $con->cerrarConexion();
     }
 
-
+*/
 
   }
 

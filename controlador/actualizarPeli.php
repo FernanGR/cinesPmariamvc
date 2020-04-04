@@ -3,17 +3,12 @@
   require_once '../dao/peliculaDao.php';
   require_once '../modelo/conexion.php';
 
+   $sala = $_POST['sala'];
+   $nombre = $_POST['peli'];
+   $descripcion = $_POST['descripcion'];
 
-session_start();
+   Peliculas::actualizarPelicula($sala,$nombre,$descripcion);
 
-
-       $sala = $_GET['sala'];
-       $nombre = $_GET['peli'];
-       $descripcion = $_GET['descripcion'];
-
-       Peliculas::actualizarPelicula($sala,$nombre,$descripcion);
-
-     header("Location:../vista/verPeliculas.php");
-
+   header("Location:../vista/indexEditPeli.php");
 
  ?>

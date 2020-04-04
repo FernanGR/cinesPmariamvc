@@ -1,5 +1,5 @@
 <?php
-  require_once '../modelo/conexion.php';
+  //require_once 'modelo/conexion.php';
 
   class Peliculas {
     public static function listaPeliculas(){

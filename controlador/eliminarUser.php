@@ -1,14 +1,11 @@
 <?php
-require_once '../dao/userDao.php';
-require_once '../modelo/conexion.php';
+    require_once '../dao/userDao.php';
+    require_once '../modelo/conexion.php';
 
 
-session_start();
-
-
-       $usuario = $_GET['user'];
+       $usuario = $_POST['user'];
        Users::eliminarUser($usuario);
-       header("Location:../vista/verUsuarios.php");
+       header("Location:../vista/indexEditUsers.php");
 
 
  ?>

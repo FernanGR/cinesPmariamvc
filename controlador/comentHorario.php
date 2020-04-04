@@ -26,14 +26,10 @@ $documento->setPrintFooter(false);
 $documento->SetTitle("Entrada Cine");
 $documento->AddPage('p','A5');
 
+session_start();
+$usuario = $_SESSION['usuario'];
+$comentario = $_POST['comentario'];
 
-$usuario = $_GET['user'];
-$comentario = $_GET['comentario'];
-
-$html = '
-    Hola, soy ' . $usuario . '.
-    Le envio este email para comentarle esto sobre los horarios de esta semana:'
-    . $comentario ;
 
 
 //$nombreEntrada = "/../entradas/entrada-" . $usuario . ".pdf";
@@ -60,7 +56,7 @@ try {
     $mail->setFrom('fernandodawsp@gmail.com', 'Fernando GR');
   //  $mail->addAddress('tibofgr@gmail.com', 'Nombre');     // Add a recipient
 
-  $mail->addAddress($_GET["email"], $usuario);     //para que capture del formulario el email al que enviarlo
+  $mail->addAddress("cinespmaria@gmail.com", $usuario);     //para que capture del formulario el email al que enviarlo
     //$mail->addAddress('mfornes@iesperemaria.com');               // Name is optional
     //$mail->addReplyTo('bb@', 'Correo de respuesta');
     //$mail->addCC('cc@example.com');
@@ -77,10 +73,13 @@ try {
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo 'Mensaje enviado OK!<br/>';
+  //  echo 'Mensaje enviado OK!<br/>';
   //  echo "<button><a href='../index.php>Volver al menu</a></button>";
-    echo "<a href='../index.php?user=$usuario&rol=ROL_EMP'><input type='button' value='Volver al menu'></a>";
-
+//  echo "<a href='../vista/indexComEmp.php'><input type='button' value='Volver al menu'></a>";
+echo'<script type="text/javascript">
+      alert("Mensaje enviado. Muchas gracias.");
+      window.location.href="../vista/indexComEmp.php";
+      </script>';
     //  echo "<a href='cinepagina.php?sesionActual=" . $sesion ."&peliculaActual=" . $pelicula ."&diaActual=" . $dia . "'><img src='imagenes/comprar-mas.png'></a>";
 
       //echo "<a href='cinecomprada.php?sesionActual=" . $GET_['sesion'] . "'><img src='imagenes/comprar-mas.png'></a>";

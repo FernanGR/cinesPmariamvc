@@ -1,10 +1,9 @@
 <?php
   require_once '../modelo/conexion.php';
-  require_once '../dao/imagenesDao.php';
+  require_once '../model/imagenesDao.php';
 
   $sala = $_POST['sala'];
-  $usuario = $_GET['usuario'];
-//capturamos los datos del fichero subido
+ //capturamos los datos del fichero subido
 $type=$_FILES['img_up']['type'];
 $tmp_name = $_FILES['img_up']["tmp_name"];
 $name = $_FILES['img_up']["name"];
@@ -32,6 +31,6 @@ echo "<br> Tamanio: ".$_FILES['img_up']["size"]." bytes";      //tamaño
 */
 Img::insertarImg($sala,$nuevo_path);
 
-header("Location:../controlador/editarFotos.php?admin=$usuario");
+ header("Location:../vista/indexEditFotos.php");
 
 ?>

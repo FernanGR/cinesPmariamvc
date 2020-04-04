@@ -1,49 +1,25 @@
-<?php
-  require_once '../dao/userDao.php';
-  require_once '../modelo/conexion.php';
-  require_once '../dao/peliculaDao.php';
-  require_once '../dao/horarioDao.php';
 
- ?>
-
-<!DOCTYPE html>
-<html>
- <head>
-   <title> Cines PMaria </title>
-     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
- </head>
 <body>
-  <img src="../imagenes/cines_pmaria.jpg"/>
-  <br/>
+   <br/>
 <?php
-  session_start();
-  if(!isset($_SESSION['usuario']))
-  {
-      header("Location:login.php");
-  }
 
   $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado");
-  echo "<h2>Buenos días, hoy es ".$dias[date("w")] . " y la hora es " . date("h") . " <h2>";
+  echo "<h2>Buenos días, hoy es ".$dias[date("w")] . ".<h2>";
 
-  //$usuario = $_SESSION['usuario'];
-  $usuario = $_GET['usuario'];
-  echo "¡Bienvenido, <b> " . $usuario . "!</b>";
-  echo "(<a href='../controlador/logout.php'>logout </a> )";
+  $usuario = $_SESSION['usuario'];
+   echo "¡Bienvenido, <b> " . $usuario . "!</b>";
 
   echo "<h1>Comprar entradas</h1>";
 
 
-
-//$conexion = new mysqli('localhost','root','','cinespmaria');
-
-//$sesionUser = $_SESSION['usuario'];
-$sesionUser = $usuario;
-
-//$userActual = Users::userActual($sesionUser);
+$userA = Users::userActual($usuario);
+$emailuser = $userA[0][2];
+/*
 foreach(Users::userActual($usuario) as $userA){
   $emailuser = $userA[2];
 
-}
+}*/
+
 //email
 //$consulta = $conexion->query("SELECT * FROM usuarios where usuario = '"  . $_SESSION['usuario']. "'"   );
 //$resultado = $consulta->fetch_assoc();
@@ -139,7 +115,7 @@ else
              $posicionSilla = (($fila * 20) + $silla);
              if($peliculaCompra[0][3][$posicionSilla] == "1")
              {
-                 echo "<a href='comprada.php?fila=" . $fila ."&sala=" . $peliculaCompra[0][0] ."&emailuser=" . $emailuser . "&silla=" . $silla . "&dia=" . $diaActual . "&sesion=" . $sesionActual ."&pelicula=" . $peliculaCompra[0][1] . "&usuario=" . $usuario . "'><img src='../imagenes/silla_libre.jpg'></a>";
+                 echo "<a href='indexComprada.php?fila=" . $fila ."&sala=" . $peliculaCompra[0][0] ."&emailuser=" . $emailuser . "&silla=" . $silla . "&dia=" . $diaActual . "&sesion=" . $sesionActual ."&pelicula=" . $peliculaCompra[0][1] . "&usuario=" . $usuario . "'><img src='../imagenes/silla_libre.jpg'></a>";
                  echo "&nbsp";
              }
              else
@@ -176,7 +152,7 @@ else
              $posicionSilla = (($fila * 10) + $silla);
              if($peliculaCompra[0][3][$posicionSilla] == "1")
              {
-                 echo "<a href='comprada.php?fila=" . $fila ."&sala=" . $peliculaCompra[0][0] ."&emailuser=" . $emailuser . "&silla=" . $silla . "&dia=" . $diaActual . "&sesion=" . $sesionActual ."&pelicula=" . $peliculaCompra[0][1] . "&usuario=" . $usuario . "'><img src='../imagenes/silla_libre.jpg'></a>";
+                 echo "<a href='indexComprada.php?fila=" . $fila ."&sala=" . $peliculaCompra[0][0] ."&emailuser=" . $emailuser . "&silla=" . $silla . "&dia=" . $diaActual . "&sesion=" . $sesionActual ."&pelicula=" . $peliculaCompra[0][1] . "&usuario=" . $usuario . "'><img src='../imagenes/silla_libre.jpg'></a>";
                  echo "&nbsp";
              }
              else
@@ -193,32 +169,28 @@ else
 
 
 ?>
-  <form method="get" action="<?php echo $_SERVER['PHP_SELF'] ; ?>">
-  <input type="hidden" name="usuario" value="<?php  echo $usuario ?> " />
-    <?php
+  <form method="GET" action="indexComEntrada.php">
+
+
+        <?php
   //  $consulta = $conexion->query("SELECT email FROM usuarios where usuario = '"  . $_SESSION['usuario']. "'"   );
   //  $resultado = $consulta->fetch_assoc();
   //  $emailuser = $resultado['email'];
-    $sesionUser = $usuario;
-
+  //  $sesionUser = $usuario;
 
     //$userActual = Users::userActual($sesionUser);
-    foreach(Users::userActual($sesionUser) as $userA){
+    foreach(Users::userActual($usuario) as $userA){
       $emailuser = $userA[2];
 
     }
-    //$emailuser = $_GET['emailuser']; // para pasar email del usuario
 
-  //  $conexion = new mysqli('localhost','root','','cinespmaria');
-  //  $resultados = $conexion->query("SELECT DISTINCT nombre FROM peliculas");
       $nombrePelis = Peliculas::nombrePeliculas();
 
     // peliculas
         echo "Película ";
          echo "<select name='peliculaActual'>";
 
-        // while($resultado = $resultados->fetch_assoc())
-        foreach(Peliculas::nombrePeliculas() as $peliName)
+         foreach(Peliculas::nombrePeliculas() as $peliName)
          {
              if($peliculaActual == $peliName[0])
              {
@@ -229,29 +201,17 @@ else
              {
                  echo "<option value='" . $peliName[0] . "'>" . $peliName[0]   . "</option>";
              }
-             // modo vision solo 1 de cada
-        /*     for($y = 0; $y<20; $y++){
-               $resultado = $resultados->fetch_assoc();
-             }*/
+
          }
 
          echo "</select> </br>";
-
-
-    //$conexion = new mysqli('localhost','root','','cinespmaria');
-    //$resultados = $conexion->query("SELECT DISTINCT sesion FROM peliculas");
-
 
 
 // sesion/ hora
     echo "Sesión ";
     echo "<select name='sesionActual'>";
 
-    //while($resultado = $resultados->fetch_assoc())
-  //  $i = 1;
-  //  $resultado = $resultados->fetch_assoc();
 
-  //  while($i <4)
   foreach(Peliculas::sesionesPeliculas() as $sesPeli)
      {
          if($sesionActual == $sesPeli[0])
@@ -263,8 +223,6 @@ else
          {
              echo "<option value='" . $sesPeli[0] . "'>" . $sesPeli[0] . "</option>";
          }
-      //   $i++;
-    //     $resultado = $resultados->fetch_assoc();
 
      }
 
@@ -272,17 +230,13 @@ else
 
 
      // dia de la semana
-    // $conexion = new mysqli('localhost','root','','cinespmaria');
-    // $resultados = $conexion->query("SELECT dia FROM peliculas");
 
          echo "Día Semana";
          echo "<select name='diaActual'>";
 
-
           $d =  date("w");
 
-          //$i = 0;
-          if( $d == 0)  // si es domingo solo podra domingo
+           if( $d == 0)  // si es domingo solo podra domingo
           {
               $i = $d;
               echo "<option value='" . $dias[$i] . "' selected>" . $dias[$i] . "</option>";
@@ -320,7 +274,5 @@ else
 
      <input type="submit" value="Seleccionar pelicula, hora y día">
      </form>
-     <a href='../index.php?user=<?php echo $usuario ?>&rol=ROL_USER'><button>Volver al Menu</button></a>
 
 </body>
-</html>

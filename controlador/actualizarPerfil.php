@@ -5,22 +5,16 @@
   require_once '../dao/horarioDao.php';
 
 
-session_start();
 
-
-       $usuario = $_GET['user'];
-       $newUser = $_GET['newUser'];
-       $contrasena = $_GET['newPass'];
-       $email = $_GET['newEmail'];
+       $usuario = $_POST['user'];
+       $newUser = $_POST['newUser'];
+       $contrasena = $_POST['newPass'];
+       $email = $_POST['newEmail'];
 
        Users::actualizarPerfil($usuario,$newUser,$contrasena,$email);
+        session_start();
+         $_SESSION['usuario'] = $newUser;
 
-         //$conexion = new mysqli('localhost','root','','cinespmaria');
-
-         //$sql = ("UPDATE usuarios SET usuario='$newUser', contrasena= '$contrasena', email= '$email' WHERE usuario = '$usuario '");
-      //  $conexion->query($sql);
-
-    //    header("Location:logout.php");
-          header("Location:../index.php?user=".$newUser."&rol=ROL_USER");
+          header("Location:../vista/indexEditPerfil.php");
 
  ?>

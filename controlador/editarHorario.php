@@ -1,29 +1,14 @@
 <?php
 
   require_once '../dao/horarioDao.php';
-  require_once '../dao/userDao.php';
+//  require_once '../dao/userDao.php';
   require_once '../modelo/conexion.php';
 
 ?>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Cines Empleados</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    </head>
     <body>
-        <img src="../imagenes/cines_pmaria.jpg"/>
-        <?php
 
-        session_start();
-
-          $admin = $_SESSION['usuario'];
-          echo "<br/>";
-          echo "Usuario: " . $admin;
-        ?>
         <br/>
-        <a href='../index.php?user=<?php echo $admin ?>&rol=ROL_ADMIN'><button>Volver al Menu</button></a>
 
 
         <br/>
@@ -54,34 +39,25 @@
 
 
           //while($resultado = $resultados->fetch_assoc()){
-          foreach (Users::listaEmpleados() as $resultado) {
+          foreach (Users::listaEmpleados() as $empleado) {
            ?>
             <tr>
-              <form name = "formulario" method="GET" action= 'actualizarHorario.php'>
-              <input type="hidden" name="emp" value="<?php  echo $resultado[5] ?> " />
-
+              <form name = "formulario" method="POST" action= '../controlador/actualizarHorario.php'>
+              <input type="hidden" name="emp" value="<?php  echo $empleado[5] ?> " />
 
           <?php
-          /*<input type="hidden" name="slunes" value="<?php  echo $slunes ?> " />*/
-            echo  "<td><b>" . $resultado[0] . "</b> </td>";
+             echo  "<td><b>" . $empleado[0] . "</b> </td>";
 
-      //  $horarioEmp = $conexion->query("SELECT * FROM horarios where horario = " . $resultado[5]);
-      // while($horarioEmp = $horarioEmp->fetch_assoc()){
-     //  $horarioEmp = $horarioEmp->fetch_assoc();
-      $hor = $resultado[5];
-    //  $horarioEmp2 = Horario::listaHorEmp($hor);
-      foreach (Horario::listaHorEmp($hor) as $horarioEmp){
-    //   $horarioEmp = Horario::listaHorEmp($hor);
-      //echo "<td>" . $horarioEmp['lunes'] . "</td>";
+      $hor = $empleado[5];
+       foreach (Horario::listaHorEmp($hor) as $horarioEmp){
+
         echo  "<td> <select name=slunes>" ;
-    //  echo  "<td>" . $horarioEmp2[0] . "</td>";
-          for($x = 0; $x < 5; $x++){
+           for($x = 0; $x < 5; $x++){
 
             if($horarioEmp[1] == $PUESTO[$x])
             {
                 echo "<option value='" .$PUESTO[$x]. "' selected>" .$PUESTO[$x] . "</option>";
-              //  $slunes = $PUESTO[$x];
-            }
+             }
             else
             {
                 echo "<option value='" . $PUESTO[$x] . "'>" . $PUESTO[$x] . "</option>";
@@ -100,8 +76,7 @@
       if($horarioEmp[2] == $PUESTO[$x])
       {
           echo "<option value='" .$PUESTO[$x]. "' selected>" .$PUESTO[$x] . "</option>";
-        //  $sesionActual = $resultado['sesion'];
-      }
+       }
       else
       {
           echo "<option value='" . $PUESTO[$x] . "'>" . $PUESTO[$x] . "</option>";
@@ -121,8 +96,7 @@
     if($horarioEmp[3] == $PUESTO[$x])
     {
         echo "<option value='" .$PUESTO[$x]. "' selected>" .$PUESTO[$x] . "</option>";
-      //  $sesionActual = $resultado['sesion'];
-    }
+     }
     else
     {
         echo "<option value='" . $PUESTO[$x] . "'>" . $PUESTO[$x] . "</option>";
@@ -234,4 +208,3 @@
        <a href='../controlador/reseteoButacas.php'><button   id="reset" > Reseteo Butacas </button></a>
 
     </body>
-</html>

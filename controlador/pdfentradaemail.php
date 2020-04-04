@@ -31,7 +31,7 @@ require_once '../dao/imagenesDao.php';
 
 if (empty($_GET['email'])){
      echo "Rellena el campo del email para poder enviarte la entrada. <br/>";
-     echo "<a href='../vista/comprada.php?fila=" . ((int)$fila-1) . "&silla=" . ((int)$silla-1) . "&sesion=" . $sesion . "&sala=". $sala . "&pelicula=" . $pelicula ."&dia=" . $dia. "&usuario=" . $usuario . "'><h2>Volver atras</h2></a>";
+     echo "<a href='../vista/indexComprada.php?fila=" . ((int)$fila-1) . "&silla=" . ((int)$silla-1) . "&sesion=" . $sesion . "&sala=". $sala . "&pelicula=" . $pelicula ."&dia=" . $dia. "&usuario=" . $usuario . "'><h2>Volver atras</h2></a>";
    }
    else{
 
@@ -115,7 +115,7 @@ try {
 
     $mail->send();
     echo 'Mensaje enviado OK!<br/>';
-      echo "<a href='../vista/comprarEntrada.php?usuario=" . $usuario . "&sesionActual=" .  $sesion ."&peliculaActual=" . $pelicula ."&diaActual=" . $dia . "'><img src='../imagenes/comprar-mas.png'></a>";
+    echo "<a href='../vista/indexComEntrada.php?sesionActual=" .  $sesion ."&peliculaActual=" . $pelicula ."&diaActual=" . $dia . "'><img src='../imagenes/comprar-mas.png'></a>";
     //  echo "<a href='cinepagina.php?sesionActual=" . $sesion ."&peliculaActual=" . $pelicula ."&diaActual=" . $dia . "'><img src='imagenes/comprar-mas.png'></a>";
 
       //echo "<a href='cinecomprada.php?sesionActual=" . $GET_['sesion'] . "'><img src='imagenes/comprar-mas.png'></a>";

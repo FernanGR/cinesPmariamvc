@@ -1,5 +1,5 @@
 <?php
-  require_once '../modelo/conexion.php';
+  //require_once '../modelo/conexion.php';
 
   class Users {
     public static function listaUsuarios(){
@@ -74,6 +74,15 @@
       $con->ejecutarActualizacion("UPDATE usuarios SET usuario='$newUser', contrasena= '$contrasena', email= '$email'  WHERE usuario = '$usuario'");
       $con->cerrarConexion();
     }
+
+    public static function userRol($user){
+      $con = new Conexion();
+      $cont = $con->ejecutarConsulta("SELECT * from usuarios WHERE usuario = '$user'");
+      $con->cerrarConexion();
+      return $cont;
+    }
+
+
 
   }
 

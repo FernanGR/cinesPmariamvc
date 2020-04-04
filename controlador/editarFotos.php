@@ -1,29 +1,11 @@
-<?php
 
-  require_once '../dao/horarioDao.php';
-  require_once '../dao/userDao.php';
-  require_once '../modelo/conexion.php';
-  require_once '../dao/imagenesDao.php';
-
-?>
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Subir Imagen</title>
-    </head>
     <body>
-       <img src="../imagenes/cines_pmaria.jpg"/>
-    <?php
-    $admin = $_GET['admin'];
-  //  $fotos = Img::listaImg();
+     <?php
 
       ?>
 
        <h2>Cambiar Imagenes de las películas de las salas </h2>
        <br/>
-       <a href='../index.php?user=<?php echo $admin ?>&rol=ROL_ADMIN'><button>Volver al Menu</button></a>
 
        <table style="border: 1px solid black;" width="95%">
          <tr>
@@ -51,10 +33,10 @@
            echo "<td>";
           ?>
 
-        <form enctype="multipart/form-data" method="post" action="subir.php">
+        <form enctype="multipart/form-data" method="post" action="../controlador/subir.php">
+
           <input type="hidden" name="sala" value="<?php echo $sala ?> "/>
-          <input type="hidden" name="usuario" value="<?php echo $admin ?> "/>
-          <input type="file" name="img_up">
+           <input type="file" name="img_up">
           <input value="Cambiar" type="submit">
         </form>
       </td></tr>

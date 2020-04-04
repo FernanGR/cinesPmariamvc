@@ -45,7 +45,7 @@ Peliculas::actualizaButaca3456($disponibilidad);
 */
   Peliculas::reseteoButacas();
 
-     header("Location:editarHorario.php");
+     header("Location:../vista/indexEditHorario.php");
 
 
  ?>

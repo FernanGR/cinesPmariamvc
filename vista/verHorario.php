@@ -1,28 +1,16 @@
 <?php
 
   require_once '../dao/horarioDao.php';
-  require_once '../dao/userDao.php';
+  //require_once '../dao/userDao.php';
   require_once '../modelo/conexion.php';
 
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Cines Empleados</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    </head>
+
     <body>
-        <img src="../imagenes/cines_pmaria.jpg"/>
-        <?php
-
-        session_start();
-
-          $usuario = $_SESSION['usuario'];
-          echo "<br/>";
-          echo "Usuario: " . $usuario;
-        ?>
+      <?php
+        $empleadoActual = $_SESSION['usuario'];
+      ?>
         <br/>
-        <a href='../index.php?user=<?php echo $usuario ?>&rol=ROL_EMP'><button>Volver al Menu</button></a>
 
         <br/>
         <table style="border: 1px solid black;" width="95%">
@@ -50,22 +38,23 @@
     //      $horarios = $conexion->query("SELECT * FROM horarios");
            $PUESTO = ['Libre', 'Puerta', 'Bar', 'Taquilla', 'Refuerzo'];
 
-           foreach (Users::listaEmpleados() as $resultado) {
+           foreach (Users::listaEmpleados() as $empleados) {
 
-             if($resultado[4] == 1){ // para ver si esta activo
+             if($empleados[4] == 1){ // para ver si esta activo
           //while($resultado = $resultados->fetch_assoc()){
-           ?>
-            <tr>
-
-          <?php
+             if($empleados[0] == $empleadoActual){
+               echo "<tr style='color:red;'>";
+             }else{
+               echo "<tr>";
+         }
           /*<input type="hidden" name="slunes" value="<?php  echo $slunes ?> " />*/
-            echo  "<td><b>" . $resultado[0] . "</b> </td>";
+            echo  "<td><b>" . $empleados[0] . "</b> </td>";
 
 
           //  $horarioEmp = $conexion->query("SELECT * FROM horarios where horario = " . $resultado[5]);
           // while($horarioEmp = $horarioEmp->fetch_assoc()){
       //      $horarioEmp = $horarioEmp->fetch_assoc();
-            $hor = $resultado[5];
+            $hor = $empleados[5];
           //  $horarioEmp2 = ;
             foreach (Horario::listaHorEmp($hor) as $horarioEmp){
             //lunes
@@ -185,4 +174,3 @@
 
 
     </body>
-</html>
