@@ -51,8 +51,8 @@
     <!-- navbar -->
       <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-          <a class="navbar-brand text-white" href="index.html">
-            <img src="img/logo.png">
+          <a class="navbar-brand text-white" href="index.php">
+            <img src="imagenes/cines_pmaria.jpg" height="50" width="50">
             Cines Pmaria
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,12 +63,15 @@
               <li class="nav-item active">
                 <a class="nav-link" href="index.php"><i class="fas fa-home pr-2"></i>Inicio</a>
               </li>
-
+            <?php
+                if(!isset($rol)){
+             ?>
               <li class="nav-item">
-                <a class="nav-link" href="vista/indexCartelera.php?user=<?php echo $user ?>&rol=<?php echo $rol ?>"><i class="fas fa-school pr-2"></i>Cartelera</a>
+                <a class="nav-link" href="vista/indexCartelera.php"><i class="fas fa-school pr-2"></i>Cartelera</a>
               </li>
 
           <?php
+          }
           if(isset($rol)){
 
             if($rol == "ROL_ADMIN"){ // solo admins
@@ -110,17 +113,19 @@
              </li>
 
              <li class="nav-item">
-                  <a class="nav-link" href="vista/indexComEntrada.html"><i class="fas fa-school pr-2"></i>Comprar Entrada</a>
+                  <a class="nav-link" href="vista/indexComEntrada.php"><i class="fas fa-school pr-2"></i>Comprar Entrada</a>
             </li>
           <?php
             }
           }
-           ?>
 
+               if(!isset($rol)){
+            ?>
              <li class="nav-item">
                <a class="nav-link" href="vista/indexContacto.php"><i class="fas fa-user-graduate pr-2"></i>Contacto</a>
              </li>
         <?php
+      }
           if(!isset($rol)){
 
         ?>
@@ -196,18 +201,17 @@
     <span>Menú</span>
     <ul class="list-unstyled">
       <li class="nav-item active">
-        <a class="nav-link text-primary" href="index.html"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>
+        <a class="nav-link text-primary" href="index.php"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-primary" href="html/centro.html"><i class="fas fa-school pr-2"></i>Cartelera</a>
+        <a class="nav-link text-primary" href="vista/indexCartelera.php"><i class="fas fa-school pr-2"></i>Cartelera</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-primary" href="html/estudios.html"><i class="fas fa-briefcase pr-2"></i>Contacto</a>
+        <a class="nav-link text-primary" href="vista/indexContacto.php"><i class="fas fa-briefcase pr-2"></i>Contacto</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-primary" href="html/practicas.html"><i class="fas fa-hammer pr-2"></i>Login</a>
+        <a class="nav-link text-primary" href="vista/indexLogin.php"><i class="fas fa-hammer pr-2"></i>Login</a>
       </li>
-
     </ul>
 
   </aside>
@@ -254,59 +258,11 @@
 
 
 <!-- Footer -->
-<footer class="bg-primary text-white row pt-5 mx-5">
+<?php
+  include("vista/footer.php");
 
-  <div class="col-sm-6 col-lg-3 text-center">
-    <div>
-      <img src="img/logo.png" class="logo-footer" width="100px">
-    </div>
+ ?>
 
-    IES Pere Maria Orts i Bosch
-    Telf: 966.87.07.00
-    Fax: 966.87.07.01
-    Correo Electrónico:
-    03010132@gva.es
-  </div>
-  <div class="col-sm-6 col-lg-3 text-center text-lg-left">
-    <div class="font-weight-bold">
-      Enlaces 1
-    </div>
-    <ul class="list-unstyled">
-      <li><a class="text-white" href="#">Cool Stuff</a></li>
-      <li><a class="text-white" href="#">Random Feature</a></li>
-      <li><a class="text-white" href="#">Team Feature</a></li>
-      <li><a class="text-white" href="#">Stuff Developers</a></li>
-      <li><a class="text-white" href="#">Another One</a></li>
-      <li><a class="text-white" href="#">Last Time</a></li>
-    </ul>
-  </div>
-  <div class="col-sm-6 col-lg-3 text-center text-lg-left">
-    <div class="font-weight-bold">
-      Enlaces 2
-    </div>
-    <ul class="list-unstyled">
-      <li><a class="text-white" href="#">Resource</a></li>
-      <li><a class="text-white" href="#">Resource Name</a></li>
-      <li><a class="text-white" href="#">Another Resource</a></li>
-      <li><a class="text-white" href="#">Final Resource</a></li>
-
-    </ul>
-  </div>
-  <div class="col-sm-6 col-lg-3 text-center text-lg-left">
-    <div class="font-weight-bold">
-      Enlaces 3
-    </div>
-    <ul class="list-unstyled">
-      <li><a class="text-white" href="#">Team</a></li>
-      <li><a class="text-white" href="#">Locations</a></li>
-      <li><a class="text-white" href="#">Privacy</a></li>
-      <li><a class="text-white" href="#">Terms</a></li>
-
-    </ul>
-  </div>
-
-
-</footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

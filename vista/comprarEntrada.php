@@ -147,8 +147,6 @@ else
          for($silla = 0; $silla < 10; $silla++)
          {
 
-
-
              $posicionSilla = (($fila * 10) + $silla);
              if($peliculaCompra[0][3][$posicionSilla] == "1")
              {
@@ -170,7 +168,6 @@ else
 
 ?>
   <form method="GET" action="indexComEntrada.php">
-
 
         <?php
   //  $consulta = $conexion->query("SELECT email FROM usuarios where usuario = '"  . $_SESSION['usuario']. "'"   );

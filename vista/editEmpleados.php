@@ -1,10 +1,4 @@
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Cines Empleados</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    </head>
     <body>
 
 
@@ -79,4 +73,4 @@
 
 
     </body>
-</html>
+ 

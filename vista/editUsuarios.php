@@ -1,17 +1,10 @@
 
         <?php
-        //  session_start();
 
-          //$admin = $_SESSION['usuario'];
-        //  echo "<br/>Admin: " . $admin;
-
-    //    $user = $_POST['user'];
-      //  $rol = $_POST['rol'];
           $_POST['usuario'] = "";
           $_POST['contraseña'] = "";
           $_POST['email'] = "";
-      //    echo $user;
-      //    echo $rol;
+ 
         ?>
 
         <h2> Añadir Nuevo Usuario </h2>
@@ -69,7 +62,7 @@
           </form>
             <form name = "formulario" method="POST" action= '../controlador/eliminarUser.php'>
             <input type="hidden" name="user" value="<?php  echo $listauser[0] ?> " />
-   
+
             <input type="submit" value="Eliminar Usuario" name="deleteUser"/>
           </form>
         <?php

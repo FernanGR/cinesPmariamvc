@@ -2,9 +2,9 @@
 
     <body>
 
-        <h1>Registrarme</h1>
+        <h1>Registrarte</h1>
         <?php
- 
+
         ?>
 
         <form method="POST" action='../controlador/añadirLogin.php'>

@@ -1,8 +1,8 @@
 <?php ob_start();?>
 <?php
-  require_once '../model/peliculaDao.php';
+  require_once '../dao/peliculaDao.php';
   require_once '../modelo/conexion.php';
-  require_once '../model/userDao.php';
+  require_once '../dao/userDao.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 
    </head>
 
@@ -32,8 +32,8 @@
     <header>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-          <a class="navbar-brand text-white" href="index.html">
-            <img src="img/logo.png">
+          <a class="navbar-brand text-white" href="../index.php">
+            <img src="../imagenes/cines_pmaria.jpg" height="50" width="50">
             Cines Pmaria
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,12 +41,12 @@
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="../index.php"><i class="fas fa-home pr-2"></i>Inicio</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href=""><i class="fas fa-school pr-2"></i>Cartelera</a>
+                <a class="nav-link" href="indexCartelera.php"><i class="fas fa-school pr-2"></i>Cartelera</a>
               </li>
               <?php
               if(isset($rol)){
@@ -98,7 +98,7 @@
        <?php
        if(!isset($rol)){
          ?>
-         <li class="nav-item">
+         <li class="nav-item active">
            <a class="nav-link" href="../vista/indexLogin.php"><i class="fas fa-chalkboard-teacher pr-2"></i>Login</a>
          </li>
          <?php
@@ -114,109 +114,35 @@
    </div>
  </nav>
 </header>
+
+<!-- Main -->
+
 <main class="mt-3 mx-5 container">
-
-
 
 
 <!-- lado izquierda -->
 
-<section class="row mt-3">
-
-  <aside class="col-md-3 d-none d-md-block">
-
-    <i class="fas fa-link"></i>
-    <span>Menú</span>
-    <ul class="list-unstyled">
-      <li class="nav-item active">
-        <a class="nav-link text-primary" href="../index.php"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-primary" href="html/centro.html"><i class="fas fa-school pr-2"></i>Cartelera</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-primary" href="html/estudios.html"><i class="fas fa-briefcase pr-2"></i>Contactanos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-primary" href="html/practicas.html"><i class="fas fa-hammer pr-2"></i>Login</a>
-      </li>
-
-    </ul>
-
-  </aside>
 
   <!-- medio -->
 
- <section class="mt-3 mx-5 text-center">
+ <section class="col-12 mt-3 mx-5 text-center">
     <?php
-    include("login.php");
+        include("login.php");
     ?>
-
   </section>
-
 <!-- lado derecho -->
 
+ </main>
 
-</section>
-
-
-    </main><!-- /.container -->
 
 
 <!-- Footer -->
-<footer class="bg-primary text-white row pt-5 mx-5">
+<div class="footr">
+  <?php
+      include("footer.php");
+   ?>
+</div>
 
-  <div class="col-sm-6 col-lg-3 text-center">
-    <div>
-      <img src="img/logo.png" class="logo-footer" width="100px">
-    </div>
-
-    IES Pere Maria Orts i Bosch
-    Telf: 966.87.07.00
-    Fax: 966.87.07.01
-    Correo Electrónico:
-    03010132@gva.es
-  </div>
-  <div class="col-sm-6 col-lg-3 text-center text-lg-left">
-    <div class="font-weight-bold">
-      Enlaces 1
-    </div>
-    <ul class="list-unstyled">
-      <li><a class="text-white" href="#">Cool Stuff</a></li>
-      <li><a class="text-white" href="#">Random Feature</a></li>
-      <li><a class="text-white" href="#">Team Feature</a></li>
-      <li><a class="text-white" href="#">Stuff Developers</a></li>
-      <li><a class="text-white" href="#">Another One</a></li>
-      <li><a class="text-white" href="#">Last Time</a></li>
-    </ul>
-  </div>
-  <div class="col-sm-6 col-lg-3 text-center text-lg-left">
-    <div class="font-weight-bold">
-      Enlaces 2
-    </div>
-    <ul class="list-unstyled">
-      <li><a class="text-white" href="#">Resource</a></li>
-      <li><a class="text-white" href="#">Resource Name</a></li>
-      <li><a class="text-white" href="#">Another Resource</a></li>
-      <li><a class="text-white" href="#">Final Resource</a></li>
-
-    </ul>
-  </div>
-  <div class="col-sm-6 col-lg-3 text-center text-lg-left">
-    <div class="font-weight-bold">
-      Enlaces 3
-    </div>
-    <ul class="list-unstyled">
-      <li><a class="text-white" href="#">Team</a></li>
-      <li><a class="text-white" href="#">Locations</a></li>
-      <li><a class="text-white" href="#">Privacy</a></li>
-      <li><a class="text-white" href="#">Terms</a></li>
-
-    </ul>
-  </div>
-
-
-</footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

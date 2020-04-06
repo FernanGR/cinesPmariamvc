@@ -1,3 +1,4 @@
+
 <?php ob_start();?>
 <?php
         session_start();
@@ -15,7 +16,7 @@
                 $us = $datosUser[0][0];
                 $rol = $datosUser[0][3];
                 header("Location:../index.php");
-              }
+            }
           }
         }
        echo " <h1>Acceso Usuario</h1>";
@@ -40,9 +41,12 @@
             ?>
 
             <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                Usuario:<input type="text" name="usuario" value="<?php if(isset($_POST['usuario'])) echo $_POST['usuario']; ?>" />
+              <label for="usuario">Usuario</label>
+                <input type="text" name="usuario" value="<?php if(isset($_POST['usuario'])) echo $_POST['usuario']; ?>" required autofocus />
                 <?php if(isset($_POST['entrar']) && empty($_POST['usuario'])) echo "<br/><span style='color:red'>¡Debes introducir tu nombre de usuario!</span>"; ?><br>
-                Contraseña:<input type="password" name="contraseña" value="<?php if(isset($_POST['contraseña'])) echo $_POST['contraseña']; ?>" />
+
+                <label for="contraseña">Contraseña</label>
+                <input type="password" name="contraseña" value="<?php if(isset($_POST['contraseña'])) echo $_POST['contraseña']; ?>" required />
                 <?php if(isset($_POST['entrar']) && empty($_POST['contraseña'])) echo "<br/><span style='color:red'>¡Debes introducir tu contraseña!</span>"; ?><br>
                 <input type="submit" value="Entrar" name="entrar"/><br>
             </form>

@@ -1,10 +1,8 @@
 
     <body>
-         <?php
 
-        ?>
         <br/>
- 
+
           <?php
             $infoPelis = Peliculas::listaPeliculas();
             $fotoPelis = Img::listaImg();
@@ -17,10 +15,19 @@
 
 
             <?php
-            echo "<h1>Sala " .$infoPelis[$i][0]."</h1><br/>";
-            echo "<h2>".$infoPelis[$i][1]."</h2><br/>";
+            echo " <table>";
+            echo "<tr><td>";
+            echo "<h1>Sala " .$infoPelis[$i][0]."</h1> ";
+            echo "</td><td>";
+            echo "<h2>".$infoPelis[$i][1]."</h2> ";
+            echo "</td></tr>";
+            echo "<tr><td>";
             echo "<img src='".$fotoPelis[$i][1]."' width=200px/><br/>";
+            echo "</td></tr>";
+            echo "<tr><td>";
             echo "<h3>".$infoPelis[$i][2]."</h3><br/>";
+            echo "</td></tr>";
+            echo "</table>";
 
              ?>
 
@@ -32,4 +39,5 @@
         }
 
  ?>
-     </body>
+
+      </body>

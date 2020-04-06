@@ -6,7 +6,6 @@
 
    <form name = "formulario" method="POST" action= '../controlador/comentHorario.php'>
 
-     <p><textarea name="comentario" placeholder="Comparte tu comentario sobre los horarios"></textarea></p>
+     <p><textarea name="comentario" placeholder="Comparte tu comentario sobre los horarios" required></textarea></p>
      <input type="submit" value="Enviar mensaje">
    </form>
- 

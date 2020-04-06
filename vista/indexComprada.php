@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 
    </head>
 
@@ -45,8 +45,8 @@
     <header>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-          <a class="navbar-brand text-white" href="index.html">
-            <img src="img/logo.png">
+          <a class="navbar-brand text-white" href="../index.php">
+            <img src="../imagenes/cines_pmaria.jpg" height="50" width="50">
             Cines Pmaria
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -139,7 +139,7 @@
 
 <main class="mt-3 mx-5 container">
 
- <!-- carrousel --> 
+ <!-- carrousel -->
 
 <!-- lado izquierda -->
 
@@ -149,20 +149,20 @@
 
     <i class="fas fa-link"></i>
     <span>Menú</span>
-    <ul class="list-unstyled">
-      <li class="nav-item active">
-        <a class="nav-link text-primary" href="index.html"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-primary" href="html/centro.html"><i class="fas fa-school pr-2"></i>Cartelera</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-primary" href="html/estudios.html"><i class="fas fa-briefcase pr-2"></i>Contactanos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-primary" href="html/practicas.html"><i class="fas fa-hammer pr-2"></i>Login</a>
-      </li>
 
+    <ul class="list-unstyled">
+      <li class="nav-item">
+        <a class="nav-link text-primary" href="../index.html"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-primary" href="indexCartelera.php"><i class="fas fa-school pr-2"></i>Cartelera</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-primary" href="indexContacto.php"><i class="fas fa-briefcase pr-2"></i>Contactanos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-primary" href="indexLogin.php"><i class="fas fa-hammer pr-2"></i>Login</a>
+      </li>
     </ul>
 
   </aside>

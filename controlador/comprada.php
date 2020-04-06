@@ -78,7 +78,7 @@
         ?>
         		<form name = "formulario" method="GET" action='../vista/indexComprarMas.php'>
 
-              TU E-MAIL: <input type="text" name="email" placeholder="tu email" value="<?php if(isset($_GET['email'])) echo $_GET['email']; ?>"/>
+              TU E-MAIL: <input type="text" name="email" placeholder="tu email" value="<?php if(isset($_GET['email'])) echo $_GET['email']; ?>" required/>
 
             <!-- para pasar las variables con el formulario -->
                <input type="hidden" name="fila" value="<?php  echo ($fila + 1) ?> " />
