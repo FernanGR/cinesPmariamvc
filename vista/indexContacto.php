@@ -176,17 +176,17 @@
          <div class="container my-5">
             <div class="row">
               <div class="d-none d-md-block col-lg-5 ">
-                <h3>Localización</h3>
+                <h3><b>Localización</b></h3>
                 <p>Estación de Autobuses de Benidorm
                   Paseo Els Tolls, S/N,
                   03502 Benidorm, Alicante </p>
-                  <h3>Telefono</h3>
+                  <h3><b>Telefono</b></h3>
                   <p>96 664 43 23</p>
-                  <h3>Email</h3>
+                  <h3><b>Email</b></h3>
                   <p>cinespmaria@gmail.com</p>
               </div>
               <div class="col-xs-12 col-lg-7">
-                <h2>Contactenos</h2>
+                <h2><b>Contactenos</b></h2>
                 <hr>
                 <form role="form" id="Formulario" action="../controlador/contactaEmail.php" method="POST">
                     <div class="form-group">

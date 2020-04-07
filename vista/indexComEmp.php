@@ -187,31 +187,7 @@
          ?>
   </section>
 
-<!-- lado derecho -->
-<aside class="col-lg-2 d-none d-lg-block">
-  <i class="fas fa-link"></i>
-  <span>Enlaces</span>
-
-  <ul class="list-unstyled">
-    <li>
-      <a href="https://ec.europa.eu/regional_policy/es/funding/erdf/"><img src="img/link1.jpg" class="img-fluid"></a>
-    </li>
-    <li>
-      <a href="https://www.gva.es/va/inicio/presentacion"><img src="img/link2.png" class="img-fluid"></a>
-    </li>
-    <li>
-      <a href="https://sites.iesperemaria.com/comenius/"><img src="img/link3.jpg" class="img-fluid"></a>
-    </li>
-    <li>
-      <a href="https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?ws=9c0feb28-729b-e011-969d-0030487d8897&vsro=8"><img src="img/link4.jpg" class="img-fluid"></a>
-    </li>
-    <li>
-      <a href="https://fct.edu.gva.es/"><img src="img/link5.png" class="img-fluid"></a>
-    </li>
-
-  </ul>
-
-</aside>
+<!-- lado derecho --> 
 
 </section>
 

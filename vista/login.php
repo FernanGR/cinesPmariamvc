@@ -42,7 +42,7 @@
 
             <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
               <label for="usuario">Usuario</label>
-                <input type="text" name="usuario" value="<?php if(isset($_POST['usuario'])) echo $_POST['usuario']; ?>" required />
+                <input type="text" name="usuario" value="<?php if(isset($_POST['usuario'])) echo $_POST['usuario']; ?>" required autocomplete="off" />
                 <?php if(isset($_POST['entrar']) && empty($_POST['usuario'])) echo "<br/><span style='color:red'>¡Debes introducir tu nombre de usuario!</span>"; ?><br>
 
                 <label for="contraseña">Contraseña</label>

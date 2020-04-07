@@ -35,7 +35,9 @@
             <?php
 
             echo "<td ><b>" . $pelis[0] . "</b> </td>" ;
-            echo "<td ><input name=peli value =" . $pelis[1] . "> </td>" ;
+        //  echo "<td ><input type='text' name=peli value =" . $pelis[1] . "></td>" ;
+
+            echo "<td ><textarea name=peli value =" . $pelis[1] . " rows='1' cols='15'>" . $pelis[1] ."</textarea></td>" ;
             echo "<td> <textarea name=descripcion value =" . $pelis[2] . ">" . $pelis[2] ."</textarea></td>";
 
             echo "<td>"
