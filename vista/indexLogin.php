@@ -137,12 +137,14 @@
 
 
   <!-- medio -->
+<div class="row">
+  <div class="col-12 mt-3 mx-5 text-sm-left text-md-center">
+     <?php
+         include("login.php");
+     ?>
+   </div>
+</div>
 
- <section class="col-12 mt-3 mx-5 text-center">
-    <?php
-        include("login.php");
-    ?>
-  </section>
 <!-- lado derecho -->
 
  </main>

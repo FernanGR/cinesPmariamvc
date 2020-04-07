@@ -43,7 +43,7 @@
           </ul>
          </div>
         <!-- Copyright -->
-          <div class="text-justify mx-3">© Cines Pmaria 2019-2020 Copyright
+          <div class="text-justify mx-3">© Cines Pmaria 2020 Copyright
 
           </div>
           <!-- Copyright -->

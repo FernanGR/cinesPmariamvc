@@ -147,49 +147,70 @@
   <!-- medio -->
 
   <div class="container">
-              <h2 class="text-center">Cines Pmaria</h2>
+    <h2 class="text-center">Cines Pmaria</h2>
 
-               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2206.384944277466!2d-0.12675881918604767!3d38.54991258133062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd620565a4b2d9e3%3A0x73de7f48c25463c6!2sVia%20Bus!5e0!3m2!1ses!2ses!4v1585965565841!5m2!1ses!2ses" width="1150" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-              <div class="text-center">
+              <div class="row">
+                <div  class="d-none d-md-block col-lg-10  ">
+                 <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2206.384944277466!2d-0.12675881918604767!3d38.54991258133062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd620565a4b2d9e3%3A0x73de7f48c25463c6!2sVia%20Bus!5e0!3m2!1ses!2ses!4v1585965565841!5m2!1ses!2ses" width="1150" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+               </div>
+                <div class=" text-center mt-3 d-none d-md-block col-lg-12">
 
-               <h3>En los Cines IMF podrás disfrutar de todas estas ventajas:</h3>
+                 <h3>En los Cines Pmaria podrás disfrutar de todas estas ventajas:</h3>
 
-                  <span>  Parking gratuito </span><br/>
-                  <span> Sonido digital DOLBY, SDDS y DTS.</span><br/>
-                  <span>  Sistema de sonido para V.O.</span><br/>
-                  <span>Sistema de proyección digital en 3D para una experiencia única. </span><br/>
-                  <span>Reposabrazos dobles. </span><br/>
-                  <span> Amplia separación entre filas. </span><br/>
-                  <span> Descuentos Carnet Joven, mayores de 65 años y Carnet Universitario los martes y jueves, no festivos y vísperas. </span>
-                  <br/><br/>
-                  <h4> Día del espectador:</h4>
-              <li> Lunes y Miércoles </li>
-             </div>
+                    <span>  Parking gratuito </span><br/>
+                    <span> Sonido digital DOLBY, SDDS y DTS.</span><br/>
+                    <span>  Sistema de sonido para V.O.</span><br/>
+                    <span>Sistema de proyección digital en 3D para una experiencia única. </span><br/>
+                    <span>Reposabrazos dobles. </span><br/>
+                    <span> Amplia separación entre filas. </span><br/>
+                    <span> Descuentos Carnet Joven, mayores de 65 años y Carnet Universitario los martes y jueves, no festivos y vísperas. </span>
+                    <br/><br/>
+                    <h4> Día del espectador:</h4>
+                <li> Lunes y Miércoles </li>
+               </div>
+              </div>
+
            <br/>
-             <h2>Contactenos</h2>
-             <hr>
-         </div>
-         <div class="container">
-             <form role="form" id="Formulario" action="../controlador/contactaEmail.php" method="POST">
-                 <div class="form-group">
-                     <label class="control-label" for="Nombre">Nombre</label>
-                     <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Introduzca su nombre" required autofocus />
-                 </div>
 
-                 <div class="form-group">
-                     <label class="control-label" for="Correo">Dirección de Correo Electrónico</label>
-                     <input type="email" class="form-control" id="Correo" name="Correo" placeholder="Introduzca su correo electrónico" required />
-                 </div>
-                 <div class="form-group">
-                     <label class="control-label" for="Mensaje">Mensaje</label>
-                     <textarea rows="5" cols="30" class="form-control" id="Mensaje" name="Mensaje" placeholder="Introduzca su mensaje" required ></textarea>
-                 </div>
-                 <div class="form-group">
-                     <input type="submit" class="btn btn-primary" value="Enviar">
-                     <input type="reset" class="btn btn-default" value="Limpiar">
-                 </div>
-                 <div id="respuesta" style="display: none;"></div>
-             </form>
+         </div>
+         <div class="container my-5">
+            <div class="row">
+              <div class="d-none d-md-block col-lg-5 ">
+                <h3>Localización</h3>
+                <p>Estación de Autobuses de Benidorm
+                  Paseo Els Tolls, S/N,
+                  03502 Benidorm, Alicante </p>
+                  <h3>Telefono</h3>
+                  <p>96 664 43 23</p>
+                  <h3>Email</h3>
+                  <p>cinespmaria@gmail.com</p>
+              </div>
+              <div class="col-xs-12 col-lg-7">
+                <h2>Contactenos</h2>
+                <hr>
+                <form role="form" id="Formulario" action="../controlador/contactaEmail.php" method="POST">
+                    <div class="form-group">
+                        <label class="control-label" for="Nombre">Nombre</label>
+                        <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Introduzca su nombre" required autofocus />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="Correo">Dirección de Correo Electrónico</label>
+                        <input type="email" class="form-control" id="Correo" name="Correo" placeholder="Introduzca su correo electrónico" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="Mensaje">Mensaje</label>
+                        <textarea rows="5" cols="30" class="form-control" id="Mensaje" name="Mensaje" placeholder="Introduzca su mensaje" required ></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Enviar">
+                        <input type="reset" class="btn btn-default" value="Limpiar">
+                    </div>
+                    <div id="respuesta" style="display: none;"></div>
+                </form>
+              </div>
+            </div>
+
          </div>
   </section>
 

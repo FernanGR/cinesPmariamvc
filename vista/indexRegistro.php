@@ -147,14 +147,13 @@
 
 <section class="row mt-3">
 
-
   <!-- medio -->
-  <section class="col-12 mt-3 mx-5 text-center">
+  <div class="col-12 mt-3 mx-5 text-sm-left text-md-center">
       <?php
 
             include("registro.php");
       ?>
-  </section>
+  </div>
 
 <!-- lado derecho -->
 

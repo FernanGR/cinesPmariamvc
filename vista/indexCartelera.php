@@ -173,7 +173,7 @@
   </aside>
 
   <!-- medio -->
-  <section class="col-12 col-md-9 col-lg-7">
+  <section class="col-sm-12 col-md-9 col-lg-7">
         <?php
             include("cartelera.php");
          ?>
