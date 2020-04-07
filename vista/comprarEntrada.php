@@ -104,19 +104,19 @@ else
      {
 
         $f = $fila+1;
-        echo "Fila " . $f . "&nbsp";
+      //  echo "Fila " . $f . "&nbsp";
 
          for($silla = 0; $silla < 20; $silla++)
          {
             if($silla == 5 || $silla == 15)     // dejar espacios vacios entre laterales y central
             {
-              echo "&nbsp";echo "&nbsp";echo "&nbsp";echo "&nbsp";echo "&nbsp";echo "&nbsp";echo "&nbsp";
+              echo "&nbsp";echo "&nbsp";echo "&nbsp";echo "&nbsp";
             }
              $posicionSilla = (($fila * 20) + $silla);
              if($peliculaCompra[0][3][$posicionSilla] == "1")
              {
                  echo "<a href='indexComprada.php?fila=" . $fila ."&sala=" . $peliculaCompra[0][0] ."&emailuser=" . $emailuser . "&silla=" . $silla . "&dia=" . $diaActual . "&sesion=" . $sesionActual ."&pelicula=" . $peliculaCompra[0][1] . "&usuario=" . $usuario . "'><img src='../imagenes/silla_libre.jpg'></a>";
-                 echo "&nbsp";
+
              }
              else
              {

@@ -9,7 +9,7 @@
         <table style="border: 1px solid black;" width="95%">
           <tr>
             <th style="border: 1px solid black;"><b>SALA</b></th>
-            <th style="border: 1px solid black;"><b>PELICULA</b></th>
+            <th style="border: 1px solid black;"><b>NOMBRE PELICULA</b></th>
             <th style="border: 1px solid black;"><b>DESCRIPCION</b></th>
 
 

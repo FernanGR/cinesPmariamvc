@@ -53,72 +53,85 @@
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="../index.php"><i class="fas fa-home pr-2"></i>Inicio</a>
               </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="indexCartelera.php"><i class="fas fa-school pr-2"></i>Cartelera</a>
-              </li>
               <?php
+                if(!isset($rol)){
+              ?>
+                  <li class="nav-item">
+                    <a class="nav-link" href="indexCartelera.php"><i class="fas fa-video pr-2"></i>Cartelera</a>
+                  </li>
+
+              <?php
+              }
               if(isset($rol)){
                 if($rol == "ROL_ADMIN"){ // solo admins
-                  ?>
-              <li class="nav-item">
-                   <a class="nav-link" href="../vista/indexEditUsers.php"><i class="fas fa-school pr-2"></i>Editar Usuarios</a>
-             </li>
-             <li class="nav-item">
-                  <a class="nav-link" href="../vista/indexEditEmp.php"><i class="fas fa-school pr-2"></i>Editar empleados</a>
-             </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="../vista/indexEditPeli.php"><i class="fas fa-school pr-2"></i>Editar Peliculas</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link" href="../vista/indexEditFotos.php"><i class="fas fa-user-graduate pr-2"></i>Editar Imagenes Cartelera</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link" href="../vista/indexEditHorario.php"><i class="fas fa-user-graduate pr-2"></i>Editar horarios</a>
-             </li>
-             <?php
-           }
-           if($rol == "ROL_EMP" || $rol == "ROL_ADMIN"){ // empleados y admin
-             ?>
-             <li class="nav-item">
-                <a class="nav-link" href="../vista/indexVerHor.php"><i class="fas fa-school pr-2"></i>Ver horarios</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link" href="../vista/indexComEmp.php"><i class="fas fa-user-graduate pr-2"></i>Sugerencia de horarios</a>
-             </li>
-           <?php
-         }
-         if($rol == "ROL_USER" || $rol == "ROL_ADMIN"){ // user y admin
-           ?>
-           <li class="nav-item">
-               <a class="nav-link" href="../vista/indexEditPerfil.php"><i class="fas fa-user-graduate pr-2"></i>Editar perfil</a>
-             </li>
+                ?>
+                <li class="nav-item">
+                  <a class="nav-link" href="indexEditUsers.php"><i class="fas fa-user-edit pr-2"></i>Editar Usuarios</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="indexEditEmp.php"><i class="fas fa-user-edit pr-2"></i>Editar empleados</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="indexEditPeli.php"><i class="fas fa-film pr-2"></i>Editar Peliculas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="indexEditFotos.php"><i class="fas fa-image pr-2"></i>Editar Imagenes Cartelera</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="indexEditHorario.php"><i class="fas fa-user-clock pr-2"></i>Editar horarios</a>
+                </li>
 
-             <li class="nav-item">
-                  <a class="nav-link" href="../vista/indexComEntrada.php"><i class="fas fa-school pr-2"></i>Comprar Entrada</a>
-            </li>
-            <?php
-          }
-        }
-        ?>
-      <li class="nav-item active">
-         <a class="nav-link" href="../vista/indexContacta.php"><i class="fas fa-user-graduate pr-2"></i>Contacto</a>
-       </li>
-       <?php
-       if(!isset($rol)){
-         ?>
-         <li class="nav-item">
-           <a class="nav-link" href="../vista/indexLogin.php"><i class="fas fa-chalkboard-teacher pr-2"></i>Login</a>
-         </li>
-         <?php
-       }else{
-         ?>
-         <li class="nav-item">
-             <a class="nav-link" href="../controlador/logout.php"><i class="fas fa-chalkboard-teacher pr-2"></i>Logout</a>
-         </li>
+               <?php
+                }
+                if($rol == "ROL_EMP"){ // empleados y admin
+
+                ?>
+               <li class="nav-item">
+                 <a class="nav-link" href="indexVerHor.php"><i class="fas fa-clock pr-2"></i>Ver horarios</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="indexComEmp.php"><i class="fas fa-sms pr-2"></i>Sugerencia de horarios</a>
+               </li>
+               <?php
+                }
+               if($rol == "ROL_USER" || $rol == "ROL_ADMIN" || $rol == "ROL_EMP"){ // user, empleado y admin
+                ?>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar perfil</a>
+                </li>
+
+                <?php
+              }
+              if($rol == "ROL_USER"){  //user
+                 ?>
+                <li class="nav-item">
+                     <a class="nav-link" href="../vista/indexComEntrada.php"><i class="fas fa-ticket-alt pr-2"></i>Comprar Entrada</a>
+               </li>
+                <?php
+                }
+              }
+
+              if(!isset($rol)){
+
+                ?>
+                <li class="nav-item active">
+                  <a class="nav-link" href="indexContacto.php"><i class="fas fa-search-location pr-2"></i>Contacto</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="indexLogin.php"><i class="fas fa-sign-in-alt pr-2"></i>Login</a>
+                </li>
+                <?php
+                  }else{
+                  ?>
+               <li class="nav-item">
+                   <a class="nav-link" href="../controlador/logout.php"><i class="fas fa-sign-out-alt pr-2"></i>Logout</a>
+               </li>
+
          <?php
        }
        ?>
@@ -130,34 +143,14 @@
 
 <!-- lado izquierda -->
 
-<section class="row mt-3">
-
-  <ul class="list-unstyled">
-    <li class="nav-item">
-      <a class="nav-link text-primary" href="../index.html"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-primary" href="indexCartelera.php"><i class="fas fa-school pr-2"></i>Cartelera</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-primary" href="indexContacto.php"><i class="fas fa-briefcase pr-2"></i>Contactanos</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link text-primary" href="indexLogin.php"><i class="fas fa-hammer pr-2"></i>Login</a>
-    </li>
-  </ul>
-
 
   <!-- medio -->
 
   <div class="container">
-         <div class="container">
-             <h2 class="text-center">Cines Pmaria</h2>
-             <div class="container">
+              <h2 class="text-center">Cines Pmaria</h2>
 
                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2206.384944277466!2d-0.12675881918604767!3d38.54991258133062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd620565a4b2d9e3%3A0x73de7f48c25463c6!2sVia%20Bus!5e0!3m2!1ses!2ses!4v1585965565841!5m2!1ses!2ses" width="1150" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-             </div>
-             <div class="text-center">
+              <div class="text-center">
 
                <h3>En los Cines IMF podrás disfrutar de todas estas ventajas:</h3>
 
@@ -198,8 +191,7 @@
                  <div id="respuesta" style="display: none;"></div>
              </form>
          </div>
-     </div>
- </section>
+  </section>
 
 <!-- lado derecho -->
 

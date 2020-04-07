@@ -13,9 +13,7 @@
     <meta name="description" content="Web CinesPmaria">
     <meta name="author" content="FernandoGR">
     <link rel="icon" href="favicon_io/favicon.ico">
-
     <title>Cines Pmaria</title>
-
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
 
     <!-- Bootstrap core CSS -->
@@ -67,7 +65,7 @@
                 if(!isset($rol)){
              ?>
               <li class="nav-item">
-                <a class="nav-link" href="vista/indexCartelera.php"><i class="fas fa-school pr-2"></i>Cartelera</a>
+                <a class="nav-link" href="vista/indexCartelera.php"><i class="fas fa-video pr-2"></i>Cartelera</a>
               </li>
 
           <?php
@@ -77,67 +75,65 @@
             if($rol == "ROL_ADMIN"){ // solo admins
           ?>
               <li class="nav-item">
-                   <a class="nav-link" href="vista/indexEditUsers.php"><i class="fas fa-school pr-2"></i>Editar Usuarios</a>
+                   <a class="nav-link" href="vista/indexEditUsers.php"><i class="fas fa-user-edit pr-2"></i>Editar Usuarios</a>
              </li>
              <li class="nav-item">
-                  <a class="nav-link" href="vista/indexEditEmp.php"><i class="fas fa-school pr-2"></i>Editar empleados</a>
+                  <a class="nav-link" href="vista/indexEditEmp.php"><i class="fas fa-user-edit pr-2"></i>Editar empleados</a>
              </li>
              <li class="nav-item">
-                 <a class="nav-link" href="vista/indexEditPeli.php"><i class="fas fa-school pr-2"></i>Editar Peliculas</a>
+                 <a class="nav-link" href="vista/indexEditPeli.php"><i class="fas fa-film pr-2"></i>Editar Peliculas</a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" href="vista/indexEditFotos.php"><i class="fas fa-user-graduate pr-2"></i>Editar Imagenes Cartelera</a>
+               <a class="nav-link" href="vista/indexEditFotos.php"><i class="fas fa-image pr-2"></i>Editar Imagenes Cartelera</a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" href="vista/indexEditHorario.php"><i class="fas fa-user-graduate pr-2"></i>Editar horarios</a>
+               <a class="nav-link" href="vista/indexEditHorario.php"><i class="fas fa-user-clock pr-2"></i>Editar horarios</a>
              </li>
 
            <?php
            }
-           if($rol == "ROL_EMP" || $rol == "ROL_ADMIN"){ // empleados y admin
+           if($rol == "ROL_EMP"){ // empleados y admin
 
             ?>
              <li class="nav-item">
-                <a class="nav-link" href="vista/indexVerHor.php"><i class="fas fa-school pr-2"></i>Ver horarios</a>
+                <a class="nav-link" href="vista/indexVerHor.php"><i class="fas fa-clock pr-2"></i>Ver horarios</a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" href="vista/indexComEmp.php"><i class="fas fa-user-graduate pr-2"></i>Sugerencia de horarios</a>
+               <a class="nav-link" href="vista/indexComEmp.php"><i class="fas fa-sms pr-2"></i>Sugerencia de horarios</a>
              </li>
              <?php
                 }
-                if($rol == "ROL_USER" || $rol == "ROL_ADMIN"){ // user y admin
+                if($rol == "ROL_USER" || $rol == "ROL_ADMIN" || $rol == "ROL_EMP"){ // user, empleado y admin
               ?>
 
              <li class="nav-item">
-               <a class="nav-link" href="vista/indexEditPerfil.php"><i class="fas fa-user-graduate pr-2"></i>Editar perfil</a>
+               <a class="nav-link" href="vista/indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar perfil</a>
              </li>
-
+          <?php
+            }
+          if($rol == "ROL_USER"){ // user
+            ?>
              <li class="nav-item">
-                  <a class="nav-link" href="vista/indexComEntrada.php"><i class="fas fa-school pr-2"></i>Comprar Entrada</a>
+                  <a class="nav-link" href="vista/indexComEntrada.php"><i class="fas fa-ticket-alt pr-2"></i>Comprar Entrada</a>
             </li>
           <?php
             }
           }
 
-               if(!isset($rol)){
-            ?>
-             <li class="nav-item">
-               <a class="nav-link" href="vista/indexContacto.php"><i class="fas fa-user-graduate pr-2"></i>Contacto</a>
-             </li>
-        <?php
-      }
           if(!isset($rol)){
 
         ?>
-
               <li class="nav-item">
-                <a class="nav-link" href="vista/indexLogin.php"><i class="fas fa-chalkboard-teacher pr-2"></i>Login</a>
+                  <a class="nav-link" href="vista/indexContacto.php"><i class="fas fa-search-location pr-2"></i>Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="vista/indexLogin.php"><i class="fas fa-sign-in-alt pr-2"></i>Login</a>
               </li>
           <?php
             }else{
          ?>
                <li class="nav-item">
-                 <a class="nav-link" href="controlador/logout.php"><i class="fas fa-chalkboard-teacher pr-2"></i>Logout</a>
+                 <a class="nav-link" href="controlador/logout.php"><i class="fas fa-sign-out-alt pr-2"></i>Logout</a>
                </li>
 
            <?php
@@ -148,7 +144,7 @@
         </nav>
       </header>
 
-<main class="mt-3 mx-5 container">
+<main class="mt-3 mx-5  ">
 
  <!-- carrousel -->
       <div id="carousel" class="carousel slide d-none d-md-block" data-ride="carousel">
@@ -173,10 +169,10 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="img/header.jpg?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
+            <img class="d-block w-100" src="imagenes/sala.jpg?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
             <div class="carousel-caption d-none d-md-block">
-              <h2 class="text-capitalize font-weight-bold">Formación profesional</h2>
-              <p>¡Inscribete o muere!</p>
+              <h2 class="text-capitalize font-weight-bold">Disfruta del espectaculo!</h2>
+              <p>¡Ven a ver las mejores peliculas con nosotros!</p>
             </div>
           </div>
         </div>
@@ -200,6 +196,79 @@
     <i class="fas fa-link"></i>
     <span>Menú</span>
     <ul class="list-unstyled">
+
+      <?php
+        if(isset($rol)){
+          if($rol == "ROL_USER"){
+           ?>
+
+       <li class="nav-item">
+         <a class="nav-link text-primary" href="index.php"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>
+       </li>
+       <li class="nav-item">
+          <a class="nav-link text-primary" href="vista/indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar Perfil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-primary" href="vista/indexComEntrada.php"><i class="fas fa-ticket-alt pr-2"></i>Comprar Entrada</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-primary" href="controlador/logout.php"><i class="fas fa-sign-out-alt pr-2"></i>Logout</a>
+        </li>
+
+          <?php
+        }else {
+          if($rol == "ROL_EMP"){
+            ?>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="index.php"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link text-primary" href="vista/indexVerHor.php"><i class="fas fa-clock pr-2"></i>Ver horarios</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link text-primary" href="vista/indexComEmp.php"><i class="fas fa-sms pr-2"></i>Sugerencia horarios</a>
+             </li>
+             <li class="nav-item">
+                <a class="nav-link text-primary" href="vista/indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar Perfil</a>
+              </li>
+             <li class="nav-item">
+               <a class="nav-link text-primary" href="controlador/logout.php"><i class="fas fa-sign-out-alt pr-2"></i>Logout</a>
+             </li>
+            <?php
+          }else {
+            ?>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="index.php"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="vista/indexEditUsers.php"><i class="fas fa-user-edit pr-2"></i>Editar Usuarios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="vista/indexEditEmp.php"><i class="fas fa-user-edit pr-2"></i>Editar empleados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="vista/indexEditPeli.php"><i class="fas fa-film pr-2"></i>Editar Peliculas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="vista/indexEditFotos.php"><i class="fas fa-image pr-2"></i>Editar Imagenes Cartelera</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="vista/indexEditHorario.php"><i class="fas fa-user-clock pr-2"></i>Editar horarios</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link text-primary" href="vista/indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary" href="controlador/logout.php"><i class="fas fa-sign-out-alt pr-2"></i>Logout</a>
+            </li>
+            <?php
+          }
+        }
+
+
+      }else {  // no users
+       ?>
+
       <li class="nav-item active">
         <a class="nav-link text-primary" href="index.php"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>
       </li>
@@ -212,6 +281,10 @@
       <li class="nav-item">
         <a class="nav-link text-primary" href="vista/indexLogin.php"><i class="fas fa-hammer pr-2"></i>Login</a>
       </li>
+
+
+    <?php } ?>
+
     </ul>
 
   </aside>
@@ -258,10 +331,11 @@
 
 
 <!-- Footer -->
-<?php
-  include("vista/footer.php");
-
- ?>
+<div class="mb-3">
+  <?php
+      include("vista/footer.php");
+   ?>
+</div>
 
 
     <!-- Bootstrap core JavaScript
