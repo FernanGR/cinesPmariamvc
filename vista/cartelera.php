@@ -13,8 +13,30 @@
 
             ?>
 
-
+            <div class="row my-3">
+              <div class="col-sm-12 col-md-6">
+                  <?php
+                       echo "<h1><b>Sala " .$infoPelis[$i][0]."</b></h1> ";
+                   ?>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <?php
+                     echo "<h2><b>".$infoPelis[$i][1]."</b></h2> ";
+                   ?>
+                </div>
+                <div class="col-sm-12 col-md-6 mt-4">
+                  <?php
+                     echo "<img src='".$fotoPelis[$i][1]."' width=200px/><br/>";
+                   ?>
+                </div>
+                <div class="col-sm-12 col-md-6 mt-3">
+                  <?php
+                     echo "<h3>".$infoPelis[$i][2]."</h3><br/>";
+                   ?>
+                </div>
+            </div>
             <?php
+            /*
             echo " <table>";
             echo "<tr><td width='40%'>";
             echo "<h1><b>Sala " .$infoPelis[$i][0]."</b></h1> ";
@@ -28,13 +50,13 @@
             echo "<h3>".$infoPelis[$i][2]."</h3><br/>";
             echo "</td></tr>";
             echo "</table>";
-
+*/
              ?>
 
 
           <?php
 
-          echo "</td></tr>";
+        //  echo "</td></tr>";
 
         }
 

@@ -147,7 +147,7 @@
   <!-- medio -->
 
   <div class="container">
-    <h2 class="text-center">Cines Pmaria</h2>
+    <h2 class="text-center"><b>Cines Pmaria</b></h2>
 
               <div class="row">
                 <div  class="d-none d-md-block col-lg-10  ">
