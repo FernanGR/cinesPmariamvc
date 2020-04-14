@@ -185,7 +185,7 @@
   </aside>
 
   <!-- medio -->
-  <section class="col-12 col-md-9 col-lg-7">
+  <section class="col-12 col-md-9">
      <?php
             include("../controlador/editarFotos.php");
      ?>

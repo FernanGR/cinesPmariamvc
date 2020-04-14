@@ -155,24 +155,21 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="imagenes/palomitas_coke.jpg?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
+            <img class="d-block w-100" src="imagenes/cartelcines.jpg?auto=yes&bg=777&fg=555&text=First slide" alt="First slide" style='width:640px;height:400px'/>
+
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="imagenes/pasillo.jpg?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide" style='width:640px;height:400px'/>
             <div class="carousel-caption d-none d-md-block">
-              <h2 class="text-capitalize font-weight-bold">Estrenos!!</h2>
-              <p>¡No te la pierdas!</p>
+              <h2 class="text-capitalize font-weight-bold text-dark">Los Mejores Estrenos!!</h2>
+              <h4 class="text-dark  font-weight-bold">¡No te los puedes pierdas!</h4>
             </div>
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="imagenes/palomitas.jpg?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
+            <img class="d-block w-100" src="imagenes/sala.jpg?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide" style='width:640px;height:400px'/>
             <div class="carousel-caption d-none d-md-block">
-              <h2 class="text-capitalize font-weight-bold">Estrenos!!</h2>
-              <p>¡No te la pierdas!</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="imagenes/sala.jpg?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
-            <div class="carousel-caption d-none d-md-block">
-              <h2 class="text-capitalize font-weight-bold">Disfruta del espectaculo!</h2>
-              <p>¡Ven a ver las mejores peliculas con nosotros!</p>
+              <h2 class="text-capitalize font-weight-bold">Disfruta del espectaculo!!</h2>
+                <p class="font-weight-bold">¡Ven a ver las mejores peliculas con nosotros!</p>
             </div>
           </div>
         </div>
@@ -189,9 +186,9 @@
 
 <!-- lado izquierda -->
 
-<section class="row mt-3">
+<section class="row mt-3 ">
 
-  <aside class="col-md-3 d-none d-md-block">
+  <aside class="col-md-3 d-none d-md-block ">
 
     <i class="fas fa-link"></i>
     <span>Menú</span>
@@ -237,10 +234,10 @@
             <?php
           }else {
             ?>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link text-primary" href="index.php"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="vista/indexEditUsers.php"><i class="fas fa-user-edit pr-2"></i>Editar Usuarios</a>
             </li>
             <li class="nav-item">
@@ -290,34 +287,42 @@
   </aside>
 
   <!-- medio -->
-  <section class="col-12 col-md-9 col-lg-7">
-        <?php
-    //   include("vista/login2.php");
-        echo "PÁGINA INICIO";
-      //  include("vista/verPeliculas.php");
-         ?>
+  <section class="my-3 col-sm-12 col-md-9 col-lg-7">
+
+         <img src="imagenes/preciobar.jpg" class="img-fluid m-1"  style='width:610px;height:400px'/>
+         <img src="imagenes/preciomiercoles.jpg" class="img-fluid m-1" style='width:610px;height:400px'/>
+         <img src="imagenes/avespresa.jpg" class="img-fluid m-1" style='width:300px;height:400px'/>
+         <img src="imagenes/badboys3.jpg" class="img-fluid m-1" style='width:300px;height:400px'/>
+         <img src="imagenes/joker.jpg" class="img-fluid m-1" style='width:300px;height:400px'/>
+         <img src="imagenes/minecraft.jpg" class="img-fluid m-1" style='width:300px;height:400px'/>
+         <img src="imagenes/bloodshot.jpg" class="img-fluid m-1" style='width:300px;height:400px'/>
+         <img src="imagenes/toystory4.jpg" class="img-fluid m-1" style='width:300px;height:400px'/>
+         <br/>
   </section>
 
 <!-- lado derecho -->
-<aside class="col-lg-2 d-none d-lg-block">
-  <i class="fas fa-link"></i>
-  <span>Enlaces</span>
+<aside class="col-lg-2 d-none d-lg-block ">
 
-  <ul class="list-unstyled">
+  <span> </span>
+
+  <ul class="list-unstyled ">
     <li>
-      <a href="https://ec.europa.eu/regional_policy/es/funding/erdf/"><img src="img/link1.jpg" class="img-fluid"></a>
+      <img src="imagenes/cvc.jpg" class="img-fluid my-1">
     </li>
     <li>
-      <a href="https://www.gva.es/va/inicio/presentacion"><img src="img/link2.png" class="img-fluid"></a>
+    <img src="imagenes/preciobar.jpg" class="img-fluid my-1">
     </li>
     <li>
-      <a href="https://sites.iesperemaria.com/comenius/"><img src="img/link3.jpg" class="img-fluid"></a>
+    <img src="imagenes/palomitas_coke.jpg" class="img-fluid my-1">
     </li>
     <li>
-      <a href="https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?ws=9c0feb28-729b-e011-969d-0030487d8897&vsro=8"><img src="img/link4.jpg" class="img-fluid"></a>
+      <img src="imagenes/palotikets.jpg" class="img-fluid my-1">
     </li>
     <li>
-      <a href="https://fct.edu.gva.es/"><img src="img/link5.png" class="img-fluid"></a>
+      <a href="https://www.facebook.com/Cines-PMaria-103042904552265/"><img src="imagenes/facebook.jpg" class="img-fluid my-1"></a>
+    </li>
+    <li>
+     <a href="https://www.instagram.com/pmariacines/"><img src="imagenes/instagram.jpg" class="img-fluid my-1"></a>
     </li>
 
   </ul>
@@ -331,7 +336,7 @@
 
 
 <!-- Footer -->
-<div class="mb-3">
+<div class="my-5">
   <?php
       include("vista/footer.php");
    ?>

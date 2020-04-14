@@ -187,7 +187,7 @@
          ?>
   </section>
 
-<!-- lado derecho --> 
+<!-- lado derecho -->
 
 </section>
 
@@ -196,7 +196,7 @@
 
 
     <!-- Footer -->
-    <div class="footr">
+    <div class="footer">
       <?php
             include("footer.php");
        ?>

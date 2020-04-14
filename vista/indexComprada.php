@@ -179,67 +179,46 @@
   </section>
 
 <!-- lado derecho -->
- 
+<aside class="col-lg-2 d-none d-lg-block">
+
+  <span> </span>
+
+  <ul class="list-unstyled">
+    <li>
+      <img src="../imagenes/cvc.jpg" class="img-fluid my-1">
+    </li>
+    <li my-5>
+    <img src="../imagenes/preciobar.jpg" class="img-fluid my-1">
+    </li>
+    <li>
+    <img src="../imagenes/palomitas_coke.jpg" class="img-fluid my-1">
+    </li>
+    <li>
+      <img src="../imagenes/palotikets.jpg" class="img-fluid my-1">
+    </li>
+    <li>
+      <a href="https://www.facebook.com/Cines-PMaria-103042904552265/"><img src="../imagenes/facebook.jpg" class="img-fluid"></a>
+    </li>
+    <li>
+     <a href="https://www.instagram.com/pmariacines/"><img src="../imagenes/instagram.jpg" class="img-fluid"></a>
+    </li>
+
+  </ul>
+
+</aside>
 
 </section>
 
 
     </main><!-- /.container -->
 
-
-<!-- Footer -->
-<footer class="bg-primary text-white row pt-5 mx-5">
-
-  <div class="col-sm-6 col-lg-3 text-center">
-    <div>
-      <img src="img/logo.png" class="logo-footer" width="100px">
+    <!-- Footer -->
+<footer>
+    <div class="my-3">
+      <?php
+          include("footer.php");
+       ?>
     </div>
-
-    IES Pere Maria Orts i Bosch
-    Telf: 966.87.07.00
-    Fax: 966.87.07.01
-    Correo Electrónico:
-    03010132@gva.es
-  </div>
-  <div class="col-sm-6 col-lg-3 text-center text-lg-left">
-    <div class="font-weight-bold">
-      Enlaces 1
-    </div>
-    <ul class="list-unstyled">
-      <li><a class="text-white" href="#">Cool Stuff</a></li>
-      <li><a class="text-white" href="#">Random Feature</a></li>
-      <li><a class="text-white" href="#">Team Feature</a></li>
-      <li><a class="text-white" href="#">Stuff Developers</a></li>
-      <li><a class="text-white" href="#">Another One</a></li>
-      <li><a class="text-white" href="#">Last Time</a></li>
-    </ul>
-  </div>
-  <div class="col-sm-6 col-lg-3 text-center text-lg-left">
-    <div class="font-weight-bold">
-      Enlaces 2
-    </div>
-    <ul class="list-unstyled">
-      <li><a class="text-white" href="#">Resource</a></li>
-      <li><a class="text-white" href="#">Resource Name</a></li>
-      <li><a class="text-white" href="#">Another Resource</a></li>
-      <li><a class="text-white" href="#">Final Resource</a></li>
-
-    </ul>
-  </div>
-  <div class="col-sm-6 col-lg-3 text-center text-lg-left">
-    <div class="font-weight-bold">
-      Enlaces 3
-    </div>
-    <ul class="list-unstyled">
-      <li><a class="text-white" href="#">Team</a></li>
-      <li><a class="text-white" href="#">Locations</a></li>
-      <li><a class="text-white" href="#">Privacy</a></li>
-      <li><a class="text-white" href="#">Terms</a></li>
-
-    </ul>
-  </div>
-
-
 </footer>
 
     <!-- Bootstrap core JavaScript

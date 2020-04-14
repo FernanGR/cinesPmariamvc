@@ -9,27 +9,27 @@
 
        <table style="border: 1px solid black;" width="95%">
          <tr>
-           <th style="border: 1px solid black;"><b>Sala</b></th>
+           <th style="border: 1px solid black;"><b>Sala</b> </th>
            <th style="border: 1px solid black;"><b>Foto</b></th>
            <th style="border: 1px solid black;"><b>Cambiar Foto</b></th>
 
          </tr>
-
          <style>
          table, tr, th, td{
          border: 1px solid #000000;
          text-align: center;
+         padding: 15px;
              }
          </style>
 
          <?php
          $sala = 0;
          foreach (Img::listaImg() as $fotos) {
-           //sala 1
+           //sala
            $sala++;
            echo "<tr>";
            echo  "<td><b>" . $fotos[0] . "</b> </td>";
-           echo "<td><img src='$fotos[1]' width=200px/></td>";
+           echo "<td ><img src='$fotos[1]' width=200px/></td>";
            echo "<td>";
           ?>
 

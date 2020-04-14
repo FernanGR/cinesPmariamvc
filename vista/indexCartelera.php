@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Web CinesPmaria">
     <meta name="author" content="FernandoGR">
-    <link rel="icon" href="favicon_io/favicon.ico">
+     <link rel="icon" href="../favicon_io/favicon.ico">
 
     <title>Cines Pmaria</title>
 
@@ -143,7 +143,7 @@
         </nav>
       </header>
 
-<main class="mt-3 mx-5 container">
+<main class="mt-3 mx-5 ">
 
  <!-- carrousel -->
 
@@ -180,26 +180,29 @@
          ?>
   </section>
 
-<!-- lado derecho -->
+ <!-- lado derecho -->
 <aside class="col-lg-2 d-none d-lg-block">
-  <i class="fas fa-link"></i>
-  <span>Enlaces</span>
+
+  <span> </span>
 
   <ul class="list-unstyled">
     <li>
-      <a href="https://ec.europa.eu/regional_policy/es/funding/erdf/"><img src="img/link1.jpg" class="img-fluid"></a>
+      <img src="../imagenes/cvc.jpg" class="img-fluid my-1">
+    </li>
+    <li my-5>
+    <img src="../imagenes/preciobar.jpg" class="img-fluid my-1">
     </li>
     <li>
-      <a href="https://www.gva.es/va/inicio/presentacion"><img src="img/link2.png" class="img-fluid"></a>
+    <img src="../imagenes/palomitas_coke.jpg" class="img-fluid my-1">
     </li>
     <li>
-      <a href="https://sites.iesperemaria.com/comenius/"><img src="img/link3.jpg" class="img-fluid"></a>
+      <img src="../imagenes/palotikets.jpg" class="img-fluid my-1">
     </li>
     <li>
-      <a href="https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?ws=9c0feb28-729b-e011-969d-0030487d8897&vsro=8"><img src="img/link4.jpg" class="img-fluid"></a>
+      <a href="https://www.facebook.com/Cines-PMaria-103042904552265/"><img src="../imagenes/facebook.jpg" class="img-fluid"></a>
     </li>
     <li>
-      <a href="https://fct.edu.gva.es/"><img src="img/link5.png" class="img-fluid"></a>
+     <a href="https://www.instagram.com/pmariacines/"><img src="../imagenes/instagram.jpg" class="img-fluid"></a>
     </li>
 
   </ul>
@@ -212,10 +215,14 @@
     </main><!-- /.container -->
 
 
-<!-- Footer -->
-  <?php
-        include("footer.php");
-   ?>
+    <!-- Footer -->
+<footer>
+    <div class="my-3">
+      <?php
+          include("footer.php");
+       ?>
+    </div>
+</footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

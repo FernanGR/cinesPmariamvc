@@ -149,22 +149,22 @@
 
 <section class="row mt-3">
 
-  <aside class="col-md-3 d-none d-md-block">
+  <aside class="col-lg-3 d-none d-lg-block ">
 
-    <i class="fas fa-link"></i>
+    <i class="fas fa-link "></i>
     <span>Menú</span>
 
     <ul class="list-unstyled">
-      <li class="nav-item">
+      <li class="nav-item  ">
         <a class="nav-link text-primary" href="../index.php"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="indexEditUsers.php"><i class="fas fa-user-edit pr-2"></i>Editar Usuarios</a>
+        <a class="nav-link text-primary" href="indexEditUsers.php"><i class="fas fa-user-edit pr-2"></i>Editar Usuarios</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item ">
         <a class="nav-link" href="indexEditEmp.php"><i class="fas fa-user-edit pr-2"></i>Editar empleados</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item ">
         <a class="nav-link" href="indexEditPeli.php"><i class="fas fa-film pr-2"></i>Editar Peliculas</a>
       </li>
       <li class="nav-item">
@@ -184,20 +184,18 @@
   </aside>
 
   <!-- medio -->
-  <section class="col-12 col-md-9 col-lg-7">
+  <section class="col-sm-12 col-md-9 my-3">
+
      <?php
             include("../vista/editUsuarios.php");
      ?>
-  </section>
+   </section>
 
 <!-- lado derecho -->
 
-
 </section>
 
-
-    </main><!-- /.container -->
-
+    </main>   <!-- /.container -->
 
 <!-- Footer -->
 

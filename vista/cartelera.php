@@ -14,22 +14,22 @@
             ?>
 
             <div class="row my-3">
-              <div class="col-sm-12 col-md-6">
+              <div class="col-sm-12 col-md-6">    <!-- número sala -->
                   <?php
                        echo "<h1><b>Sala " .$infoPelis[$i][0]."</b></h1> ";
                    ?>
                 </div>
-                <div class="col-sm-12 col-md-6">
+                <div class="col-sm-12 col-md-6">    <!-- nombre de película -->
                   <?php
                      echo "<h2><b>".$infoPelis[$i][1]."</b></h2> ";
                    ?>
                 </div>
-                <div class="col-sm-12 col-md-6 mt-4">
+                <div class="col-sm-12 col-md-6 mt-3">   <!-- imagen de película -->
                   <?php
                      echo "<img src='".$fotoPelis[$i][1]."' width=200px/><br/>";
                    ?>
                 </div>
-                <div class="col-sm-12 col-md-6 mt-3">
+                <div class="col-sm-12 col-md-6 mt-3">   <!-- descripción de la película -->
                   <?php
                      echo "<h3>".$infoPelis[$i][2]."</h3><br/>";
                    ?>

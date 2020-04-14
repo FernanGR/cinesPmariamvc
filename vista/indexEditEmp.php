@@ -140,15 +140,15 @@
         </nav>
       </header>
 
-<main class="mt-3 mx-5 container">
+<main class="mt-3 mx-5">
 
  <!-- carrousel -->
 
 <!-- lado izquierda -->
 
-<section class="row mt-3">
+<section class="row my-3">
 
-  <aside class="col-md-3 d-none d-md-block">
+  <aside class="col-lg-3 d-none d-lg-block">
 
     <i class="fas fa-link"></i>
     <span>Menú</span>
@@ -183,7 +183,7 @@
   </aside>
 
   <!-- medio -->
-  <section class="col-12 col-md-9 col-lg-7">
+  <section class="col-sm-12 col-md-9">
         <?php
             include("editEmpleados.php");
          ?>
@@ -197,7 +197,7 @@
     </main><!-- /.container -->
 
 
-<!-- Footer -->
+  <!-- Footer -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

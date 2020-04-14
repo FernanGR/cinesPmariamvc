@@ -188,9 +188,14 @@
 
     </main><!-- /.container -->
 
-
-<!-- Footer -->
-
+    <!-- Footer -->
+<footer>
+    <div class="my-3">
+      <?php
+          include("footer.php");
+       ?>
+    </div>
+</footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

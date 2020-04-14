@@ -166,14 +166,14 @@
                     <span> Descuentos Carnet Joven, mayores de 65 años y Carnet Universitario los martes y jueves, no festivos y vísperas. </span>
                     <br/><br/>
                     <h4> Día del espectador:</h4>
-                <li> Lunes y Miércoles </li>
+                <li> Miércoles </li>
                </div>
               </div>
 
            <br/>
 
          </div>
-         <div class="container my-5">
+         <div class="container my-5 mx-5">
             <div class="row">
               <div class="d-none d-md-block col-lg-5 ">
                 <h3><b>Localización</b></h3>
@@ -188,10 +188,10 @@
               <div class="col-xs-12 col-lg-7">
                 <h2><b>Contactenos</b></h2>
                 <hr>
-                <form role="form" id="Formulario" action="../controlador/contactaEmail.php" method="POST">
+                <form role="form" id="Formulario" action="../controlador/contactaEmail.php"  style='width : 350px;' method="POST">
                     <div class="form-group">
                         <label class="control-label" for="Nombre">Nombre</label>
-                        <input type="text" class="form-control" id="Nombre" name="Nombre" placeholder="Introduzca su nombre" required autofocus />
+                        <input type="text" class="form-control" id="Nombre" size="2" name="Nombre" placeholder="Introduzca su nombre" required autofocus />
                     </div>
 
                     <div class="form-group">

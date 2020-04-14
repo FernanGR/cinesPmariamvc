@@ -199,7 +199,7 @@
             } else{
               if($rol == "ROL_ADMIN"){
                 ?>
-                <li class="nav-item">
+                <li class="nav-item ">
                   <a class="nav-link text-primary" href="../index.php"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">

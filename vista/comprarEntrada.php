@@ -4,102 +4,67 @@
 <?php
 
   $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado");
-  echo "<h2>Buenos días, hoy es ".$dias[date("w")] . ".<h2>";
+
 
   $usuario = $_SESSION['usuario'];
-   echo "¡Bienvenido, <b> " . $usuario . "!</b>";
-
+   echo "<h1>¡Bienvenido, <b> " . $usuario . "!</b></h1>";
+  echo "<h2>Buenos días, hoy es ".$dias[date("w")] . ".<h2>";
   echo "<h1>Comprar entradas</h1>";
 
 
 $userA = Users::userActual($usuario);
 $emailuser = $userA[0][2];
-/*
-foreach(Users::userActual($usuario) as $userA){
-  $emailuser = $userA[2];
 
-}*/
-
-//email
-//$consulta = $conexion->query("SELECT * FROM usuarios where usuario = '"  . $_SESSION['usuario']. "'"   );
-//$resultado = $consulta->fetch_assoc();
-//$emailuser = $resultado['email'];
-
-//pelicula
 if(isset($_GET['peliculaActual']))
 {
     $peliculaActual = $_GET['peliculaActual'];
-    echo "<h2>PELICULA: " . $peliculaActual . "  <h2>";
+    echo "<h2><b>PELICULA:</b> " . $peliculaActual . "  <h2>";
 }
 else
 {
     $_GET['peliculaActual'] = null;
-  //  $consulta = $conexion->query('SELECT nombre FROM peliculas');
-  //  $resultado = $consulta->fetch_assoc();
-  //  $peliculaActual = $resultado['nombre'];
-  $peliA = Peliculas::nombrePeliculas();
+    $peliA = Peliculas::nombrePeliculas();
 
   $peliculaActual = $peliA[0][0];
-    echo "<h2>PELICULA: " . $peliculaActual . "  <h2>";
+    echo "<h2><b>PELICULA:</b> " . $peliculaActual . "  <h2>";
 }
 
 //sesion
   if(isset($_GET['sesionActual']))
   {
       $sesionActual = $_GET['sesionActual'];
-      echo "<h2>SESIÓN: " . $sesionActual . "  <h2>";
+      echo "<h2><b>SESIÓN: </b>" . $sesionActual . "  <h2>";
   }
   else
   {
       $_GET['sesionActual'] = null;
-    //  $consulta = $conexion->query('SELECT sesion FROM peliculas');
-  //    $resultado = $consulta->fetch_assoc();
-    //  $sesionActual = $resultado['sesion'];
+
     $sessiones = Peliculas::sesionesPeliculas();
     $sesionActual = $sessiones[0][0];
-      echo "<h2>SESIÓN: " . $sesionActual . "  <h2>";
+      echo "<h2><b>SESIÓN:</b> " . $sesionActual . "  <h2>";
   }
 
   //dia
   if(isset($_GET['diaActual']))
   {
       $diaActual = $_GET['diaActual'];
-      echo "<h2>Día: " . $diaActual . "  <h2>";
+      echo "<h2><b>Día: </b>" . $diaActual . "  <h2>";
   }
   else
   {
       $_GET['diaActual'] = null;
-    //  $consulta = $conexion->query('SELECT dia FROM peliculas');
-    //  $resultado = $consulta->fetch_assoc();
       $diaActual = $dias[date("w")];
-      echo "<h2>Día: " . $diaActual . "  <h2>";
+      echo "<h2><b>Día: </b>" . $diaActual . "  <h2>";
   }
   echo " <img src='../imagenes/salas_cine.jpg'/><br/>" ;
 
-
-  //   $conexion = new mysqli('localhost','root','','cinespmaria');
-  //   $resultados = $conexion->query("SELECT * FROM peliculas where nombre = '". $peliculaActual . "' and  sesion = '". $sesionActual ."'   and  dia = '". $diaActual ."'");
-  //   $resultado = $resultados->fetch_assoc();
     $peliculaCompra = Peliculas::dispoPeliculas($peliculaActual,$sesionActual,$diaActual);
 
      //$sala = (int)$resultado["sala"];
      $sala = (int)$peliculaCompra[0][0];
 
      if($peliculaCompra[0][0] == 1 || $peliculaCompra[0][0] == 2){
-  /*     echo "&nbsp";
-       echo "&nbsp";
-       echo "&nbsp";
-       echo "&nbsp";
-       echo "&nbsp";echo "&nbsp";echo "&nbsp";echo "&nbsp";
 
-       for($s = 1; $s<21; $s++){
-         echo "&nbsp"; echo "&nbsp"; echo "&nbsp"; echo "&nbsp"; echo "&nbsp"; echo "&nbsp";
-         if($s == 6 || $s == 16)  {
-           echo "&nbsp";   echo "&nbsp";   echo "&nbsp";   echo "&nbsp";  echo "&nbsp";echo "&nbsp";echo "&nbsp";echo "&nbsp";echo "&nbsp";
-         }
-          echo $s;
-       }
-         echo "<br/>";*/
      for($fila = 0; $fila < 10; $fila++)
      {
 
@@ -128,17 +93,7 @@ else
      }
 
    }else {
-  /*    echo "&nbsp";
-      echo "&nbsp";
-      echo "&nbsp";
-      echo "&nbsp";
-      echo "&nbsp";
-     for($s = 1; $s<11; $s++){
-       echo "&nbsp"; echo "&nbsp"; echo "&nbsp"; echo "&nbsp"; echo "&nbsp"; echo "&nbsp";echo "&nbsp";
 
-        echo $s;
-     }
-       echo "<br/>";*/
      for($fila = 0; $fila < 10; $fila++)
      {
        $f = $fila+1;
@@ -170,12 +125,7 @@ else
   <form method="GET" action="indexComEntrada.php">
 
         <?php
-  //  $consulta = $conexion->query("SELECT email FROM usuarios where usuario = '"  . $_SESSION['usuario']. "'"   );
-  //  $resultado = $consulta->fetch_assoc();
-  //  $emailuser = $resultado['email'];
-  //  $sesionUser = $usuario;
 
-    //$userActual = Users::userActual($sesionUser);
     foreach(Users::userActual($usuario) as $userA){
       $emailuser = $userA[2];
 

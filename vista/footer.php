@@ -6,7 +6,7 @@
 
     <!----------- Footer ------------>
 
-      <footer class="bg-primary text-white row pt-3 mx-5">
+      <footer class="bg-primary text-white row pt-3 mx-5 pb-2">
 
         <div class="col-sm-6 col-lg-3 text-center">
           <div>
@@ -38,7 +38,7 @@
            </div>
           <ul class="list-unstyled">
             <li><a class="text-white" href="https://www.facebook.com/Cines-PMaria-103042904552265/"><i class="fab fa-facebook-f pr-1"></i>Facebook</a></li>
-            <li><a class="text-white" href="https://www.instagram.com/cinespmaria/"><i class="fab fa-instagram pr-1"></i>Instagram</a></li>
+            <li><a class="text-white" href="https://www.instagram.com/pmariacines/"><i class="fab fa-instagram pr-1"></i>Instagram</a></li>
 
           </ul>
          </div>
@@ -46,7 +46,6 @@
           <div class="text-justify mx-3">© Cines Pmaria 2020 Copyright
 
           </div>
-          <!-- Copyright -->
 
       </footer>
 

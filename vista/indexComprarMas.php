@@ -184,24 +184,27 @@
 
 <!-- lado derecho -->
 <aside class="col-lg-2 d-none d-lg-block">
-  <i class="fas fa-link"></i>
-  <span>Enlaces</span>
+
+  <span> </span>
 
   <ul class="list-unstyled">
     <li>
-      <a href="https://ec.europa.eu/regional_policy/es/funding/erdf/"><img src="img/link1.jpg" class="img-fluid"></a>
+      <img src="../imagenes/cvc.jpg" class="img-fluid my-1">
+    </li>
+    <li my-5>
+    <img src="../imagenes/preciobar.jpg" class="img-fluid my-1">
     </li>
     <li>
-      <a href="https://www.gva.es/va/inicio/presentacion"><img src="img/link2.png" class="img-fluid"></a>
+    <img src="../imagenes/palomitas_coke.jpg" class="img-fluid my-1">
     </li>
     <li>
-      <a href="https://sites.iesperemaria.com/comenius/"><img src="img/link3.jpg" class="img-fluid"></a>
+      <img src="../imagenes/palotikets.jpg" class="img-fluid my-1">
     </li>
     <li>
-      <a href="https://e5.onthehub.com/WebStore/ProductsByMajorVersionList.aspx?ws=9c0feb28-729b-e011-969d-0030487d8897&vsro=8"><img src="img/link4.jpg" class="img-fluid"></a>
+      <a href="https://www.facebook.com/Cines-PMaria-103042904552265/"><img src="../imagenes/facebook.jpg" class="img-fluid"></a>
     </li>
     <li>
-      <a href="https://fct.edu.gva.es/"><img src="img/link5.png" class="img-fluid"></a>
+     <a href="https://www.instagram.com/pmariacines/"><img src="../imagenes/instagram.jpg" class="img-fluid"></a>
     </li>
 
   </ul>
@@ -214,60 +217,15 @@
     </main><!-- /.container -->
 
 
-<!-- Footer -->
-<footer class="bg-primary text-white row pt-5 mx-5">
-
-  <div class="col-sm-6 col-lg-3 text-center">
-    <div>
-      <img src="img/logo.png" class="logo-footer" width="100px">
+    <!-- Footer -->
+<footer>
+    <div class="my-3">
+      <?php
+          include("footer.php");
+       ?>
     </div>
-
-    IES Pere Maria Orts i Bosch
-    Telf: 966.87.07.00
-    Fax: 966.87.07.01
-    Correo Electrónico:
-    03010132@gva.es
-  </div>
-  <div class="col-sm-6 col-lg-3 text-center text-lg-left">
-    <div class="font-weight-bold">
-      Enlaces 1
-    </div>
-    <ul class="list-unstyled">
-      <li><a class="text-white" href="#">Cool Stuff</a></li>
-      <li><a class="text-white" href="#">Random Feature</a></li>
-      <li><a class="text-white" href="#">Team Feature</a></li>
-      <li><a class="text-white" href="#">Stuff Developers</a></li>
-      <li><a class="text-white" href="#">Another One</a></li>
-      <li><a class="text-white" href="#">Last Time</a></li>
-    </ul>
-  </div>
-  <div class="col-sm-6 col-lg-3 text-center text-lg-left">
-    <div class="font-weight-bold">
-      Enlaces 2
-    </div>
-    <ul class="list-unstyled">
-      <li><a class="text-white" href="#">Resource</a></li>
-      <li><a class="text-white" href="#">Resource Name</a></li>
-      <li><a class="text-white" href="#">Another Resource</a></li>
-      <li><a class="text-white" href="#">Final Resource</a></li>
-
-    </ul>
-  </div>
-  <div class="col-sm-6 col-lg-3 text-center text-lg-left">
-    <div class="font-weight-bold">
-      Enlaces 3
-    </div>
-    <ul class="list-unstyled">
-      <li><a class="text-white" href="#">Team</a></li>
-      <li><a class="text-white" href="#">Locations</a></li>
-      <li><a class="text-white" href="#">Privacy</a></li>
-      <li><a class="text-white" href="#">Terms</a></li>
-
-    </ul>
-  </div>
-
-
 </footer>
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
