@@ -11,7 +11,7 @@
             <th style="border: 1px solid black;"><b>SALA</b></th>
             <th style="border: 1px solid black;"><b>NOMBRE PELICULA</b></th>
             <th style="border: 1px solid black;"><b>DESCRIPCION</b></th>
-
+            <th style="border: 1px solid black;"><b>ACCIÓN</b></th>
 
           </tr>
 
@@ -38,7 +38,7 @@
         //  echo "<td ><input type='text' name=peli value =" . $pelis[1] . "></td>" ;
 
             echo "<td ><textarea name=peli value =" . $pelis[1] . " rows='1' cols='15'>" . $pelis[1] ."</textarea></td>" ;
-            echo "<td> <textarea name=descripcion value =" . $pelis[2] . " cols='30'>"  . $pelis[2] ."</textarea></td>";
+            echo "<td> <textarea name=descripcion value =" . $pelis[2] . " cols='30' style='width:300px'>"  . $pelis[2] ."</textarea></td>";
 
             echo "<td>"
 

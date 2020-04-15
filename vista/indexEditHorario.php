@@ -49,7 +49,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <a class="navbar-brand text-white" href="../index.php">
-            <img src="../imagenes/cines_pmaria.jpg" height="50" width="50">
+            <img src="../imagenes/cines_pmaria.jpg" height="50" width="50" class="rounded-circle">
             Cines Pmaria
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,6 +60,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="../index.php"><i class="fas fa-home pr-2"></i>Inicio</a>
               </li>
+
               <?php
                 if(!isset($rol)){
               ?>

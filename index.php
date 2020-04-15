@@ -3,6 +3,7 @@
   require_once 'modelo/conexion.php';
   require_once 'dao/userDao.php';
   require_once 'dao/imagenesDao.php';
+
   ?>
 
 <!doctype html>
@@ -37,20 +38,20 @@
         $userLog = $_SESSION['usuario'];
         $rolUser = Users::userRol($_SESSION['usuario']);
         $rol = $rolUser[0][3];
-      //      $rol = $_GET['rol'];
-     //    $user = $_GET['user'];
+
 
         echo "Usuario sesion: " . $userLog;
         echo "<br/>Rol sesion: " . $rolUser[0][3];
          }
       $cartelera = Img::listaImg();
+      $infoPelis = Peliculas::listaPeliculas();
      ?>
 
     <!-- navbar -->
       <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <a class="navbar-brand text-white" href="index.php">
-            <img src="imagenes/cines_pmaria.jpg" height="50" width="50">
+            <img src="imagenes/cines_pmaria.jpg" height="50" width="50"  class="rounded-circle">
             Cines Pmaria
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -155,21 +156,22 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100" src="imagenes/cartelcines.jpg?auto=yes&bg=777&fg=555&text=First slide" alt="First slide" style='width:640px;height:400px'/>
+            <img class="d-block w-100" src="imagenes/cartelcines.jpg?auto=yes&bg=777&fg=555&text=First slide" alt="First slide" style='width:640px;height:350px'/>
 
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="imagenes/pasillo.jpg?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide" style='width:640px;height:400px'/>
+            <img class="d-block w-100" src="imagenes/pasillo.jpg?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide" style='width:640px;height:350px'/>
             <div class="carousel-caption d-none d-md-block">
-              <h2 class="text-capitalize font-weight-bold text-dark">Los Mejores Estrenos!!</h2>
-              <h4 class="text-dark  font-weight-bold">¡No te los puedes pierdas!</h4>
+              <h2 class="text-capitalize font-weight-bold text-dark">Disfruta del espectaculo!!</h2>
+                <p class="font-weight-bold text-dark">¡Ven a ver las mejores peliculas con nosotros!</p>
             </div>
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="imagenes/sala.jpg?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide" style='width:640px;height:400px'/>
+            <img class="d-block w-100" src="imagenes/estrenos.jpg?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide" style='width:640px;height:350px'/>
             <div class="carousel-caption d-none d-md-block">
-              <h2 class="text-capitalize font-weight-bold">Disfruta del espectaculo!!</h2>
-                <p class="font-weight-bold">¡Ven a ver las mejores peliculas con nosotros!</p>
+              <h2 class="text-capitalize font-weight-bold text-dark">Los Mejores Estrenos!!</h2>
+              <h4 class="text-dark  font-weight-bold">¡No te los puedes perder!</h4>
+
             </div>
           </div>
         </div>
@@ -289,14 +291,29 @@
   <!-- medio -->
   <section class="my-3 col-sm-12 col-md-9 col-lg-7">
 
+      <h2 class="text-center text-secondary"> PROXIMOS ESTRENOS</h2>
+      <img src="imagenes/estrenos2.jpg" class="img-fluid m-1"  style='width:610px;height:400px'/>
+      <br/><br/>
+      <h2 class="text-center text-secondary"> CARTELERA ACTUAL</h2>
+
+         <?php
+         for($i = 0; $i<6;$i++){      // cartelera actual
+
+           echo "<img src='vista/".$cartelera[$i][1]." 'class='img-fluid m-1' style='width:300px;height:400px' title='" . $infoPelis[$i][1]. "\nSesiones: 18.00-20.30-23.00'/>";
+
+        }
+          ?>
+
+          <img src="imagenes/descuento102.jpg" class="img-fluid m-1 mt-4" style='width:610px;height:300px' />
+
+
+         <!-- imagenes bar y fidelidad -->
+         <br/><br/>
+         <h2 class="text-center text-secondary"> Precios Populares</h2>
          <img src="imagenes/preciobar.jpg" class="img-fluid m-1"  style='width:610px;height:400px'/>
          <img src="imagenes/preciomiercoles.jpg" class="img-fluid m-1" style='width:610px;height:400px'/>
-         <img src="imagenes/avespresa.jpg" class="img-fluid m-1" style='width:300px;height:400px'/>
-         <img src="imagenes/badboys3.jpg" class="img-fluid m-1" style='width:300px;height:400px'/>
-         <img src="imagenes/joker.jpg" class="img-fluid m-1" style='width:300px;height:400px'/>
-         <img src="imagenes/minecraft.jpg" class="img-fluid m-1" style='width:300px;height:400px'/>
-         <img src="imagenes/bloodshot.jpg" class="img-fluid m-1" style='width:300px;height:400px'/>
-         <img src="imagenes/toystory4.jpg" class="img-fluid m-1" style='width:300px;height:400px'/>
+
+
          <br/>
   </section>
 
@@ -317,6 +334,12 @@
     </li>
     <li>
       <img src="imagenes/palotikets.jpg" class="img-fluid my-1">
+    </li>
+    <li>
+      <img src="imagenes/preciomiercoles.jpg" class="img-fluid my-1">
+    </li>
+    <li>
+      <img src="imagenes/descuento102.jpg" class="img-fluid my-1">
     </li>
     <li>
       <a href="https://www.facebook.com/Cines-PMaria-103042904552265/"><img src="imagenes/facebook.jpg" class="img-fluid my-1"></a>

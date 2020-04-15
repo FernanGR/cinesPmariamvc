@@ -22,7 +22,7 @@
          </form>
 
         <br/>
- 
+
         <table style="border: 1px solid black;" width="95%">
           <tr>
             <th style="border: 1px solid black;"><b>USUARIO</b></th>
@@ -36,6 +36,8 @@
           table, tr, th, td{
           border: 1px solid #000000;
           text-align: center;
+          padding-left: 2px;
+          padding-right: 2px;
               }
           </style>
 
@@ -49,12 +51,12 @@
             <input type="hidden" name="oldUser" value="<?php  echo $listauser[0] ?> " />    <!-- nombre actual usuario -->
 
             <?php
-             echo "<td ><input name=newUser value =" . $listauser[0] . "> </td>" ;     // nuevo nombre del usuario
-            echo "<td> <input name=contrasena value =" . $listauser[1] . "></td>";    //nueva contraseña
+             echo "<td ><input name=newUser value =" . $listauser[0] . " style='width : 150px;' > </td>" ;   // nuevo nombre del usuario
+            echo "<td> <input name=contrasena value =" . $listauser[1] .  " style='width : 150px;' > </td>" ;     //nueva contraseña
 
 
             echo "<td> <input name=email value =" . $listauser[2] . "></td>";         //nuevo email
-            echo "<td> <input name=roll value =" . $listauser[3] . "></td>";          //nuevo roll
+            echo "<td> <input name=roll value =" . $listauser[3] .  " style='width : 120px;' > </td>" ;          //nuevo roll
 
             echo "<td>";
              ?>

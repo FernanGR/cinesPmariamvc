@@ -47,7 +47,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <a class="navbar-brand text-white" href="../index.php">
-            <img src="../imagenes/cines_pmaria.jpg" height="50" width="50">
+            <img src="../imagenes/cines_pmaria.jpg" height="50" width="50" class="rounded-circle">
             Cines Pmaria
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -237,7 +237,7 @@
   </aside>
 
   <!-- medio -->
-  <section class="col-12 col-md-9 col-lg-7">
+  <section class="col-sm-12 col-md-9 col-lg-6">
         <?php
 
       include("../controlador/editPerfil.php");
@@ -245,9 +245,10 @@
   </section>
 
 <!-- lado derecho -->
+  <section class="col-md-1 d-none d-lg-block">
+    <img src="../imagenes/editPerfil.jpg"   class="rounded-circle">
 
-
-</section>
+  </section>
 
 
     </main><!-- /.container -->

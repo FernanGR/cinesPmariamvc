@@ -47,7 +47,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <a class="navbar-brand text-white" href="../index.php">
-            <img src="../imagenes/cines_pmaria.jpg" height="50" width="50">
+            <img src="../imagenes/cines_pmaria.jpg" height="50" width="50" class="rounded-circle">
             Cines Pmaria
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -185,11 +185,11 @@
 
   <span> </span>
 
-  <ul class="list-unstyled">
+  <ul class="list-unstyled ">
     <li>
       <img src="../imagenes/cvc.jpg" class="img-fluid my-1">
     </li>
-    <li my-5>
+    <li>
     <img src="../imagenes/preciobar.jpg" class="img-fluid my-1">
     </li>
     <li>
@@ -199,10 +199,16 @@
       <img src="../imagenes/palotikets.jpg" class="img-fluid my-1">
     </li>
     <li>
-      <a href="https://www.facebook.com/Cines-PMaria-103042904552265/"><img src="../imagenes/facebook.jpg" class="img-fluid"></a>
+      <img src="../imagenes/preciomiercoles.jpg" class="img-fluid my-1">
     </li>
     <li>
-     <a href="https://www.instagram.com/pmariacines/"><img src="../imagenes/instagram.jpg" class="img-fluid"></a>
+      <img src="../imagenes/descuento102.jpg" class="img-fluid my-1">
+    </li>
+    <li>
+      <a href="https://www.facebook.com/Cines-PMaria-103042904552265/"><img src="../imagenes/facebook.jpg" class="img-fluid my-1"></a>
+    </li>
+    <li>
+     <a href="https://www.instagram.com/pmariacines/"><img src="../imagenes/instagram.jpg" class="img-fluid my-1"></a>
     </li>
 
   </ul>

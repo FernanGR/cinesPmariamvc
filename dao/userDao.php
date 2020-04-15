@@ -35,12 +35,14 @@
 
       $con = new Conexion();
       $cont = $con->ejecutarConsulta("SELECT * FROM usuarios WHERE ROL LIKE 'ROL_EMP'");
-      $i = 1;
+
+      $i = 0;
       foreach ($cont as $resultado)
       {
-        $i = $i + 1;
+        if($resultado[5] > $i)
+        $i = $resultado[5];
       }
-      $horario = $i;
+      $horario = $i+1;
 
       $con->ejecutarActualizacion("INSERT INTO usuarios (usuario,contrasena,email,ROL,horario) VALUES ('$user' , '$pass', '$email','$rol','$horario')");
       $con->ejecutarActualizacion("INSERT INTO horarios (horario) VALUES ('$horario')");

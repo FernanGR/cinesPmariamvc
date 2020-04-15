@@ -44,7 +44,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <a class="navbar-brand text-white" href="../index.php">
-            <img src="../imagenes/cines_pmaria.jpg" height="50" width="50">
+            <img src="../imagenes/cines_pmaria.jpg" height="50" width="50" class="rounded-circle">
             Cines Pmaria
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -140,15 +140,18 @@
       </header>
 
 
-<main class="mt-3 mx-5 container">
+<main class="mt-3 mx-5  container">
 
- <!-- carrousel -->
-<!-- lado izquierda -->
+  <section class="row mt-3 mx-5">
+    <!-- lado izquierda -->
 
-<section class="row mt-3">
+  <div class="col-md-1 d-none d-lg-block  mt-3 ">
+    <img src="../imagenes/descuento102.jpg" alt="carrete" width="280px" height="200px" class="rounded-circle">
+  </div>
+
 
   <!-- medio -->
-  <div class="col-12 mt-3 mx-5 text-sm-left text-md-center">
+  <div class="col-sm-12 col-md-10  mt-3  text-sm-left text-md-center">
       <?php
 
             include("registro.php");
