@@ -24,7 +24,7 @@
   $dia1 = $_GET['dia'];
   $imgPeli = Img::listaImg();
 $html = '
-  <img  src="'. $imgPeli[$sala-1][1]. '" width="400" height="200" />
+  <img  src="../imagenes/ticket3.jpg" width="400" height="200" />
 
 <br/>
 <table style="border: 1px solid black;" width="95%">
@@ -55,9 +55,11 @@ Hora: '. $sesion  . '</td>
 </tr>
 
 </table>
-<img  src="../imagenes/ticket3.jpg" width="400" height="200" />
+<br/>
+<br/>
+<img  src="'. $imgPeli[$sala-1][1]. '" width="400" height="200" />
 
-<br> ';
+<br/> ';
 
 $nombreEntrada = "Entrada-" . $usuario . ".pdf";
 $documento->WriteHTML($html, true, false, true, false, '');

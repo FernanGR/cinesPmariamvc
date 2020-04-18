@@ -4,19 +4,14 @@
 
       ?>
 
-       <h2>Cambiar Imagenes de las películas de las salas </h2>
+       <h2 class="text-success text-center"><b>Cambiar Imagenes de la cartelera</b></h2>
        <br/>
 
        <table style="border: 1px solid black;" width="95%">
-         <tr>
-           <th style="border: 1px solid black;"><b>Sala</b> </th>
-           <th style="border: 1px solid black;"><b>Foto</b></th>
-           <th style="border: 1px solid black;"><b>Cambiar Foto</b></th>
 
-         </tr>
          <style>
          table, tr, th, td{
-         border: 1px solid #000000;
+         border: 1px solid #2b351f;
          text-align: center;
          padding: 15px;
              }
@@ -28,7 +23,7 @@
            //sala
            $sala++;
            echo "<tr>";
-           echo  "<td><b>" . $fotos[0] . "</b> </td>";
+           echo  "<td><h3 class='text-success'><b>SALA " . $fotos[0] . "</b> <h3></td>";
            echo "<td ><img src='$fotos[1]' width=200px/></td>";
            echo "<td>";
           ?>
@@ -36,8 +31,9 @@
         <form enctype="multipart/form-data" method="post" action="../controlador/subir.php">
 
           <input type="hidden" name="sala" value="<?php echo $sala ?> "/>
-           <input type="file" name="img_up">
-          <input value="Cambiar" type="submit">
+          <label><h3 class="text-primary"><b> Elija una imagen</b></h3></label>
+           <input type="file" name="img_up" >
+          <input value="Cambiar" type="submit"  class="btn-bClaro">
         </form>
       </td></tr>
 

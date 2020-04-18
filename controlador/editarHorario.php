@@ -9,12 +9,13 @@
     <body>
 
         <br/>
+        <h2 class="text-success text-center"><b> Modificar Horarios de Empleados </b></h2>
 
 
         <br/>
         <table style="border: 1px solid black;" width="95%">
           <tr>
-            <th style="border: 1px solid black;"><b>EMPLEADO</b></th>
+            <th style="border: 1px solid black;"><b>NOMBRE</b></th>
             <th style="border: 1px solid black;"><b>LUNES</b></th>
             <th style="border: 1px solid black;"><b>MARTES</b></th>
             <th style="border: 1px solid black;"><b>MIÉRCOLES</b></th>
@@ -26,7 +27,7 @@
 
           <style>
           table, tr, th, td{
-          border: 1px solid #000000;
+          border: 1px solid #2b351f;
           text-align: center;
               }
           </style>
@@ -191,7 +192,7 @@
 
        ?>
 
-    <input type="submit" value="actualizar horario" name="registrar"/>
+    <input type="submit" value="actualizar horario" name="registrar" class="btn-primary m-1"/>
     </form>
 
     <?php
@@ -205,6 +206,6 @@
         </table>
 
         <br/>
-       <a href='../controlador/reseteoButacas.php'><button   id="reset" > Reseteo Butacas </button></a>
+       <a href='../controlador/reseteoButacas.php'><button   id="reset" class="btn-success" > Reseteo Butacas </button></a>
 
     </body>

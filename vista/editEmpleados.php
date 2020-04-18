@@ -2,7 +2,7 @@
     <body>
 
 
-        <h2> Añadir Nuevo Empleado </h2>
+        <h2 class="text-success"><b> Añadir Nuevo Empleado </b></h2>
          <form autocomplete="off" method="POST" action= '../controlador/añadirEmp.php'>
 
             Usuario:<input type="text" name="usuario" value="<?php if(isset($_POST['usuario'])) echo $_POST['usuario']; ?>" required/>
@@ -11,7 +11,7 @@
             <br/>
             Email:<input type="email" name="email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" required/>
             <br/>
-              <input type="submit" value="Registrar Empleado" name="registrar"/>
+              <input type="submit" value="Registrar Empleado" name="registrar" class="btn-success mt-2"/>
          </form>
 
 
@@ -30,7 +30,7 @@
 
           <style>
             table, tr, th, td{
-            border: 1px solid #000000;
+            border: 1px solid #2b351f;
             text-align: center;
             }
           </style>
@@ -54,13 +54,13 @@
 
               echo "<td>"
              ?>
-          <input type="submit" value="Actualizar Empleado" name="editUser"/>
+          <input type="submit" value="Actualizar Empleado" name="editUser" class="btn-bClaro m-1 p-1"/>
 
           </form>
             <form name = "formulario" method="POST" action= '../controlador/eliminarEmp.php'>
             <input type="hidden" name="user" value="<?php  echo $empleados[0] ?> " />
 
-            <input type="submit" value="Eliminar Empleado" name="deleteEmp"/>
+            <input type="submit" value="Eliminar Empleado" name="deleteEmp" class="btn-rClaro m-1 p-1"/>
           </form>
         <?php
 

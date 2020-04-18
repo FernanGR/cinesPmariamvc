@@ -51,8 +51,7 @@ try {
     $mail->Port       = 587;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('fernandodawsp@gmail.com', ' ');
-  //  $mail->addAddress('tibofgr@gmail.com', 'Nombre');     // Add a recipient
+    $mail->setFrom('CinesPmaria@gmail.com', 'Cines Pmaria ');
 
   $mail->addAddress("cinespmaria@gmail.com", $nombre);     //para que capture del formulario el email al que enviarlo
     //$mail->addAddress('mfornes@iesperemaria.com');               // Name is optional

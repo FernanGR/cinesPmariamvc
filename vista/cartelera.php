@@ -16,7 +16,7 @@
             <div class="row my-3">
               <div class="col-sm-12 col-md-6">    <!-- número sala -->
                   <?php
-                       echo "<h1><b>Sala " .$infoPelis[$i][0]."</b></h1> ";
+                       echo "<h1 class='text-success'><b>Sala " .$infoPelis[$i][0]."</b></h1> ";
                    ?>
                 </div>
                 <div class="col-sm-12 col-md-6">    <!-- nombre de película -->

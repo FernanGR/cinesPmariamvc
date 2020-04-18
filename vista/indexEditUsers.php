@@ -151,8 +151,8 @@
 
   <aside class="col-lg-3 d-none d-lg-block ">
 
-    <i class="fas fa-link "></i>
-    <span>Menú</span>
+    <i class="fas fa-link text-success"></i>
+    <span class="text-success">Menú</span>
 
     <ul class="list-unstyled">
       <li class="nav-item  ">

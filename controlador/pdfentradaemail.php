@@ -37,7 +37,7 @@ if (empty($_GET['email'])){
 
    $imgPeli = Img::listaImg();
    $html = '
-     <img  src="'. $imgPeli[(int)$sala-1][1]. '" width="400" height="200" />
+   <img  src="../imagenes/ticket3.jpg" width="400" height="200" />
 
   <br/>
   <table style="border: 1px solid black;" width="95%">
@@ -68,8 +68,9 @@ if (empty($_GET['email'])){
   </tr>
 
   </table>
-  <img  src="../imagenes/ticket3.jpg" width="400" height="200" />
-
+  <br/>
+  <br/>
+  <img  src="'. $imgPeli[(int)$sala-1][1]. '" width="400" height="200" />
   <br> ';
 
 
@@ -114,7 +115,7 @@ try {
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo 'Mensaje enviado OK!<br/>';
+    echo '<h2 class="text-success"><b>Entrada enviada!!</b></h2><br/>';
     echo "<a href='../vista/indexComEntrada.php?sesionActual=" .  $sesion ."&peliculaActual=" . $pelicula ."&diaActual=" . $dia . "'><img src='../imagenes/comprar-mas.png'></a>";
     //  echo "<a href='cinepagina.php?sesionActual=" . $sesion ."&peliculaActual=" . $pelicula ."&diaActual=" . $dia . "'><img src='imagenes/comprar-mas.png'></a>";
 

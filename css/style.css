@@ -4,18 +4,34 @@
 }
 body {
 /*   background-image: url("../imagenes/palomitas.jpg") ; */
-    background-color: #ADD8E6;
+    /*background-color: #ADD8E6;     a4da56   e4ffbc*/
+    background-color:    #eaeded    ;
+
   }
 .izk{
   background-color: grey;
 }
+
 .text-primary {
-  color: #1C7AF9;
+  color:  #2e86c1 ;
 }
 
 .bg-primary {
-  background-color: #1C7AF9;
+  background-color:    #2e86c1   !important;
 }
+
+.text-success{
+  color: #81B052 !important;
+}
+
+.btn-bClaro{
+  background-color: #a8c2ff !important;
+}
+
+.btn-rClaro{
+  background-color: #a3f272 !important;
+}
+
 
 .bg-gray {
   background-color: #acacac !important;
@@ -56,7 +72,7 @@ body {
   border-top-right-radius: 0;
 }
 
- 
+
 
 .footr{
 

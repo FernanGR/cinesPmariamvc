@@ -4,6 +4,9 @@
   require_once 'dao/userDao.php';
   require_once 'dao/imagenesDao.php';
 
+  //array con los dias
+  $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado");
+
   ?>
 
 <!doctype html>
@@ -31,34 +34,32 @@
     <?php
     session_start();
     if(isset($_SESSION['usuario']))
-    //if(isset($_GET['user']))
       {
-        //  header("Location:vista/login.php");
-
-        $userLog = $_SESSION['usuario'];
+        $userName = $_SESSION['usuario'];
         $rolUser = Users::userRol($_SESSION['usuario']);
         $rol = $rolUser[0][3];
-
-
-        echo "Usuario sesion: " . $userLog;
+/*
+        echo "Usuario sesion: " . $userName;
         echo "<br/>Rol sesion: " . $rolUser[0][3];
-         }
+*/
+      }
+
       $cartelera = Img::listaImg();
       $infoPelis = Peliculas::listaPeliculas();
      ?>
 
     <!-- navbar -->
-      <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary  ">
           <a class="navbar-brand text-white" href="index.php">
             <img src="imagenes/cines_pmaria.jpg" height="50" width="50"  class="rounded-circle">
-            Cines Pmaria
+            <span>Cines Pmaria</span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
+          <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
+            <ul class="navbar-nav ">
               <li class="nav-item active">
                 <a class="nav-link" href="index.php"><i class="fas fa-home pr-2"></i>Inicio</a>
               </li>
@@ -93,7 +94,7 @@
 
            <?php
            }
-           if($rol == "ROL_EMP"){ // empleados y admin
+           if($rol == "ROL_EMP"){ // empleados
 
             ?>
              <li class="nav-item">
@@ -104,21 +105,25 @@
              </li>
              <?php
                 }
-                if($rol == "ROL_USER" || $rol == "ROL_ADMIN" || $rol == "ROL_EMP"){ // user, empleado y admin
-              ?>
 
-             <li class="nav-item">
-               <a class="nav-link" href="vista/indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar perfil</a>
-             </li>
-          <?php
-            }
           if($rol == "ROL_USER"){ // user
             ?>
+            <li class="nav-item">
+              <a class="nav-link" href="vista/indexCartelera.php"><i class="fas fa-video pr-2"></i>Cartelera</a>
+            </li>
              <li class="nav-item">
                   <a class="nav-link" href="vista/indexComEntrada.php"><i class="fas fa-ticket-alt pr-2"></i>Comprar Entrada</a>
             </li>
           <?php
             }
+            if($rol == "ROL_USER" || $rol == "ROL_ADMIN" || $rol == "ROL_EMP"){ // user, empleado y admin
+          ?>
+
+         <li class="nav-item">
+           <a class="nav-link" href="vista/indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar perfil</a>
+         </li>
+      <?php
+        }
           }
 
           if(!isset($rol)){
@@ -145,9 +150,13 @@
         </nav>
       </header>
 
-<main class="mt-3 mx-5  ">
+<main class="mt-3 mx-5   ">
 
  <!-- carrousel -->
+    <?php
+
+      if(!isset($rol)){
+     ?>
       <div id="carousel" class="carousel slide d-none d-md-block" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -162,16 +171,35 @@
           <div class="carousel-item">
             <img class="d-block w-100" src="imagenes/pasillo.jpg?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide" style='width:640px;height:350px'/>
             <div class="carousel-caption d-none d-md-block">
-              <h2 class="text-capitalize font-weight-bold text-dark">Disfruta del espectaculo!!</h2>
-                <p class="font-weight-bold text-dark">¡Ven a ver las mejores peliculas con nosotros!</p>
+              <div class="bg-dark align-items-center  " style="opacity:.6" id="cr1" >
+                <style>
+                #cr1{
+                  width:600px;
+                  display: inline-block;
+                  border-radius: 20px;
+                }
+                </style>
+
+              <h2 class="text-capitalize font-weight-bold text-white">Disfruta del espectaculo!!</h2>
+                <h4 class="font-weight-bold text-white">¡Ven a ver las mejores peliculas con nosotros!</h4>
+              </div>
+
             </div>
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="imagenes/estrenos.jpg?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide" style='width:640px;height:350px'/>
             <div class="carousel-caption d-none d-md-block">
-              <h2 class="text-capitalize font-weight-bold text-dark">Los Mejores Estrenos!!</h2>
-              <h4 class="text-dark  font-weight-bold">¡No te los puedes perder!</h4>
-
+              <div class="bg-dark align-items-center  " style="opacity:.6" id="cr" >
+                <style>
+                #cr{
+                  width:500px;
+                  display: inline-block;
+                  border-radius: 20px;
+                }
+                </style>
+              <h2 class="text-capitalize font-weight-bold text-white">Los Mejores Estrenos!!</h2>
+              <h4 class="text-white  font-weight-bold">¡No te los puedes perder!</h4>
+            </div>
             </div>
           </div>
         </div>
@@ -185,6 +213,15 @@
         </a>
       </div>
 
+    <?php
+  }else {   // si esta logueado, no sale carrousel. sale bienvenida
+     echo "<div>";
+     echo "<h1 class='text-center text-success h1'><b>¡Bienvenido, " . $userName . "!</b></h1>";
+     echo "<h2 class='text-center text-primary'>Estamos encantados de tenerte de vuelta.</h2>";
+     echo "<h2  class='text-center text-primary'> Hoy es ".$dias[date("w")] . ".<h2>";
+     echo "</div>";
+  }
+     ?>
 
 <!-- lado izquierda -->
 
@@ -192,8 +229,8 @@
 
   <aside class="col-md-3 d-none d-md-block ">
 
-    <i class="fas fa-link"></i>
-    <span>Menú</span>
+    <i class="fas fa-link text-success"></i>
+    <span class="text-success"><b>Menú</b></span>
     <ul class="list-unstyled">
 
       <?php
@@ -205,11 +242,15 @@
          <a class="nav-link text-primary" href="index.php"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>
        </li>
        <li class="nav-item">
-          <a class="nav-link text-primary" href="vista/indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar Perfil</a>
-        </li>
+         <a class="nav-link text-primary" href="vista/indexCartelera.php"><i class="fas fa-video pr-2"></i>Cartelera</a>
+       </li>
+
         <li class="nav-item">
           <a class="nav-link text-primary" href="vista/indexComEntrada.php"><i class="fas fa-ticket-alt pr-2"></i>Comprar Entrada</a>
         </li>
+        <li class="nav-item">
+           <a class="nav-link text-primary" href="vista/indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar Perfil</a>
+         </li>
         <li class="nav-item">
           <a class="nav-link text-primary" href="controlador/logout.php"><i class="fas fa-sign-out-alt pr-2"></i>Logout</a>
         </li>
@@ -291,10 +332,10 @@
   <!-- medio -->
   <section class="my-3 col-sm-12 col-md-9 col-lg-7">
 
-      <h2 class="text-center text-secondary"> PROXIMOS ESTRENOS</h2>
+      <h2 class="text-center text-success"><b> PROXIMOS ESTRENOS </b></h2>
       <img src="imagenes/estrenos2.jpg" class="img-fluid m-1"  style='width:610px;height:400px'/>
       <br/><br/>
-      <h2 class="text-center text-secondary"> CARTELERA ACTUAL</h2>
+      <h2 class="text-center text-success"><b> CARTELERA ACTUAL </b></h2>
 
          <?php
          for($i = 0; $i<6;$i++){      // cartelera actual
@@ -309,8 +350,8 @@
 
          <!-- imagenes bar y fidelidad -->
          <br/><br/>
-         <h2 class="text-center text-secondary"> Precios Populares</h2>
-         <img src="imagenes/preciobar.jpg" class="img-fluid m-1"  style='width:610px;height:400px'/>
+         <h2 class="text-center text-success"><b> Precios Populares </b></h2>
+          <img src="imagenes/preciobar.jpg" class="img-fluid m-1 mt-3"  style='width:610px;height:400px'/>
          <img src="imagenes/preciomiercoles.jpg" class="img-fluid m-1" style='width:610px;height:400px'/>
 
 

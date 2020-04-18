@@ -19,7 +19,7 @@
             }
           }
         }
-       echo " <h1>Acceso Usuario</h1>";
+       echo " <h1 class='text-success'>Acceso Usuario</h1>";
 
         if(isset($_SESSION['usuario']))
         {
@@ -40,15 +40,14 @@
           }
             ?>
 
-            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-              <label for="usuario">Usuario</label>
-                <input type="text" name="usuario" value="<?php if(isset($_POST['usuario'])) echo $_POST['usuario']; ?>" required autocomplete="off" />
-                <?php if(isset($_POST['entrar']) && empty($_POST['usuario'])) echo "<br/><span style='color:red'>¡Debes introducir tu nombre de usuario!</span>"; ?><br>
-
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" >
+              <label for="usuario" >Usuario</label>
+                <input type="text" name="usuario" value="<?php if(isset($_POST['usuario'])) echo $_POST['usuario']; ?>" required autocomplete="off" autofocus />
+                <br/>
                 <label for="contraseña">Contraseña</label>
                 <input type="password" name="contraseña" value="<?php if(isset($_POST['contraseña'])) echo $_POST['contraseña']; ?>" required />
                 <?php if(isset($_POST['entrar']) && empty($_POST['contraseña'])) echo "<br/><span style='color:red'>¡Debes introducir tu contraseña!</span>"; ?><br>
-                <input type="submit" value="Entrar" name="entrar"/><br>
+                <input type="submit" value="Entrar" name="entrar" class="btn-success"/><br>
             </form>
             <p>¿Aún no te has registrado?<a href="<?php echo "indexRegistro.php"; ?>">¡Regístrate!</a></p>
 

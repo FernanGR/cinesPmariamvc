@@ -14,7 +14,7 @@
 
         <br/>
         <table style="border: 1px solid black;" width="95%">
-          <tr>
+          <tr class='text-dark'>
             <th style="border: 1px solid black;"><b>EMPLEADO</b></th>
             <th style="border: 1px solid black;"><b>LUNES</b></th>
             <th style="border: 1px solid black;"><b>MARTES</b></th>
@@ -27,7 +27,7 @@
 
           <style>
           table, tr, th, td{
-          border: 1px solid #000000;
+          border: 1px solid   #2b351f  ;
           text-align: center;
               }
           </style>
@@ -43,9 +43,9 @@
              if($empleados[4] == 1){ // para ver si esta activo
           //while($resultado = $resultados->fetch_assoc()){
              if($empleados[0] == $empleadoActual){
-               echo "<tr style='color:red;'>";
+               echo "<tr class='text-success'>";
              }else{
-               echo "<tr>";
+               echo "<tr class='text-secondary'>";
          }
           /*<input type="hidden" name="slunes" value="<?php  echo $slunes ?> " />*/
             echo  "<td><b>" . $empleados[0] . "</b> </td>";

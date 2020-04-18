@@ -8,6 +8,7 @@
        $email = $_POST['email'];
        $rol = 'ROL_EMP';
 
+  
        Users::añadirEmp($empleado, $contrasena,$email,$rol);
 
        header("Location:../vista/indexEditEmp.php");

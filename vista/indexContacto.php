@@ -147,7 +147,7 @@
   <!-- medio -->
 
   <div class="container">
-    <h2 class="text-center"><b>Cines Pmaria</b></h2>
+    <h2 class="text-center text-success"><b>Cines Pmaria</b></h2>
 
               <div class="row">
                 <div  class="d-none d-md-block col-lg-10  ">
@@ -155,8 +155,8 @@
                </div>
                 <div class=" text-center mt-3 d-none d-md-block col-lg-12">
 
-                 <h3>En los Cines Pmaria podrás disfrutar de todas estas ventajas:</h3>
-
+                 <h3 class="text-success">En los Cines Pmaria podrás disfrutar de todas estas ventajas:</h3>
+                 <div class="text-primary">
                     <span>  Parking gratuito </span><br/>
                     <span> Sonido digital DOLBY, SDDS y DTS.</span><br/>
                     <span>  Sistema de sonido para V.O.</span><br/>
@@ -165,8 +165,9 @@
                     <span> Amplia separación entre filas. </span><br/>
                     <span> Descuentos Carnet Joven, mayores de 65 años y Carnet Universitario los martes y jueves, no festivos y vísperas. </span>
                     <br/><br/>
-                    <h4> Día del espectador:</h4>
-                <li> Miércoles </li>
+                  </div>
+                    <h4 class="text-success"> Día del espectador:</h4>
+                <span class="text-primary"> Miércoles </span>
                </div>
               </div>
 
@@ -176,19 +177,19 @@
          <div class="container my-5 mx-5">
             <div class="row">
               <div class="d-none d-md-block col-lg-5 ">
-                <h3><b>Localización</b></h3>
-                <p>Estación de Autobuses de Benidorm
+                <h3 class="text-success"><b>Localización</b></h3>
+                <p class="text-primary">Estación de Autobuses de Benidorm
                   Paseo Els Tolls, S/N,
                   03502 Benidorm, Alicante </p>
-                  <h3><b>Telefono</b></h3>
-                  <p>96 664 43 23</p>
-                  <h3><b>Email</b></h3>
-                  <p>cinespmaria@gmail.com</p>
+                  <h3 class="text-success"><b>Telefono</b></h3>
+                  <p class="text-primary">96 664 43 23</p>
+                  <h3 class="text-success"><b>Email</b></h3>
+                  <p class="text-primary">cinespmaria@gmail.com</p>
               </div>
               <div class="col-xs-12 col-lg-7">
-                <h2><b>Contactenos</b></h2>
+                <h2 class="text-success"><b>Contactenos</b></h2>
                 <hr>
-                <form role="form" id="Formulario" action="../controlador/contactaEmail.php"  style='width : 350px;' method="POST">
+                <form role="form" id="Formulario" action="../controlador/contactaEmail.php"  style='width : 350px;' method="POST" class="text-primary">
                     <div class="form-group">
                         <label class="control-label" for="Nombre">Nombre</label>
                         <input type="text" class="form-control" id="Nombre" size="2" name="Nombre" placeholder="Introduzca su nombre" required autofocus />
@@ -203,8 +204,8 @@
                         <textarea rows="5" cols="30" class="form-control" id="Mensaje" name="Mensaje" placeholder="Introduzca su mensaje" required ></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Enviar">
-                        <input type="reset" class="btn btn-default" value="Limpiar">
+                        <input type="submit" class="btn btn-success" value="Enviar">
+                        <input type="reset" class="btn btn-success" value="Limpiar">
                     </div>
                     <div id="respuesta" style="display: none;"></div>
                 </form>

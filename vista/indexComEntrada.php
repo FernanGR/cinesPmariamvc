@@ -100,22 +100,27 @@
                </li>
                <?php
                 }
-               if($rol == "ROL_USER" || $rol == "ROL_ADMIN" || $rol == "ROL_EMP"){ // user, empleado y admin
-                ?>
 
-                <li class="nav-item">
-                  <a class="nav-link" href="indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar perfil</a>
-                </li>
-
-                <?php
-              }
               if($rol == "ROL_USER"){  //user
                  ?>
+                 <li class="nav-item">
+                   <a class="nav-link" href="indexCartelera.php"><i class="fas fa-video pr-2"></i>Cartelera</a>
+                 </li>
+
                 <li class="nav-item active">
                      <a class="nav-link" href="../vista/indexComEntrada.php"><i class="fas fa-ticket-alt pr-2"></i>Comprar Entrada</a>
                </li>
                 <?php
                 }
+                if($rol == "ROL_USER" || $rol == "ROL_ADMIN" || $rol == "ROL_EMP"){ // user, empleado y admin
+                 ?>
+
+                 <li class="nav-item">
+                   <a class="nav-link" href="indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar perfil</a>
+                 </li>
+
+                 <?php
+               }
               }
 
               if(!isset($rol)){
@@ -147,12 +152,15 @@
  <!-- carrousel -->
 <!-- lado izquierda -->
 
+<?php
+/*
 <section class="row mt-3">
 
   <aside class="col-md-3 d-none d-md-block">
 
-    <i class="fas fa-link"></i>
-    <span>Menú</span>
+    <i class="fas fa-link text-success"></i>
+    <span class="text-success">Menú</span>
+
     <ul class="list-unstyled">
 
             <li class="nav-item">
@@ -172,10 +180,13 @@
 
   </aside>
 
-  <!-- medio -->
-  <section class="col-12 col-md-9 col-lg-11">
-        <?php
+    <section class="col-sm-12 col-md-9 col-lg-9">
+*/
+ ?>
 
+  <!-- medio -->
+<section class="row mt-5  mx-3">
+        <?php
           include("comprarEntrada.php");
          ?>
   </section>
@@ -183,7 +194,6 @@
 <!-- lado derecho -->
 
 
-</section>
 
 
     </main><!-- /.container -->

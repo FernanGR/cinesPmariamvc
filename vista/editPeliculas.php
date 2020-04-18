@@ -4,7 +4,7 @@
 
         ?>
         <br/>
-
+        <h2 class="text-success text-center"><b> Editar Película	</b></h2>
         <br/>
         <table style="border: 1px solid black;" width="95%">
           <tr>
@@ -17,7 +17,7 @@
 
           <style>
           table, tr, th, td{
-          border: 1px solid #000000;
+          border: 1px solid #2b351f;
           text-align: center;
               }
           </style>
@@ -44,7 +44,7 @@
 
              ?>
 
-          <input type="submit" value="Actualizar pelicula" name="editPeli"/>
+          <input type="submit" value="Actualizar pelicula" name="editPeli" class="btn-bClaro m-1"/>
           </form>
 
         <?php

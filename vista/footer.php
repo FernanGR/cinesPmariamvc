@@ -10,7 +10,7 @@
 
         <div class="col-sm-6 col-lg-3 text-center">
           <div>
-             <img src="../imagenes/cines_pmaria.jpg" class="logo-footer" width="100px">
+             <img src="../imagenes/cines_pmaria.jpg" class="logo-footer rounded-circle" width="100px">
 
         </div>
         <h3>CINES PMARIA</h3>

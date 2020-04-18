@@ -154,9 +154,9 @@
 
   <aside class="col-md-3 d-none d-md-block">
 
-    <i class="fas fa-link"></i>
-    <span>Menú</span>
-
+    <i class="fas fa-link text-success"></i>
+    <span class="text-success">Menú</span>
+ 
     <ul class="list-unstyled">
       <li class="nav-item">
         <a class="nav-link text-primary" href="../index.php"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>

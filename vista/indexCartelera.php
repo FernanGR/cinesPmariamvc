@@ -100,22 +100,27 @@
                </li>
                <?php
                 }
-               if($rol == "ROL_USER" || $rol == "ROL_ADMIN" || $rol == "ROL_EMP"){ // user, empleado y admin
-                ?>
 
-                <li class="nav-item">
-                  <a class="nav-link" href="indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar perfil</a>
-                </li>
-
-                <?php
-              }
               if($rol == "ROL_USER"){  //user
                  ?>
+                 <li class="nav-item active">
+                   <a class="nav-link" href="indexCartelera.php"><i class="fas fa-video pr-2"></i>Cartelera</a>
+                 </li>
                 <li class="nav-item">
-                     <a class="nav-link" href="../vista/indexComEntrada.php"><i class="fas fa-ticket-alt pr-2"></i>Comprar Entrada</a>
+                     <a class="nav-link" href="indexComEntrada.php"><i class="fas fa-ticket-alt pr-2"></i>Comprar Entrada</a>
                </li>
                 <?php
+
                 }
+                if($rol == "ROL_USER" || $rol == "ROL_ADMIN" || $rol == "ROL_EMP"){ // user, empleado y admin
+                 ?>
+
+                 <li class="nav-item">
+                   <a class="nav-link" href="indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar perfil</a>
+                 </li>
+
+                 <?php
+               }
               }
 
               if(!isset($rol)){
@@ -153,9 +158,38 @@
 
   <aside class="col-md-3 d-none d-md-block">
 
-    <i class="fas fa-link"></i>
-    <span>Menú</span>
+    <i class="fas fa-link text-success"></i>
+    <span class="text-success">Menú</span>
     <ul class="list-unstyled">
+
+    <?php
+    if(isset($rol)){
+      if($rol == "ROL_USER"){
+       ?>
+
+   <li class="nav-item">
+     <a class="nav-link text-primary" href="../index.php"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>
+   </li>
+   <li class="nav-item">
+     <a class="nav-link text-primary" href="indexCartelera.php"><i class="fas fa-video pr-2"></i>Cartelera</a>
+   </li>
+
+    <li class="nav-item">
+      <a class="nav-link text-primary" href="indexComEntrada.php"><i class="fas fa-ticket-alt pr-2"></i>Comprar Entrada</a>
+    </li>
+    <li class="nav-item">
+       <a class="nav-link text-primary" href="indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar Perfil</a>
+     </li>
+    <li class="nav-item">
+      <a class="nav-link text-primary" href="../controlador/logout.php"><i class="fas fa-sign-out-alt pr-2"></i>Logout</a>
+    </li>
+
+    <?php
+  }
+}else{
+     ?>
+
+
       <li class="nav-item active">
         <a class="nav-link text-primary" href="../index.php"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>
       </li>
@@ -170,7 +204,10 @@
       </li>
 
     </ul>
+<?php
+  }
 
+ ?>
   </aside>
 
   <!-- medio -->
