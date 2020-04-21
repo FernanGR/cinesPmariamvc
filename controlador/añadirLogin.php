@@ -1,6 +1,6 @@
 <?php
 
-  require_once '../dao/userDao.php';
+  require_once '../Modelo/userModelo.php';
   require_once '../modelo/conexion.php';
 
 
@@ -14,11 +14,11 @@ session_start();
 
        $yaesta = 0;
 
-       $lista = Users::listaUsuarios();
+       $lista = Users::listaTodos();
        foreach ($lista as $user) {
-         if($user[0] == $usuario){
+         if(strcasecmp($user[0], $usuario) == 0){
            echo'<script type="text/javascript">
-                 alert("El nombre de usuario ya esta, elige otro.");
+                 alert("El nombre de usuario ya esta usado. \nElige otro!");
                  window.location.href="../vista/indexRegistro.php";
                  </script>';
                  $yaesta = 1;
@@ -26,8 +26,10 @@ session_start();
        }
       if($yaesta != 1){
        Users::añadirUsuario($usuario, $contrasena,$email,$rol);
-
        header("Location:../vista/indexLogin.php");
      }
+
+
+
 
  ?>

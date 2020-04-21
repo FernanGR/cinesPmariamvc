@@ -5,8 +5,7 @@
   require_once '../modelo/conexion.php';
 
 ?>
-
-
+ 
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -27,9 +26,10 @@ $documento->SetTitle("Entrada Cine");
 $documento->AddPage('p','A5');
 
 session_start();
-$usuario = $_SESSION['usuario'];
-$comentario = $_POST['comentario'];
-$emailUser = Users::emailUser($usuario);
+$tuNombre = $_POST["tuNombre"];
+$nombre = $_POST["Nombre"];
+$correo = $_POST["Correo"];
+
 
 
 //$nombreEntrada = "/../entradas/entrada-" . $usuario . ".pdf";
@@ -54,11 +54,11 @@ try {
 
     //Recipients
     $mail->setFrom('CinesPmaria@gmail.com', 'Cines Pmaria');
+    $mail->addAddress($correo, $tuNombre);
 
-    $mail->addAddress("cinespmaria@gmail.com", $usuario);     //
     //$mail->addAddress('mfornes@iesperemaria.com');               // Name is optional
     //$mail->addReplyTo('bb@', 'Correo de respuesta');
-    $mail->addCC( $emailUser[0][0]);
+    //$mail->addCC('cc@example.com');
     //$mail->addBCC('bcc@example.com');
 
     // Attachments
@@ -67,18 +67,26 @@ try {
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'Comentario sobre horarios.';
-    $mail->Body    = 'Hola, soy  ' . $usuario . '. <br/>Aqui esta mi sugerencia sobre los horarios para la semana que viene: <br/>' . $comentario;
+    $mail->Subject = 'Recomendacion Cine';
+    $mail->Body    = 'Hola ' .$nombre. ', soy  ' . $tuNombre . '. <br/>Te recomiendo visitar la página web de los cines Pmaria: "www.CinesPmaria.org".
+    <br/>Aqui encontraras información de todo sobre el cine, las películas y horarios para que vengas a disfrutar una buena tarde de cine.
+    <br/>Visitanos!! Te esperamos!!
+    <br/><img src="../imagenes/logoCpmaria.jpg/>"';
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
+    header("Location:../index.php");
+
   //  echo 'Mensaje enviado OK!<br/>';
   //  echo "<button><a href='../index.php>Volver al menu</a></button>";
 //  echo "<a href='../vista/indexComEmp.php'><input type='button' value='Volver al menu'></a>";
-echo'<script type="text/javascript">
+
+  /*echo'<script type="text/javascript">
       alert("Mensaje enviado. Muchas gracias.");
       window.location.href="../vista/indexComEmp.php";
       </script>';
+
+  */
     //  echo "<a href='cinepagina.php?sesionActual=" . $sesion ."&peliculaActual=" . $pelicula ."&diaActual=" . $dia . "'><img src='imagenes/comprar-mas.png'></a>";
 
       //echo "<a href='cinecomprada.php?sesionActual=" . $GET_['sesion'] . "'><img src='imagenes/comprar-mas.png'></a>";

@@ -1,6 +1,6 @@
 <?php
 
-  require_once '../dao/peliculaDao.php';
+  require_once '../Modelo/peliculaModelo.php';
   require_once '../modelo/conexion.php';
 
    $sala = $_POST['sala'];

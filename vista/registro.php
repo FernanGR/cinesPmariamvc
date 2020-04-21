@@ -1,11 +1,6 @@
 
-
     <body>
-
-        <h1 class="text-success">Registrate</h1>
-        <?php
-
-        ?>
+     <h1 class='text-success'>Registro de Usuario</h1>
 
         <form method="POST" action='../controlador/añadirLogin.php'>
             Usuario:<input type="text" name="usuario" value="<?php if(isset($_POST['usuario'])) echo $_POST['usuario']; ?>" required/>

@@ -1,6 +1,6 @@
 <?php
 
-  require_once '../dao/userDao.php';
+  require_once '../Modelo/userModelo.php';
   require_once '../modelo/conexion.php';
 
 
@@ -15,7 +15,7 @@
        foreach ($lista as $user) {
          if($user[0] == $usuario){
            echo'<script type="text/javascript">
-                 alert("El nombre de usuario ya esta, elige otro.");
+                 alert("El nombre de usuario ya esta en uso. \nElige otro.");
                  window.location.href="../vista/indexEditUsers.php";
                  </script>';
                  $yaesta = 1;

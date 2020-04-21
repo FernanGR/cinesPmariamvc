@@ -1,17 +1,16 @@
-<?php
+ <?php
   require_once '../Modelo/peliculaModelo.php';
   require_once '../modelo/conexion.php';
   require_once '../Modelo/userModelo.php';
-  //require_once '../model/imagenesModelo.php';
-  ?>
+?>
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+  <!--  <meta charset="utf-8">  -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Web CinesPmaria">
     <meta name="author" content="FernandoGR">
-    <link rel="icon" href="favicon_io/favicon.ico">
+    <link rel="icon" href="../favicon_io/favicon.ico">
 
     <title>Cines Pmaria</title>
 
@@ -39,17 +38,15 @@
         $rolUser = Users::userRol($_SESSION['usuario']);
         $rol = $rolUser[0][3];
 
-      }else{
-        header("Location:indexLogin.php");
       }
-     ?>
+       ?>
     <!-- navbar -->
     <header class="sticky-top">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <a class="navbar-brand text-white" href="../index.php">
             <img src="../imagenes/cines_pmaria.jpg" height="50" width="50" class="rounded-circle">
-            Cines Pmaria
+              <span>  Cines Pmaria  </span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -101,122 +98,128 @@
                </li>
                <?php
                 }
+               if($rol == "ROL_USER" || $rol == "ROL_ADMIN" || $rol == "ROL_EMP"){ // user, empleado y admin
+                ?>
 
+                <li class="nav-item">
+                  <a class="nav-link" href="indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar perfil</a>
+                </li>
+
+                <?php
+              }
               if($rol == "ROL_USER"){  //user
                  ?>
                  <li class="nav-item">
-                   <a class="nav-link" href="indexCartelera.php"><i class="fas fa-video pr-2"></i>Cartelera</a>
-                 </li>
+                      <a class="nav-link" href="../vista/indexComEntrada.php"><i class="fas fa-ticket-alt pr-2"></i>Comprar Entrada</a>
+                </li>
                 <li class="nav-item">
-                     <a class="nav-link" href="../vista/indexComEntrada.php"><i class="fas fa-ticket-alt pr-2"></i>Comprar Entrada</a>
+                     <a class="nav-link" href="../vista/indexRecomendacion.php"><i class="fas fa-broadcast-tower pr-2"></i>Recomiendanos</a>
                </li>
                 <?php
                 }
-                if($rol == "ROL_USER" || $rol == "ROL_ADMIN" || $rol == "ROL_EMP"){ // user, empleado y admin
-                 ?>
-
-                 <li class="nav-item">
-                   <a class="nav-link" href="indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar perfil</a>
-                 </li>
-
-                 <?php
-               }
               }
 
               if(!isset($rol)){
 
                 ?>
-                <li class="nav-item">
+                <li class="nav-item active">
                   <a class="nav-link" href="indexContacto.php"><i class="fas fa-search-location pr-2"></i>Contacto</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="indexLogin.php"><i class="fas fa-sign-in-alt pr-2"></i>Login</a>
                 </li>
                 <?php
-                }else{
+                  }else{
                   ?>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../controlador/logout.php"><i class="fas fa-sign-out-alt pr-2"></i>Logout</a>
-                  </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="../controlador/logout.php"><i class="fas fa-sign-out-alt pr-2"></i>Logout</a>
+               </li>
 
-           <?php
-              }
-           ?>
-            </ul>
-          </div>
-        </nav>
-      </header>
-
+         <?php
+       }
+       ?>
+     </ul>
+   </div>
+ </nav>
+</header>
 <main class="mt-3 mx-5 container">
-
- <!-- carrousel -->
 
 <!-- lado izquierda -->
 
-<section class="row mt-3">
-
-  <aside class="col-md-3 d-none d-md-block">
-
-    <i class="fas fa-link text-success"></i>
-    <span class="text-success">Menú</span>
-
-
-      <ul class="list-unstyled">
-        <li class="nav-item">
-          <a class="nav-link text-primary" href="../index.php"><i class="fas fa-home pr-2"></i>Inicio <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-primary" href="indexCartelera.php"><i class="fas fa-video pr-2"></i>Cartelera</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-primary" href="indexComEntrada.php"><i class="fas fa-ticket-alt pr-2"></i>Comprar Entrada</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-primary" href="indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar Perfil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-primary" href="../controlador/logout.php"><i class="fas fa-sign-out-alt pr-2"></i>Logout</a>
-        </li>
-      </ul>
-
-  </aside>
 
   <!-- medio -->
-  <section class="col-12 col-md-9 col-lg-7">
-      <?php
 
-          include("../controlador/pdfentradaemail.php");
-      ?>
+  <div class="container">
+    <h2 class="text-center text-success"><b>Cines Pmaria</b></h2>
+
+              <div class="row">
+                <div  class="d-none d-md-block col-lg-10  ">
+                 <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2206.384944277466!2d-0.12675881918604767!3d38.54991258133062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd620565a4b2d9e3%3A0x73de7f48c25463c6!2sVia%20Bus!5e0!3m2!1ses!2ses!4v1585965565841!5m2!1ses!2ses" width="1150" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+               </div>
+                <div class=" text-center mt-3 d-none d-md-block col-lg-12">
+
+                 <h3 class="text-success">En los Cines Pmaria podrás disfrutar de todas estas ventajas:</h3>
+                 <div class="text-primary">
+                    <span>  Parking gratuito </span><br/>
+                    <span> Sonido digital DOLBY, SDDS y DTS.</span><br/>
+                    <span>  Sistema de sonido para V.O.</span><br/>
+                    <span>Sistema de proyección digital en 3D para una experiencia única. </span><br/>
+                    <span>Reposabrazos dobles. </span><br/>
+                    <span> Amplia separación entre filas. </span><br/>
+                    <span> Descuentos Carnet Joven, mayores de 65 años y Carnet Universitario los martes y jueves, no festivos y vísperas. </span>
+                    <br/><br/>
+                  </div>
+                    <h4 class="text-success"> Día del espectador:</h4>
+                <span class="text-primary"> Miércoles </span>
+               </div>
+              </div>
+
+           <br/>
+
+         </div>
+         <div class="container my-5 mx-5">
+            <div class="row">
+              <div class="d-none d-md-block col-lg-5 ">
+                <h3 class="text-success"><b>Localización</b></h3>
+                <p class="text-primary">Estación de Autobuses de Benidorm
+                  Paseo Els Tolls, S/N,
+                  03502 Benidorm, Alicante </p>
+                  <h3 class="text-success"><b>Telefono</b></h3>
+                  <p class="text-primary">96 664 43 23</p>
+                  <h3 class="text-success"><b>Email</b></h3>
+                  <p class="text-primary">cinespmaria@gmail.com</p>
+              </div>
+              <div class="col-xs-12 col-lg-7">
+                <h2 class="text-success"><b>Contactenos</b></h2>
+                <hr>
+                <form role="form" id="Formulario" action="../controlador/contactaEmail.php"  style='width : 350px;' method="POST" class="text-primary">
+                    <div class="form-group">
+                        <label class="control-label" for="Nombre">Nombre</label>
+                        <input type="text" class="form-control" id="Nombre" size="2" name="Nombre" placeholder="Introduzca su nombre" required autofocus />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="Correo">Dirección de Correo Electrónico</label>
+                        <input type="email" class="form-control" id="Correo" name="Correo" placeholder="Introduzca su correo electrónico" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="Mensaje">Mensaje</label>
+                        <textarea rows="5" cols="30" class="form-control" id="Mensaje" name="Mensaje" placeholder="Introduzca su mensaje" required ></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="Enviar">
+                        <input type="reset" class="btn btn-success" value="Limpiar">
+                    </div>
+                    <div id="respuesta" style="display: none;"></div>
+                </form>
+              </div>
+            </div>
+
+         </div>
   </section>
 
 <!-- lado derecho -->
-<aside class="col-lg-2 d-none d-lg-block">
 
-  <span> </span>
-
-  <ul class="list-unstyled">
-    <li>
-      <img src="../imagenes/cvc.jpg" class="img-fluid my-1">
-    </li>
-    <li my-5>
-    <img src="../imagenes/preciobar.jpg" class="img-fluid my-1">
-    </li>
-    <li>
-    <img src="../imagenes/palomitas_coke.jpg" class="img-fluid my-1">
-    </li>
-    <li>
-      <img src="../imagenes/palotikets.jpg" class="img-fluid my-1">
-    </li>
-    <li>
-      <a href="https://www.facebook.com/Cines-PMaria-103042904552265/"><img src="../imagenes/facebook.jpg" class="img-fluid"></a>
-    </li>
-    <li>
-     <a href="https://www.instagram.com/pmariacines/"><img src="../imagenes/instagram.jpg" class="img-fluid"></a>
-    </li>
-
-  </ul>
-
-</aside>
 
 </section>
 
@@ -224,15 +227,10 @@
     </main><!-- /.container -->
 
 
-    <!-- Footer -->
-<footer>
-    <div class="my-3">
-      <?php
-          include("footer.php");
-       ?>
-    </div>
-</footer>
-
+<!-- Footer -->
+<?php
+  include("footer.php");
+ ?>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

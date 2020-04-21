@@ -1,8 +1,8 @@
 <?php
-require_once '../dao/horarioDao.php';
-require_once '../dao/userDao.php';
+require_once '../Modelo/horarioModelo.php';
+require_once '../Modelo/userModelo.php';
 require_once '../modelo/conexion.php';
-require_once '../dao/imagenesDao.php';
+require_once '../Modelo/imagenesModelo.php';
 
   use PHPMailer\PHPMailer\PHPMailer;
   use PHPMailer\PHPMailer\Exception;
@@ -64,7 +64,7 @@ if (empty($_GET['email'])){
   Hora: '. $sesion  . '</td>
   </tr>
   <tr>
-  <td colspan="2" style="border: 1px solid black;">Presente esta entrada en la sala</td>
+  <td colspan="2" style="border: 1px solid black;">Presente esta entrada en la taquilla</td>
   </tr>
 
   </table>

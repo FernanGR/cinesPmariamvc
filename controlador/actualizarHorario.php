@@ -1,6 +1,6 @@
 <?php
- 
-      require_once '../dao/horarioDao.php';
+
+      require_once '../Modelo/horarioModelo.php';
 
 
        $empleado = $_POST['emp'];

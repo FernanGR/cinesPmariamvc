@@ -1,8 +1,8 @@
 <?php
-  require_once 'dao/peliculaDao.php';
+  require_once 'Modelo/peliculaModelo.php';
   require_once 'modelo/conexion.php';
-  require_once 'dao/userDao.php';
-  require_once 'dao/imagenesDao.php';
+  require_once 'Modelo/userModelo.php';
+  require_once 'Modelo/imagenesModelo.php';
 
   //array con los dias
   $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado");
@@ -36,12 +36,9 @@
     if(isset($_SESSION['usuario']))
       {
         $userName = $_SESSION['usuario'];
-        $rolUser = Users::userRol($_SESSION['usuario']);
+        $rolUser = Users::userActual($_SESSION['usuario']);
         $rol = $rolUser[0][3];
-/*
-        echo "Usuario sesion: " . $userName;
-        echo "<br/>Rol sesion: " . $rolUser[0][3];
-*/
+
       }
 
       $cartelera = Img::listaImg();
@@ -50,16 +47,16 @@
 
     <!-- navbar -->
       <header class="sticky-top">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary  ">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <a class="navbar-brand text-white" href="index.php">
-            <img src="imagenes/cines_pmaria.jpg" height="50" width="50"  class="rounded-circle">
+            <img src="imagenes/logoCpmaria.jpg" height="50" width="50"  class="rounded-circle">
             <span>Cines Pmaria</span>
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
-            <ul class="navbar-nav ">
+            <ul class="navbar-nav text-center">
               <li class="nav-item active">
                 <a class="nav-link" href="index.php"><i class="fas fa-home pr-2"></i>Inicio</a>
               </li>
@@ -216,7 +213,7 @@
     <?php
   }else {   // si esta logueado, no sale carrousel. sale bienvenida
      echo "<div>";
-     echo "<h1 class='text-center text-success h1'><b>¡Bienvenido, " . $userName . "!</b></h1>";
+     echo "<h1 class='text-center text-success h1'><b>¡Bienvenid@, " . $userName . "!</b></h1>";
      echo "<h2 class='text-center text-primary'>Estamos encantados de tenerte de vuelta.</h2>";
      echo "<h2  class='text-center text-primary'> Hoy es ".$dias[date("w")] . ".<h2>";
      echo "</div>";
@@ -327,6 +324,62 @@
 
     </ul>
 
+<!-- MODAL Recomendación -->
+
+ <button type="button" class="btn btn-success" data-toggle="modal" data-target="#staticBackdrop">
+Recomiendanos
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title text-success" id="staticBackdropLabel">Recomiendenos entre sus amigos</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- formulario modal -->
+        <form role="form" id="Formulario" action="controlador/recomiendanos.php"  style='width : 350px;' method="POST" class="text-primary">
+          <div class="form-group">
+              <label class="control-label" for="Nombre">Tu nombre</label>
+              <input type="text" class="form-control" id="Nombre" size="2" name="tuNombre" placeholder="Introduzca su nombre" required autofocus />
+          </div>
+            <div class="form-group">
+                <label class="control-label" for="Nombre">Nombre de su amigo</label>
+                <input type="text" class="form-control" id="Nombre" size="2" name="Nombre" placeholder="Introduzca nombre de su amigo" required autofocus />
+            </div>
+
+            <div class="form-group">
+                <label class="control-label" for="Correo">Dirección de Correo Electrónico</label>
+                <input type="email" class="form-control" id="Correo" name="Correo" placeholder="Introduzca su correo electrónico" required />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-success" value="Enviar">
+             </div>
+            <div id="respuesta" style="display: none;"></div>
+        </form>
+
+        <script>
+        $('#myModal').on('shown.bs.modal', function () {
+          $('#myInput').trigger('focus')
+        })
+        </script>
+        <!-- formulario modal -->
+
+  </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+       </div>
+    </div>
+  </div>
+</div>
+
+<!--  fin modal -->
+
   </aside>
 
   <!-- medio -->
@@ -350,9 +403,10 @@
 
          <!-- imagenes bar y fidelidad -->
          <br/><br/>
-         <h2 class="text-center text-success"><b> Precios Populares </b></h2>
+         <h2 class="text-center text-success"><b> Precios Bar </b></h2>
           <img src="imagenes/preciobar.jpg" class="img-fluid m-1 mt-3"  style='width:610px;height:400px'/>
-         <img src="imagenes/preciomiercoles.jpg" class="img-fluid m-1" style='width:610px;height:400px'/>
+          <br/>
+           <img src="imagenes/preciomiercoles.jpg" class="img-fluid m-1" style='width:610px;height:400px'/>
 
 
          <br/>
@@ -401,9 +455,52 @@
 
 <!-- Footer -->
 <div class="my-5">
-  <?php
-      include("vista/footer.php");
-   ?>
+
+
+        <footer class="bg-primary text-white row pt-3 mx-5 pb-2">
+
+          <div class="col-sm-6 col-lg-3 text-center">
+            <div>
+              <a href="index.php"> <img src="imagenes/logoCpmaria.jpg" class="logo-footer rounded-circle link-unstyled" width="100px"></a>
+            </div>
+              <a href="index.php">  <h3 class="text-white">CINES PMARIA</h3>  </a>
+          </div>
+
+          <div class="col-sm-6 col-lg-3 text-center text-lg-left">
+            <div class="font-weight-bold">
+              <h4>Localización </h4>
+            </div>
+                   Estación de Autobuses de Benidorm <br/>
+                   Paseo Els Tolls, S/N, <br/>
+                   03502 Benidorm, Alicante
+          </div>
+          <div class="col-sm-6 col-lg-3 text-center text-lg-left">
+            <div class="font-weight-bold">
+              <h4>Contacto </h4>
+            </div>
+             Telf: 96 664 43 23 <br/>
+            Correo Electrónico: <br/>
+            cinespmaria@gmail.com
+          </div>
+          <div class="col-sm-6 col-lg-3 text-center text-lg-left">
+            <div class="font-weight-bold">
+              <h4>Siguenos</h4>
+             </div>
+            <ul class="list-unstyled">
+              <li><a class="text-white" href="https://www.facebook.com/Cines-PMaria-103042904552265/"><i class="fab fa-facebook-f pr-1"></i>Facebook</a></li>
+              <li><a class="text-white" href="https://www.instagram.com/pmariacines/"><i class="fab fa-instagram pr-1"></i>Instagram</a></li>
+
+            </ul>
+           </div>
+          <!-- Copyright -->
+            <div class="text-justify ml-5">© Cines Pmaria 2020 Copyright
+
+            </div>
+
+        </footer>
+
+
+
 </div>
 
 

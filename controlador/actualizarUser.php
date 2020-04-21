@@ -1,9 +1,9 @@
 <?php
 
-  require_once '../dao/userDao.php';
+  require_once '../Modelo/userModelo.php';
   require_once '../modelo/conexion.php';
 
- 
+
        $usuario = $_POST['oldUser'];
        $newUser = $_POST['newUser'];
        $contrasena = $_POST['contrasena'];

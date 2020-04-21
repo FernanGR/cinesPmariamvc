@@ -1,7 +1,7 @@
  <?php
-  require_once '../dao/peliculaDao.php';
+  require_once '../Modelo/peliculaModelo.php';
   require_once '../modelo/conexion.php';
-  require_once '../dao/userDao.php';
+  require_once '../Modelo/userModelo.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -41,7 +41,7 @@
       }
        ?>
     <!-- navbar -->
-    <header>
+    <header class="sticky-top">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <a class="navbar-brand text-white" href="../index.php">
@@ -52,7 +52,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav text-center">
               <li class="nav-item">
                 <a class="nav-link" href="../index.php"><i class="fas fa-home pr-2"></i>Inicio</a>
               </li>
@@ -150,7 +150,7 @@
     <h2 class="text-center text-success"><b>Cines Pmaria</b></h2>
 
               <div class="row">
-                <div  class="d-none d-md-block col-lg-10  ">
+                <div  class="d-none d-md-block col-lg-12  ">
                  <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2206.384944277466!2d-0.12675881918604767!3d38.54991258133062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd620565a4b2d9e3%3A0x73de7f48c25463c6!2sVia%20Bus!5e0!3m2!1ses!2ses!4v1585965565841!5m2!1ses!2ses" width="1150" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                </div>
                 <div class=" text-center mt-3 d-none d-md-block col-lg-12">
@@ -188,8 +188,7 @@
               </div>
               <div class="col-xs-12 col-lg-7">
                 <h2 class="text-success"><b>Contactenos</b></h2>
-                <hr>
-                <form role="form" id="Formulario" action="../controlador/contactaEmail.php"  style='width : 350px;' method="POST" class="text-primary">
+                 <form role="form" id="Formulario" action="../controlador/contactaEmail.php"  style='width : 350px;' method="POST" class="text-primary">
                     <div class="form-group">
                         <label class="control-label" for="Nombre">Nombre</label>
                         <input type="text" class="form-control" id="Nombre" size="2" name="Nombre" placeholder="Introduzca su nombre" required autofocus />

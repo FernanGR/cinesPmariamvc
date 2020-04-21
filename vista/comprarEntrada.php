@@ -17,24 +17,27 @@
   echo "</div>";   // fin titulo
 
 //actuales
-  echo "<div class='col-sm-12 col-md-5 my-3 ml-5'>"; //lado izquierdo- entrada actual
+  echo "<div class='col-sm-12 col-md-5 my-3 ml-5  mx-auto'>"; //lado izquierdo- entrada actual
 
 
   echo "<h2 class='text-primary'><b>SELECCIÓN ACTUAL </b></h2>";
   echo "<hr/>";
-//película
+  $nsala = 1;
+ //película
 if(isset($_GET['peliculaActual']))
 {
     $peliculaActual = $_GET['peliculaActual'];
-    echo "<h3><b class='text-success'>PELICULA:</b><span class='text-primary'> " . $peliculaActual . "</span>  <h3>";
-}
+    $numSala = Peliculas::encuentraSala($peliculaActual);
+    echo "<h3><b class='text-success'>PELICULA:</b><span class='text-primary'> " . $peliculaActual . " (Sala " . $numSala[0][0] . ")</span>  <h3>";
+    $nsala = $numSala[0][0];
+ }
 else
 {
     $_GET['peliculaActual'] = null;
     $peliA = Peliculas::nombrePeliculas();
-
+    $nsala = 1;
   $peliculaActual = $peliA[0][0];
-    echo "<h3><b class='text-success'>PELICULA:</b> <span class='text-primary'>" . $peliculaActual . "</span>  <h3>";
+    echo "<h3><b class='text-success'>PELICULA:</b> <span class='text-primary'>" . $peliculaActual . " (Sala 1) </span>  <h3>";
 }
 
 //sesion
@@ -68,7 +71,7 @@ else
   echo "</div>";
 
   //Lado derecho, elección peliculas, sesiones y dias
-  echo "<div class='col-sm-12 col-md-5 my-3 ml-5'>";
+  echo "<div class='col-sm-12 col-md-5 my-3 ml-5  mx-auto'>";
 
   // menu para elegir pelicula, dia y sesión
 ?>
@@ -180,14 +183,14 @@ foreach($sesionesSelect as $sesPeli)
 
 <?php
 
-
+  $rutaFoto = IMG::listaImg();
   echo " <img src='../imagenes/salas_cine.jpg' width='950px' height='300px' class='col-lg-12 d-none d-md-block '/><br/>" ;    // imagen salas
 
-  echo "<div d-block align-items-center>";
-    $peliculaCompra = Peliculas::dispoPeliculas($peliculaActual,$sesionActual,$diaActual);
+  // muestra las butacas
+  echo "<div class='mx-auto' id='fondo-blur'>";
+      $peliculaCompra = Peliculas::dispoPeliculas($peliculaActual,$sesionActual,$diaActual);
 
-     //$sala = (int)$resultado["sala"];
-     $sala = (int)$peliculaCompra[0][0];
+      $sala = (int)$peliculaCompra[0][0];
 
      if($peliculaCompra[0][0] == 1 || $peliculaCompra[0][0] == 2){
 
@@ -210,14 +213,13 @@ foreach($sesionesSelect as $sesPeli)
              if($peliculaCompra[0][3][$posicionSilla] == "1")
              {
                  echo "<a href='indexComprada.php?fila=" . $fila ."&sala=" . $peliculaCompra[0][0] ."&emailuser=" . $emailuser . "&silla=" . $silla . "&dia=" . $diaActual . "&sesion=" . $sesionActual .
-                 "&pelicula=" . $peliculaCompra[0][1] . "&usuario=" . $usuario . "'><img src='../imagenes/silla_libre.jpg' title='" . (int) ($silla + 1) ."'></a>";
+                 "&pelicula=" . $peliculaCompra[0][1] . "&usuario=" . $usuario . "'><img src='../imagenes/silla_libre.jpg' title='F - " . $f ." \nB - " . (int) ($silla + 1) ."'></a>";
 
              }
              else
              {
                  echo "<img src='../imagenes/silla_ocupada.jpg'  title='ocupada'>";
-                 echo "&nbsp";
-             }
+              }
          }
          echo "<br>";
      }
@@ -240,7 +242,7 @@ foreach($sesionesSelect as $sesPeli)
              {
                  echo "<a href='indexComprada.php?fila=" . $fila ."&sala=" . $peliculaCompra[0][0] ."&emailuser=" . $emailuser . "&silla=" . $silla .
                  "&dia=" . $diaActual . "&sesion=" . $sesionActual ."&pelicula=" . $peliculaCompra[0][1] . "&usuario=" . $usuario .
-                 "'><img src='../imagenes/silla_libre.jpg' title='" . (int) ($silla + 1) ."'></a>";
+                 "'><img src='../imagenes/silla_libre.jpg' title='F - " . $f ." \nB - " . (int) ($silla + 1) ."'></a>";
                  echo "&nbsp";
              }
              else
@@ -254,7 +256,10 @@ foreach($sesionesSelect as $sesPeli)
 
    }
    echo "<br>";
-   echo "</div>";
+  echo "<div>";
+
+    echo " <img src='". $rutaFoto[$nsala-1][1]. "' width='950px' height='350px' class='col-lg-12 d-none d-md-block '/><br/>" ;    // imagen pelicula actual
+
 
 
 ?>

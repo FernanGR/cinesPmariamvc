@@ -1,8 +1,4 @@
 
-    <body>
-     <?php
-
-      ?>
 
        <h2 class="text-success text-center"><b>Cambiar Imagenes de la cartelera</b></h2>
        <br/>
@@ -44,5 +40,4 @@
                </table>
 
                  <br/>
-    </body>
-</html>
+ 

@@ -16,11 +16,13 @@
       $this->clave, $this->base);
     }
 
+      // función que devuelve la ejecución 
     public function ejecutarConsulta( $sql){
       $contenedor = $this->conexion->query($sql);
       return $contenedor->fetch_all();
     }
 
+    // función que ejecuta secuencia
     public function ejecutarActualizacion($sql){
       $this->conexion->query($sql);
     }

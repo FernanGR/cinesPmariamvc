@@ -25,11 +25,11 @@
 
         <table style="border: 1px solid black;" width="95%">
           <tr class="text-dark">
-            <th style="border: 1px solid black;"><b>USUARIO</b></th>
-            <th style="border: 1px solid black;"><b>CONTRASEÑA</b></th>
-            <th style="border: 1px solid black;"><b>EMAIL</b></th>
-            <th style="border: 1px solid black;"><b>ROL</b></th>
-            <th style="border: 1px solid black;"><b>ACCIÓN</b></th>
+            <th style="border: 1px solid black;" class="text-blue"><b>NOMBRE</b></th>
+            <th style="border: 1px solid black;" class="text-blue"><b>CONTRASEÑA</b></th>
+            <th style="border: 1px solid black;" class="text-blue"><b>EMAIL</b></th>
+            <th style="border: 1px solid black;" class="text-blue"><b>ROL</b></th>
+            <th style="border: 1px solid black;" class="text-blue"><b>ACCIÓN</b></th>
            </tr>
 
           <style>
@@ -66,7 +66,7 @@
             <form name = "formulario" method="POST" action= '../controlador/eliminarUser.php'>
             <input type="hidden" name="user" value="<?php  echo $listauser[0] ?> " />
 
-          <input type="submit" value="Eliminar Usuario" name="deleteUser" class=" fas btn-rClaro m-1 p-1">  
+          <input type="submit" value="Eliminar Usuario" name="deleteUser" class=" fas btn-rClaro m-1 p-1">
           </form>
         <?php
 

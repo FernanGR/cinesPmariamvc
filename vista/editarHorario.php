@@ -1,9 +1,6 @@
 <?php
 
-  require_once '../dao/horarioDao.php';
-//  require_once '../dao/userDao.php';
-  require_once '../modelo/conexion.php';
-
+  
 ?>
 
     <body>
@@ -15,14 +12,14 @@
         <br/>
         <table style="border: 1px solid black;" width="95%">
           <tr>
-            <th style="border: 1px solid black;"><b>NOMBRE</b></th>
-            <th style="border: 1px solid black;"><b>LUNES</b></th>
-            <th style="border: 1px solid black;"><b>MARTES</b></th>
-            <th style="border: 1px solid black;"><b>MIÉRCOLES</b></th>
-            <th style="border: 1px solid black;"><b>JUEVES</b></th>
-            <th style="border: 1px solid black;"><b>VIERNES</b></th>
-            <th style="border: 1px solid black;"><b>SÁBADO</b></th>
-            <th style="border: 1px solid black;"><b>DOMINGO</b></th>
+            <th style="border: 1px solid black;" class="text-blue p-1"><b>NOMBRE</b></th>
+            <th style="border: 1px solid black;" class="text-blue p-1"><b>LUNES</b></th>
+            <th style="border: 1px solid black;" class="text-blue p-1"><b>MARTES</b></th>
+            <th style="border: 1px solid black;" class="text-blue p-1"><b>MIÉRCOLES</b></th>
+            <th style="border: 1px solid black;" class="text-blue p-1"><b>JUEVES</b></th>
+            <th style="border: 1px solid black;" class="text-blue p-1"><b>VIERNES</b></th>
+            <th style="border: 1px solid black;" class="text-blue p-1"><b>SÁBADO</b></th>
+            <th style="border: 1px solid black;" class="text-blue p-1"><b>DOMINGO</b></th>
           </tr>
 
           <style>
@@ -47,7 +44,7 @@
               <input type="hidden" name="emp" value="<?php  echo $empleado[5] ?> " />
 
           <?php
-             echo  "<td><b>" . $empleado[0] . "</b> </td>";
+             echo  "<td class='text-secondary'><b>" . $empleado[0] . "</b> </td>";
 
       $hor = $empleado[5];
        foreach (Horario::listaHorEmp($hor) as $horarioEmp){
@@ -192,7 +189,7 @@
 
        ?>
 
-    <input type="submit" value="actualizar horario" name="registrar" class="btn-primary m-1"/>
+    <input type="submit" value="actualizar horario" name="registrar" class="btn-bClaro p-1 m-1"/>
     </form>
 
     <?php

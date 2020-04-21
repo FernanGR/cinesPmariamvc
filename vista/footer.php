@@ -1,6 +1,4 @@
 
-
-  <body>
 <!-- Footer -->
 
 
@@ -10,10 +8,9 @@
 
         <div class="col-sm-6 col-lg-3 text-center">
           <div>
-             <img src="../imagenes/cines_pmaria.jpg" class="logo-footer rounded-circle" width="100px">
-
-        </div>
-        <h3>CINES PMARIA</h3>
+            <a href="../index.php"> <img src="../imagenes/logoCpmaria.jpg" class="logo-footer rounded-circle link-unstyled" width="100px"></a>
+          </div>
+            <a href="../index.php">  <h3 class="text-white link-unstyled">CINES PMARIA</h3>  </a>
         </div>
 
         <div class="col-sm-6 col-lg-3 text-center text-lg-left">
@@ -48,16 +45,3 @@
           </div>
 
       </footer>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-
-  </body>
-</html>

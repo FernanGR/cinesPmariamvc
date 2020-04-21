@@ -1,8 +1,8 @@
 <?php
-  require_once '../dao/userDao.php';
+  require_once '../Modelo/userModelo.php';
   require_once '../modelo/conexion.php';
-  require_once '../dao/peliculaDao.php';
-  require_once '../dao/horarioDao.php';
+  require_once '../Modelo/peliculaModelo.php';
+  require_once '../Modelo/horarioModelo.php';
 
 
 
@@ -11,10 +11,40 @@
        $contrasena = $_POST['newPass'];
        $email = $_POST['newEmail'];
 
+
+       $yaesta = 0;
+
+       $lista = Users::listaTodos();
+
+     if(strcasecmp($usuario, $newUser) == 0){
        Users::actualizarPerfil($usuario,$newUser,$contrasena,$email);
         session_start();
-         $_SESSION['usuario'] = $newUser;
+        $_SESSION['usuario'] = $newUser;
 
-          header("Location:../vista/indexEditPerfil.php");
+        header("Location:../vista/indexEditPerfil.php");
+     }else{
+       foreach ($lista as $user) {
+         if(strcasecmp($user[0], $newUser) == 0){
+           echo'<script type="text/javascript">
+                 alert("El nombre de usuario ya esta usado. \nElige otro!");
+                 window.location.href="../vista/indexEditPerfil.php";
+                 </script>';
+                 $yaesta = 1;
+           }
+
+       }
+
+      if($yaesta != 1){
+        Users::actualizarPerfil($usuario,$newUser,$contrasena,$email);
+         session_start();
+          $_SESSION['usuario'] = $newUser;
+
+           header("Location:../vista/indexEditPerfil.php");
+
+     }
+ }
+
+
+
 
  ?>

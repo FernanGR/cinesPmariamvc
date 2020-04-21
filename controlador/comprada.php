@@ -1,8 +1,8 @@
 <?php
-  require_once '../dao/userDao.php';
+  require_once '../Modelo/userModelo.php';
   require_once '../modelo/conexion.php';
-  require_once '../dao/peliculaDao.php';
-  require_once '../dao/horarioDao.php';
+  require_once '../Modelo/peliculaModelo.php';
+  require_once '../Modelo/horarioModelo.php';
 
  ?>
 
@@ -49,10 +49,11 @@
       //  $consulta = $conexion->query("UPDATE peliculas SET disponibilidad = '" . $disponibilidad . "' WHERE nombre = '" . $pelicula. "'  and dia = '" . $dia . "' and sesion = '" . $sesion . "'");
       Peliculas::actualizaButacas($disponibilidad,$pelicula,$sesion,$dia);
 
-        echo "<h2>¡Enhorabuena!</h2><br>";
-        echo "Has adquirido una entrada. Para descargarla, haz click <a href='../controlador/pdfentrada.php?fila=" . ($fila + 1) . "&sala=" . $sala . "&pelicula=" . $pelicula . "&dia=" . $dia.  "&silla=" . ($silla + 1) . "&sesion=" . $sesion . "&usuario=" . $usuario . "'>AQUÍ</a><br><br>";
-
-        echo "Pulsa aqui para recibir la entrada a tu email: ";
+        echo "<h1 class='text-primary'>¡Enhorabuena!</h1><br>";
+        echo "<span class='text-dark'>Has adquirido una entrada. Para descargarla, haz click </span><a href='../controlador/pdfentrada.php?fila=" . ($fila + 1) . "&sala=" . $sala . "&pelicula=" .
+        $pelicula . "&dia=" . $dia.  "&silla=" . ($silla + 1) . "&sesion=" . $sesion . "&usuario=" . $usuario . "'>AQUÍ</a><br>";
+        echo "<hr/>";
+        echo "<span class='text-dark'>Pulsa aqui para recibir la entrada en tu email: </span>";
          ?>
             <form name = "formulario" method="GET" action='../vista/indexComprarMas.php'>
 
@@ -68,12 +69,11 @@
               <input type="hidden" name="usuario" value="<?php echo $usuario ?> " />
               <input type="hidden" name="email" value="<?php echo $emailuser ?> " />
 
-              <br/>
-              <input type="submit" value="Enviar a tu email!" name="enviar"/>
+               <input type="submit" value="Enviar a tu email!" name="enviar" class="btn-bClaro"/>
             </form>
+             <?php
 
-            <?php
-
+        echo "<hr/>";
         echo "O si rellenas este formulario, te la enviaremos a este correo electronico:";
         ?>
         		<form name = "formulario" method="GET" action='../vista/indexComprarMas.php'>
@@ -89,12 +89,12 @@
               <input type="hidden" name="pelicula" value="<?php  echo $pelicula ?> " />
               <input type="hidden" name="usuario" value="<?php echo $usuario ?> " />
               <br/>
-              <input type="submit" value="ENVIAR!" name="enviar"/>
+              <input type="submit" value="ENVIAR!" name="enviar" class="btn-bClaro"/>
             </form>
             <?php
 
 
-        echo "<a href='../vista/indexComEntrada.php?usuario=" . $usuario . "&sesionActual=" . $sesion . "&peliculaActual=" . $pelicula ."&emailuser=". $emailuser . "&diaActual=" . $dia . "'><img src='../imagenes/comprar-mas.png'></a>";
+        echo "<a href='../vista/indexComEntrada.php?usuario=" . $usuario . "&sesionActual=" . $sesion . "&peliculaActual=" . $pelicula ."&emailuser=". $emailuser . "&diaActual=" . $dia . "'><button class='btn-rClaro my-3'>COMPRAR MÁS ENTRADAS</button></a>";
 
         ?>
     </body>

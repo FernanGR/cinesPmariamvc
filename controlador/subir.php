@@ -1,6 +1,6 @@
 <?php
   require_once '../modelo/conexion.php';
-  require_once '../model/imagenesDao.php';
+  require_once '../modelo/imagenesModelo.php';
 
   $sala = $_POST['sala'];
  //capturamos los datos del fichero subido

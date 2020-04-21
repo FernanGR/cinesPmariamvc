@@ -1,5 +1,5 @@
 <?php
-  require_once '../dao/peliculaDao.php';
+  require_once '../Modelo/peliculaModelo.php';
   require_once '../modelo/conexion.php';
   //require_once '../modelo/userModel.php';
  ?>

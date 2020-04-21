@@ -1,5 +1,5 @@
 <?php
-   require_once '../dao/userDao.php';
+   require_once '../Modelo/userModelo.php';
    require_once '../modelo/conexion.php';
 
    $empleado = $_POST['user'];

@@ -1,5 +1,4 @@
-
-     <body>
+ 
           <?php
          //session_start();
             $usuario = $_SESSION['usuario'];
@@ -20,8 +19,3 @@
              <br/>
               <input type="submit" value="Editar Perfil" name="editarPerfil" class="btn-success"/>
           </form>
-
-         <?php
-         //echo " <a href='../index.php?user= $usuario&rol=ROL_USER'><button> Volver Menu </button></a>" ;
-         ?>
-     </body>

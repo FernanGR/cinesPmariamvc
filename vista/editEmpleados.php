@@ -18,13 +18,13 @@
         <br/>
         <table style="border: 1px solid black;" width="95%">
           <tr>
-            <th style="border: 1px solid black;"><b>EMPLEADO</b></th>
-            <th style="border: 1px solid black;"><b>CONTRASEÑA</b></th>
-            <th style="border: 1px solid black;"><b>EMAIL</b></th>
-            <th style="border: 1px solid black;"><b>ROL</b></th>
-            <th style="border: 1px solid black;"><b>ACTIVO</b></th>
-            <th style="border: 1px solid black;"><b>HORARIO</b></th>
-            <th style="border: 1px solid black;"><b>ACCIÓN</b></th>
+            <th style="border: 1px solid black;" class="text-blue"><b>EMPLEADO</b></th>
+            <th style="border: 1px solid black;" class="text-blue"><b>CONTRASEÑA</b></th>
+            <th style="border: 1px solid black;" class="text-blue"><b>EMAIL</b></th>
+            <th style="border: 1px solid black;" class="text-blue"><b>ROL</b></th>
+            <th style="border: 1px solid black;" class="text-blue"><b>ACTIVO</b></th>
+            <th style="border: 1px solid black;" class="text-blue"><b>HORARIO</b></th>
+            <th style="border: 1px solid black;" class="text-blue"><b>ACCIÓN</b></th>
 
           </tr>
 
@@ -47,7 +47,7 @@
             <?php
               echo "<td ><input name=newUser value =" . $empleados[0] . " style='width : 100px;' > </td>" ;     // EMPLEADO
               echo "<td> <input name=contrasena value =" . $empleados[1] .  " style='width : 150px;' > </td>" ; //CONTRASEÑA
-              echo "<td> <input name=email value =" . $empleados[2] .  " style='width : 200px;' > </td>" ;      //EMAIL
+              echo "<td> <input name=email value =" . $empleados[2] .  " style='width : 180px;' > </td>" ;      //EMAIL
               echo "<td> <input name=roll value =" . $empleados[3] .  " style='width : 100px;' > </td>" ;       //ROL
               echo "<td> <input name=activo value =" . $empleados[4] .  " style='width : 100px;' > </td>" ;     //ACTIVO
               echo "<td> <input name=horario value =" . $empleados[5] . " style='width : 100px;' > </td>" ;     //HORARIO

@@ -1,8 +1,8 @@
 <?php
-  require_once '../dao/peliculaDao.php';
+  require_once '../Modelo/peliculaModelo.php';
   require_once '../modelo/conexion.php';
-  require_once '../dao/userDao.php';
-  //require_once '../model/imagenesDao.php';
+  require_once '../Modelo/userModelo.php';
+  //require_once '../model/imagenesModelo.php';
   ?>
 <!doctype html>
 <html lang="en">
@@ -42,7 +42,7 @@
       }
      ?>
     <!-- navbar -->
-    <header>
+    <header class="sticky-top">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <a class="navbar-brand text-white" href="../index.php">
@@ -53,7 +53,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav text-center">
               <li class="nav-item active">
                 <a class="nav-link" href="../index.php"><i class="fas fa-home pr-2"></i>Inicio</a>
               </li>

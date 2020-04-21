@@ -1,7 +1,7 @@
 <?php
 
-  require_once '../dao/horarioDao.php';
-  require_once '../dao/userDao.php';
+  require_once '../Modelo/horarioModelo.php';
+  require_once '../Modelo/userModelo.php';
   require_once '../modelo/conexion.php';
 
 ?>
@@ -75,7 +75,7 @@ try {
   //  echo 'Mensaje enviado OK!<br/>';
   echo'<script type="text/javascript">
         alert("Mensaje enviado. Muchas gracias.");
-        window.location.href="../vista/indexContacta.php";
+        window.location.href="../vista/indexContacto.php";
         </script>';
  } catch (Exception $e) {
     echo "Mensaje NO enviado. Mailer Error: {$mail->ErrorInfo}";

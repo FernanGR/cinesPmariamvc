@@ -1,7 +1,7 @@
 <?php
 
-  require_once '../dao/horarioDao.php';
-  //require_once '../dao/userDao.php';
+  require_once '../Modelo/horarioModelo.php';
+  //require_once '../Modelo/userModelo.php';
   require_once '../modelo/conexion.php';
 
 ?>
@@ -15,14 +15,14 @@
         <br/>
         <table style="border: 1px solid black;" width="95%">
           <tr class='text-dark'>
-            <th style="border: 1px solid black;"><b>EMPLEADO</b></th>
-            <th style="border: 1px solid black;"><b>LUNES</b></th>
-            <th style="border: 1px solid black;"><b>MARTES</b></th>
-            <th style="border: 1px solid black;"><b>MIÉRCOLES</b></th>
-            <th style="border: 1px solid black;"><b>JUEVES</b></th>
-            <th style="border: 1px solid black;"><b>VIERNES</b></th>
-            <th style="border: 1px solid black;"><b>SÁBADO</b></th>
-            <th style="border: 1px solid black;"><b>DOMINGO</b></th>
+            <th style="border: 1px solid black;" class="p-2"><b>EMPLEADO</b></th>
+            <th style="border: 1px solid black;" class="p-2"><b>LUNES</b></th>
+            <th style="border: 1px solid black;" class="p-2"><b>MARTES</b></th>
+            <th style="border: 1px solid black;" class="p-2"><b>MIÉRCOLES</b></th>
+            <th style="border: 1px solid black;" class="p-2"><b>JUEVES</b></th>
+            <th style="border: 1px solid black;" class="p-2"><b>VIERNES</b></th>
+            <th style="border: 1px solid black;" class="p-2"><b>SÁBADO</b></th>
+            <th style="border: 1px solid black;" class="p-2"><b>DOMINGO</b></th>
           </tr>
 
           <style>
@@ -33,30 +33,23 @@
           </style>
 
           <?php
-      //    $conexion = new mysqli('localhost','root','','cinespmaria');
-    //   $resultados = $conexion->query("SELECT * FROM usuarios WHERE rol LIKE 'ROL_EMP'");
-    //      $horarios = $conexion->query("SELECT * FROM horarios");
+
            $PUESTO = ['Libre', 'Puerta', 'Bar', 'Taquilla', 'Refuerzo'];
 
            foreach (Users::listaEmpleados() as $empleados) {
 
              if($empleados[4] == 1){ // para ver si esta activo
-          //while($resultado = $resultados->fetch_assoc()){
-             if($empleados[0] == $empleadoActual){
-               echo "<tr class='text-success'>";
+              if($empleados[0] == $empleadoActual){
+               echo "<tr class='text-danger'>";
              }else{
-               echo "<tr class='text-secondary'>";
+               echo "<tr class='text-muted'>";
          }
-          /*<input type="hidden" name="slunes" value="<?php  echo $slunes ?> " />*/
-            echo  "<td><b>" . $empleados[0] . "</b> </td>";
+             echo  "<td><b>" . $empleados[0] . "</b> </td>";
 
 
-          //  $horarioEmp = $conexion->query("SELECT * FROM horarios where horario = " . $resultado[5]);
-          // while($horarioEmp = $horarioEmp->fetch_assoc()){
-      //      $horarioEmp = $horarioEmp->fetch_assoc();
             $hor = $empleados[5];
-          //  $horarioEmp2 = ;
-            foreach (Horario::listaHorEmp($hor) as $horarioEmp){
+             foreach (Horario::listaHorEmp($hor) as $horarioEmp){
+
             //lunes
             echo "<td>";
             if($horarioEmp[1] == 'Libre'){
@@ -169,8 +162,7 @@
       </table>
 
         <br/>
-    <?php /*    <a href="comentarEmpleado.php">Comentario al Admin</a>
-    <?php     echo "<a href='comentarEmpleado.php'><input type='button' value='Enviar mensaje'></a>"; */  ?>
+
 
 
     </body>

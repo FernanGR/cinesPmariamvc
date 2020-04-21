@@ -5,9 +5,10 @@
 body {
 /*   background-image: url("../imagenes/palomitas.jpg") ; */
     /*background-color: #ADD8E6;     a4da56   e4ffbc*/
-    background-color:    #eaeded    ;
+    background-color:    #ebf4d6    ;
 
   }
+
 .izk{
   background-color: grey;
 }
@@ -17,11 +18,15 @@ body {
 }
 
 .bg-primary {
-  background-color:    #2e86c1   !important;
+  background-color:    #4e7a90   !important;
+}
+
+.text-blue{
+  color: #5b7989;
 }
 
 .text-success{
-  color: #81B052 !important;
+  color: #81B052  !important;
 }
 
 .btn-bClaro{
@@ -73,16 +78,19 @@ body {
 }
 
 
-
 .footr{
-
   position: absolute;
   bottom: 130px;
   width: 100%;
   height: 40px;
-
 }
 
 textarea {
   resize: none;
 }
+
+
+   a:hover {
+    text-decoration : none;
+  }
+ 
