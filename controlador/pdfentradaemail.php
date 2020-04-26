@@ -36,8 +36,18 @@ if (empty($_GET['email'])){
    else{
 
    $imgPeli = Img::listaImg();
+
    $html = '
-   <img  src="../imagenes/ticket3.jpg" width="400" height="200" />
+   <table width="100%" border="0" cellpadding="2">
+       <tr>
+           <td align="center">
+             <img  src="../imagenes/ticket3.jpg" width="180" height="100" />
+           </td>
+           <td align="center">
+             <img  src="../imagenes/codigoQR.jpg" width="180" height="100" />
+           </td>
+       </tr>
+   <table>
 
   <br/>
   <table style="border: 1px solid black;" width="95%">
@@ -60,19 +70,19 @@ if (empty($_GET['email'])){
   </tr>
   <tr>
   <td style="border: 1px solid black;"><b>FECHA</b></td>
-  <td style="border: 1px solid black;">Día: ' .$dia. '<br>
+  <td style="border: 1px solid black;">Día: ' .$dia. '<br/>
   Hora: '. $sesion  . '</td>
   </tr>
   <tr>
-  <td colspan="2" style="border: 1px solid black;">Presente esta entrada en la puerta</td>
+  <td colspan="2" style="border: 1px solid black;" align="center"> <span>Presente esta entrada en la puerta</span></td>
   </tr>
 
   </table>
   <br/>
-  <br/>
-  <img  src="'. $imgPeli[(int)$sala-1][1]. '" width="400" height="200" />
-  <br> ';
-
+    <div align="center">
+    <img  src="'. $imgPeli[(int)$sala-1][1]. '" width="320" height="130" />
+    </div>
+    <br/> ';
 
   $nombreEntrada = "/../entradas/entrada-" . $usuario . ".pdf";
 
