@@ -22,7 +22,96 @@
         $sala = (int) $_GET['sala'];
         $usuario = $_GET['usuario'];
         $dia = $_GET['dia'];
+      //  $modal = $_GET['modal'];
 
+?>
+
+<?php
+/*
+  if($modal == 1){
+
+    ?>
+
+
+    <!-- Modal -->
+      <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h3 class="modal-title text-danger" id="staticBackdropLabel">Pago con tarjeta</h3>
+
+         </div>
+         <div class="modal-body">
+           <!-- formulario modal -->
+         <form role="formx"  action="indexComprada.php"  method="GET" class="credit-card-div">
+           <div class="panel panel-default" >
+            <div class="panel-heading">
+              <div>
+                <input type="hidden" name="fila" value="<?php  echo $fila ?>" />
+                <input type="hidden" name="sala" value="<?php  echo $sala ?>" />
+                <input type="hidden" name="emailuser" value="<?php  echo $_GET['emailuser'] ?>" />
+                <input type="hidden" name="silla" value="<?php  echo $silla ?>" />
+                <input type="hidden" name="dia" value="<?php  echo $dia ?>" />
+                <input type="hidden" name="sesion" value="<?php  echo $sesion ?>" />
+                <input type="hidden" name="pelicula" value="<?php  echo $pelicula ?>" />
+                <input type="hidden" name="usuario" value="<?php  echo $usuario ?>" />
+                <input type="hidden" name="modal" value="0" />
+              </div>
+              <div class="row ">
+                      <div class="col-md-12">
+                          <input type="text" class="form-control" placeholder="Introduce número tarjeta" pattern="[0-9]{13,18}" maxlength="18" required />
+                      </div>
+             </div>
+             <div class="row ">
+                      <div class="col-md-3 col-sm-3 col-xs-3">
+                          <span class="help-block text-muted small-font" > Mes cad.</span>
+                          <input type="text" class="form-control" placeholder="MM" pattern="[0-2]{2}" maxlength="2" required/>
+                      </div>
+                 <div class="col-md-3 col-sm-3 col-xs-3">
+                          <span class="help-block text-muted small-font" >  Año cad.</span>
+                          <input type="text" class="form-control" placeholder="YY" pattern="[0-9]{2}" maxlength="2" required/>
+                      </div>
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                       <span class="help-block text-muted small-font" >  CCV</span>
+                       <input type="text" class="form-control" placeholder="CCV"  pattern="[0-9]{3}" maxlength="3" required/>
+                </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <img src="../imagenes/tarjeta.jpg" class="img-rounded mt-2" />
+                    </div>
+                     </div>
+
+                <div class="row">
+           <div class="col-md-12 pad-adjust">
+               <div class="checkbox">
+               <label>
+                 <input type="checkbox" checked class="text-muted"> Guardar datos de tarjeta
+               </label>
+             </div>
+           </div>
+                </div>
+                  <div class="row ">
+                       <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
+                         <button type="submit" class="btn btn-danger"
+                         onclick= "self.location.href ='../vista/indexComEntrada.php?sesionActual=<?php echo $sesion ?>&peliculaActual=<?php echo $pelicula ?>&diaActual=<?php echo $dia ?>'" />
+                          CANCELAR</button>
+
+                         </div>
+                         <div class="col-md-6 col-sm-6 col-xs-6 pad-adjust">
+                             <input type="submit"  class="btn btn-warning btn-block" value="PAY NOW" />
+                         </div>
+                     </div>
+
+             </div>
+     </form>
+
+
+           <!-- formulario modal -->
+    <?php
+
+  }else{
+
+*/
+
+    // capturo email del usuario actual
         foreach(Users::userActual($usuario) as $userA){
           $emailuser = $userA[2];
 
@@ -41,13 +130,16 @@
         {
           if($i == $sillaElegida)
             {
+              ?>
+              <script>
+                console.log(<?php $sillaElegida ?>);
+                </script>
+              <?php
                 $disponibilidad[$i] = 0;
             }
         }
 
-      //  $conexion = new mysqli('localhost','root','','cinespmaria');
-      //  $consulta = $conexion->query("UPDATE peliculas SET disponibilidad = '" . $disponibilidad . "' WHERE nombre = '" . $pelicula. "'  and dia = '" . $dia . "' and sesion = '" . $sesion . "'");
-      Peliculas::actualizaButacas($disponibilidad,$pelicula,$sesion,$dia);
+       Peliculas::actualizaButacas($disponibilidad,$pelicula,$sesion,$dia);
 
         echo "<h1 class='text-primary'>¡Enhorabuena!</h1><br>";
         echo "<span class='text-dark'>Has adquirido una entrada. Para descargarla, haz click </span><a href='../controlador/pdfentrada.php?fila=" . ($fila + 1) . "&sala=" . $sala . "&pelicula=" .
@@ -95,7 +187,7 @@
 
 
         echo "<a href='../vista/indexComEntrada.php?usuario=" . $usuario . "&sesionActual=" . $sesion . "&peliculaActual=" . $pelicula ."&emailuser=". $emailuser . "&diaActual=" . $dia . "'><button class='btn-rClaro my-3'>COMPRAR MÁS ENTRADAS</button></a>";
-
+//  }
         ?>
     </body>
 </html>

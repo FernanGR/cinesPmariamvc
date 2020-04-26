@@ -80,15 +80,16 @@
                 <li class="nav-item">
                   <a class="nav-link" href="indexEditEmp.php"><i class="fas fa-user-edit pr-2"></i>Editar empleados</a>
                 </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="indexEditHorario.php"><i class="fas fa-user-clock pr-2"></i>Editar horarios</a>
+                </li>
                 <li class="nav-item">
                   <a class="nav-link" href="indexEditPeli.php"><i class="fas fa-film pr-2"></i>Editar Peliculas</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="indexEditFotos.php"><i class="fas fa-image pr-2"></i>Editar Imagenes Cartelera</a>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="indexEditHorario.php"><i class="fas fa-user-clock pr-2"></i>Editar horarios</a>
-                </li>
+
 
                <?php
                 }
@@ -170,14 +171,15 @@
         <a class="nav-link" href="indexEditEmp.php"><i class="fas fa-user-edit pr-2"></i>Editar empleados</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="indexEditHorario.php"><i class="fas fa-user-clock pr-2"></i>Editar horarios</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="indexEditPeli.php"><i class="fas fa-film pr-2"></i>Editar Peliculas</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="indexEditFotos.php"><i class="fas fa-image pr-2"></i>Editar Imagenes Cartelera</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="indexEditHorario.php"><i class="fas fa-user-clock pr-2"></i>Editar horarios</a>
-      </li>
+
       <li class="nav-item">
          <a class="nav-link text-primary" href="indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar Perfil</a>
       </li>

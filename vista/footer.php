@@ -25,7 +25,7 @@
           <div class="font-weight-bold">
             <h4>Contacto </h4>
           </div>
-           Telf: 96 664 43 23 <br/>
+           Telf: 96 677 66 88 <br/>
           Correo Electrónico: <br/>
           cinespmaria@gmail.com
         </div>
@@ -34,8 +34,8 @@
             <h4>Siguenos</h4>
            </div>
           <ul class="list-unstyled">
-            <li><a class="text-white" href="https://www.facebook.com/Cines-PMaria-103042904552265/"><i class="fab fa-facebook-f pr-1"></i>Facebook</a></li>
-            <li><a class="text-white" href="https://www.instagram.com/pmariacines/"><i class="fab fa-instagram pr-1"></i>Instagram</a></li>
+            <li><a class="text-white" href="https://www.facebook.com/Cines-PMaria-103042904552265/" target="_blank"><i class="fab fa-facebook-f pr-1"></i>Facebook</a></li>
+            <li><a class="text-white" href="https://www.instagram.com/pmariacines/" target="_blank"><i class="fab fa-instagram pr-1"></i>Instagram</a></li>
 
           </ul>
          </div>

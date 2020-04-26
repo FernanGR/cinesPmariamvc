@@ -64,7 +64,7 @@ if (empty($_GET['email'])){
   Hora: '. $sesion  . '</td>
   </tr>
   <tr>
-  <td colspan="2" style="border: 1px solid black;">Presente esta entrada en la taquilla</td>
+  <td colspan="2" style="border: 1px solid black;">Presente esta entrada en la puerta</td>
   </tr>
 
   </table>
@@ -115,13 +115,18 @@ try {
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo '<h2 class="text-success"><b>Entrada enviada!!</b></h2><br/>';
-    echo "<a href='../vista/indexComEntrada.php?sesionActual=" .  $sesion ."&peliculaActual=" . $pelicula ."&diaActual=" . $dia . "'><img src='../imagenes/comprar-mas.png'></a>";
-    //  echo "<a href='cinepagina.php?sesionActual=" . $sesion ."&peliculaActual=" . $pelicula ."&diaActual=" . $dia . "'><img src='imagenes/comprar-mas.png'></a>";
+    echo '<h2 class="text-primary"><b>Entrada enviada!!</b></h2><br/>';
+    $cadena = "?diaActual=". $dia."&sesionActual=" . $sesion . "&peliculaActual=" . $pelicula ;
+    echo "<a href='../vista/indexComEntrada.php'><button class='btn-rClaro my-3'>COMPRAR MÁS ENTRADAS</button></a>";
 
-      //echo "<a href='cinecomprada.php?sesionActual=" . $GET_['sesion'] . "'><img src='imagenes/comprar-mas.png'></a>";
-} catch (Exception $e) {
+  //  echo "<a href='../vista/indexComEntrada.php?sesionActual=" . $sesion . "&peliculaActual=" . $pelicula . "&diaActual=" . $dia . "'><button class='btn-rClaro my-3'>COMPRAR MÁS ENTRADAS</button></a>";
+
+
+
+ } catch (Exception $e) {
     echo "Mensaje NO enviado. Mailer Error: {$mail->ErrorInfo}";
+    echo "<a href='../vista/indexComEntrada.php'><button class='btn-rClaro my-3'>Volver</button></a>";
+
 }
 
 }

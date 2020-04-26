@@ -80,14 +80,15 @@
                   <a class="nav-link" href="vista/indexEditEmp.php"><i class="fas fa-user-edit pr-2"></i>Editar empleados</a>
              </li>
              <li class="nav-item">
+               <a class="nav-link" href="vista/indexEditHorario.php"><i class="fas fa-user-clock pr-2"></i>Editar horarios</a>
+             </li>
+             <li class="nav-item">
                  <a class="nav-link" href="vista/indexEditPeli.php"><i class="fas fa-film pr-2"></i>Editar Peliculas</a>
              </li>
              <li class="nav-item">
                <a class="nav-link" href="vista/indexEditFotos.php"><i class="fas fa-image pr-2"></i>Editar Imagenes Cartelera</a>
              </li>
-             <li class="nav-item">
-               <a class="nav-link" href="vista/indexEditHorario.php"><i class="fas fa-user-clock pr-2"></i>Editar horarios</a>
-             </li>
+
 
            <?php
            }
@@ -284,14 +285,15 @@
               <a class="nav-link" href="vista/indexEditEmp.php"><i class="fas fa-user-edit pr-2"></i>Editar empleados</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="vista/indexEditHorario.php"><i class="fas fa-user-clock pr-2"></i>Editar horarios</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="vista/indexEditPeli.php"><i class="fas fa-film pr-2"></i>Editar Peliculas</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="vista/indexEditFotos.php"><i class="fas fa-image pr-2"></i>Editar Imagenes Cartelera</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="vista/indexEditHorario.php"><i class="fas fa-user-clock pr-2"></i>Editar horarios</a>
-            </li>
+
             <li class="nav-item">
                <a class="nav-link text-primary" href="vista/indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar Perfil</a>
             </li>
@@ -342,7 +344,7 @@ Recomiendanos
       </div>
       <div class="modal-body">
         <!-- formulario modal -->
-        <form role="form" id="Formulario" action="controlador/recomiendanos.php"  style='width : 350px;' method="POST" class="text-primary">
+      <form role="form" id="Formulario" action="controlador/recomiendanos.php"  style='width : 350px;' method="POST" class="text-primary">
           <div class="form-group">
               <label class="control-label" for="Nombre">Tu nombre</label>
               <input type="text" class="form-control" id="Nombre" size="2" name="tuNombre" placeholder="Introduzca su nombre" required autofocus />
@@ -363,11 +365,7 @@ Recomiendanos
             <div id="respuesta" style="display: none;"></div>
         </form>
 
-        <script>
-        $('#myModal').on('shown.bs.modal', function () {
-          $('#myInput').trigger('focus')
-        })
-        </script>
+       
         <!-- formulario modal -->
 
   </div>

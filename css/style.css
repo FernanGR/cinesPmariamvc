@@ -93,4 +93,12 @@ textarea {
    a:hover {
     text-decoration : none;
   }
- 
+
+
+ .tablas{
+   overfloW: auto;
+ }
+
+ .bg-roClaro{
+   background-color: #cf434b !important;
+ }

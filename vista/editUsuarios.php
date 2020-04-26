@@ -23,15 +23,19 @@
 
         <br/>
 
-        <table style="border: 1px solid black;" width="95%">
-          <tr class="text-dark">
-            <th style="border: 1px solid black;" class="text-blue"><b>NOMBRE</b></th>
-            <th style="border: 1px solid black;" class="text-blue"><b>CONTRASEÑA</b></th>
-            <th style="border: 1px solid black;" class="text-blue"><b>EMAIL</b></th>
-            <th style="border: 1px solid black;" class="text-blue"><b>ROL</b></th>
-            <th style="border: 1px solid black;" class="text-blue"><b>ACCIÓN</b></th>
+        <!--    <table style="border: 1px solid black;" width="95%">    -->
+          <table class="table table-bordered table-hover table-sm text-center">
+          <thead>
+            <tr class='text-dark table-dark'>
+              <th style="border: 1px solid black;" class="text-blue"><b>NOMBRE</b></th>
+              <th style="border: 1px solid black;" class="text-blue"><b>CONTRASEÑA</b></th>
+              <th style="border: 1px solid black;" class="text-blue"><b>EMAIL</b></th>
+              <th style="border: 1px solid black;" class="text-blue"><b>ROL</b></th>
+              <th style="border: 1px solid black;" class="text-blue"><b>ACCIÓN</b></th>
            </tr>
+         </thead>
 
+<!--
           <style>
           table, tr, th, td{
           border: 1px solid #2b351f;
@@ -40,7 +44,7 @@
           padding-right: 2px;
               }
           </style>
-
+-->
           <?php
 
           foreach (Users::listaUsuarios() as $listauser) {
@@ -51,12 +55,13 @@
             <input type="hidden" name="oldUser" value="<?php  echo $listauser[0] ?> " />    <!-- nombre actual usuario -->
 
             <?php
-             echo "<td ><input name=newUser value =" . $listauser[0] . " style='width : 150px;' > </td>" ;   // nuevo nombre del usuario
-            echo "<td> <input name=contrasena value =" . $listauser[1] .  " style='width : 150px;' > </td>" ;     //nueva contraseña
+            echo "<tr>";
+             echo "<td ><input name=newUser value =" . $listauser[0] . " style='width : 150px;'  class='w-100 text-center'> </td>" ;   // nuevo nombre del usuario
+            echo "<td> <input name=contrasena value =" . $listauser[1] .  " style='width : 150px;'  class='w-100 text-center'> </td>" ;     //nueva contraseña
 
 
-            echo "<td> <input name=email value =" . $listauser[2] . "></td>";         //nuevo email
-            echo "<td> <input name=roll value =" . $listauser[3] .  " style='width : 120px;' > </td>" ;          //nuevo roll
+            echo "<td> <input name=email value =" . $listauser[2] . "  class=' text-center'></td>";         //nuevo email
+            echo "<td> <input name=roll value =" . $listauser[3] .  "    class='w-100 text-center'> </td>" ;          //nuevo roll
 
             echo "<td>";
              ?>

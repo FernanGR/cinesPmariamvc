@@ -51,7 +51,7 @@ $html = '
 Hora: '. $sesion  . '</td>
 </tr>
 <tr>
-<td colspan="2" style="border: 1px solid black;">Presente esta entrada en la taquilla</td>
+<td colspan="2" style="border: 1px solid black;">Presente esta entrada en la puerta</td>
 </tr>
 
 </table>

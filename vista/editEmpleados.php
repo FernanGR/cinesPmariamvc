@@ -16,24 +16,29 @@
 
 
         <br/>
-        <table style="border: 1px solid black;" width="95%">
-          <tr>
+        <!--    <table style="border: 1px solid black;" width="95%">    -->
+          <table class="table table-bordered table-hover table-sm text-center">
+          <thead>
+            <tr class='text-dark table-dark'>
             <th style="border: 1px solid black;" class="text-blue"><b>EMPLEADO</b></th>
             <th style="border: 1px solid black;" class="text-blue"><b>CONTRASEÑA</b></th>
             <th style="border: 1px solid black;" class="text-blue"><b>EMAIL</b></th>
             <th style="border: 1px solid black;" class="text-blue"><b>ROL</b></th>
-            <th style="border: 1px solid black;" class="text-blue"><b>ACTIVO</b></th>
-            <th style="border: 1px solid black;" class="text-blue"><b>HORARIO</b></th>
+            <th style="border: 1px solid black;" class="text-blue px-2"><b>ACTIVO</b></th>
+            <th style="border: 1px solid black;" class="text-blue px-2"><b>HORARIO</b></th>
             <th style="border: 1px solid black;" class="text-blue"><b>ACCIÓN</b></th>
 
           </tr>
+        </thead>
 
+        <!--
           <style>
             table, tr, th, td{
             border: 1px solid #2b351f;
             text-align: center;
             }
           </style>
+          -->
 
           <?php
 
@@ -45,12 +50,12 @@
 
 
             <?php
-              echo "<td ><input name=newUser value =" . $empleados[0] . " style='width : 100px;' > </td>" ;     // EMPLEADO
-              echo "<td> <input name=contrasena value =" . $empleados[1] .  " style='width : 150px;' > </td>" ; //CONTRASEÑA
-              echo "<td> <input name=email value =" . $empleados[2] .  " style='width : 180px;' > </td>" ;      //EMAIL
-              echo "<td> <input name=roll value =" . $empleados[3] .  " style='width : 100px;' > </td>" ;       //ROL
-              echo "<td> <input name=activo value =" . $empleados[4] .  " style='width : 100px;' > </td>" ;     //ACTIVO
-              echo "<td> <input name=horario value =" . $empleados[5] . " style='width : 100px;' > </td>" ;     //HORARIO
+              echo "<td><input name=newUser value =" . $empleados[0] . " class='w-100 text-center'> </td>" ;     // EMPLEADO
+              echo "<td> <input name=contrasena value =" . $empleados[1] .  " class='w-100 text-center' > </td>" ; //CONTRASEÑA
+              echo "<td> <input name=email value =" . $empleados[2] .  " style='width : 175px;' class=' text-center' > </td>" ;      //EMAIL
+              echo "<td> <input name=roll value =" . $empleados[3] .  " style='width : 100px;'  class='text-center'> </td>" ;       //ROL
+              echo "<td> <input name=activo value =" . $empleados[4] .  "   class='w-100 text-center'> </td>" ;     //ACTIVO
+              echo "<td> <input name=horario value =" . $empleados[5] . "  class='w-100 text-center' > </td>" ;     //HORARIO
 
               echo "<td>"
              ?>

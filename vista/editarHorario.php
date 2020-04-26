@@ -1,6 +1,6 @@
 <?php
 
-  
+
 ?>
 
     <body>
@@ -10,46 +10,53 @@
 
 
         <br/>
-        <table style="border: 1px solid black;" width="95%">
-          <tr>
-            <th style="border: 1px solid black;" class="text-blue p-1"><b>NOMBRE</b></th>
-            <th style="border: 1px solid black;" class="text-blue p-1"><b>LUNES</b></th>
-            <th style="border: 1px solid black;" class="text-blue p-1"><b>MARTES</b></th>
-            <th style="border: 1px solid black;" class="text-blue p-1"><b>MIÉRCOLES</b></th>
-            <th style="border: 1px solid black;" class="text-blue p-1"><b>JUEVES</b></th>
-            <th style="border: 1px solid black;" class="text-blue p-1"><b>VIERNES</b></th>
-            <th style="border: 1px solid black;" class="text-blue p-1"><b>SÁBADO</b></th>
-            <th style="border: 1px solid black;" class="text-blue p-1"><b>DOMINGO</b></th>
-          </tr>
+
+
+            <!--    <table style="border: 1px solid black;" width="95%">    -->
+              <table class="table table-bordered table-hover table-sm text-center">
+              <thead>
+                <tr class='text-dark table-dark'>
+
+                  <th style="border: 1px solid black;" class="text-blue p-1"><b>NOMBRE</b></th>
+                  <th style="border: 1px solid black;" class="text-blue p-1"><b>LUNES</b></th>
+                  <th style="border: 1px solid black;" class="text-blue p-1"><b>MARTES</b></th>
+                  <th style="border: 1px solid black;" class="text-blue p-1"><b>MIÉRCOLES</b></th>
+                  <th style="border: 1px solid black;" class="text-blue p-1"><b>JUEVES</b></th>
+                  <th style="border: 1px solid black;" class="text-blue p-1"><b>VIERNES</b></th>
+                  <th style="border: 1px solid black;" class="text-blue p-1"><b>SÁBADO</b></th>
+                  <th style="border: 1px solid black;" class="text-blue p-1"><b>DOMINGO</b></th>
+                  <th style="border: 1px solid black;" class="text-blue p-1"><b>ACCIÓN</b></th>
+
+              </tr>
+            </thread>
 
           <style>
-          table, tr, th, td{
-          border: 1px solid #2b351f;
-          text-align: center;
+              table, tr, th, td{
+              border: 1px solid #2b351f;
+              text-align: center;
               }
           </style>
 
           <?php
-        //  $conexion = new mysqli('localhost','root','','cinespmaria');
-        //  $resultados = $conexion->query("SELECT * FROM usuarios WHERE rol LIKE 'ROL_EMP'");
-        //  $horarios = $conexion->query("SELECT * FROM horarios");
+
            $PUESTO = ['Libre', 'Puerta', 'Bar', 'Taquilla', 'Refuerzo'];
 
 
           //while($resultado = $resultados->fetch_assoc()){
           foreach (Users::listaEmpleados() as $empleado) {
            ?>
+           <tbody>
             <tr>
               <form name = "formulario" method="POST" action= '../controlador/actualizarHorario.php'>
               <input type="hidden" name="emp" value="<?php  echo $empleado[5] ?> " />
 
           <?php
-             echo  "<td class='text-secondary'><b>" . $empleado[0] . "</b> </td>";
+             echo  "<td class='text-dark'><b>" . $empleado[0] . "</b> </td>";
 
       $hor = $empleado[5];
        foreach (Horario::listaHorEmp($hor) as $horarioEmp){
 
-        echo  "<td> <select name=slunes>" ;
+        echo  "<td > <select name=slunes>" ;
            for($x = 0; $x < 5; $x++){
 
             if($horarioEmp[1] == $PUESTO[$x])
@@ -189,7 +196,7 @@
 
        ?>
 
-    <input type="submit" value="actualizar horario" name="registrar" class="btn-bClaro p-1 m-1"/>
+    <input type="submit" value="actualizar horario" name="registrar" class="btn-bClaro p-1"/>
     </form>
 
     <?php
@@ -199,7 +206,7 @@
   } // fin horario foreach
 }
       ?>
-
+    </tbody>
         </table>
 
         <br/>
