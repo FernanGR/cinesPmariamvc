@@ -182,7 +182,7 @@
                   Paseo Els Tolls, S/N,
                   03502 Benidorm, Alicante </p>
                   <h3 class="text-success"><b>Telefono</b></h3>
-                  <p class="text-primary">96 664 43 23</p>
+                  <p class="text-primary">96 677 66 88</p>  
                   <h3 class="text-success"><b>Email</b></h3>
                   <p class="text-primary">cinespmaria@gmail.com</p>
               </div>

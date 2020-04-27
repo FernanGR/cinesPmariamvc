@@ -15,14 +15,14 @@
 
         <?php
 
-        $fila = (int)$_GET['fila'];
-        $silla = (int)$_GET['silla'];
-        $sesion = $_GET['sesion'];
-        $pelicula = $_GET['pelicula'];
-        $sala = (int) $_GET['sala'];
-        $usuario = $_GET['usuario'];
-        $dia = $_GET['dia'];
-      //  $modal = $_GET['modal'];
+        $fila = (int)$_POST['fila'];
+        $silla = (int)$_POST['silla'];
+        $sesion = $_POST['sesion'];
+        $pelicula = $_POST['pelicula'];
+        $sala = (int) $_POST['sala'];
+        $usuario = $_POST['usuario'];
+        $dia = $_POST['dia'];
+      //  $modal = $_POST['modal'];
 
 ?>
 
@@ -142,12 +142,33 @@
        Peliculas::actualizaButacas($disponibilidad,$pelicula,$sesion,$dia);
 
         echo "<h1 class='text-primary'>¡Enhorabuena!</h1><br>";
-        echo "<span class='text-dark'>Has adquirido una entrada. Para descargarla, haz click </span><a href='../controlador/pdfentrada.php?fila=" . ($fila + 1) . "&sala=" . $sala . "&pelicula=" .
-        $pelicula . "&dia=" . $dia.  "&silla=" . ($silla + 1) . "&sesion=" . $sesion . "&usuario=" . $usuario . "'>AQUÍ</a><br>";
+        echo "<span class='text-dark'>Has adquirido una entrada. Para descargarla, pulsa aqui:</span>";
+          ?>
+          <form name = "formVuelta" method="POST" action='../controlador/pdfentrada.php'>
+
+          <!-- para pasar las variables con el formulario -->
+            <input type="hidden" name="fila" value="<?php  echo ($fila + 1) ?> " />
+            <input type="hidden" name="silla" value="<?php  echo ($silla + 1) ?> " />
+            <input type="hidden" name="sala" value="<?php  echo $sala ?> " />
+            <input type="hidden" name="dia" value="<?php  echo $dia ?> " />
+            <input type="hidden" name="sesion" value="<?php  echo $sesion ?> " />
+            <input type="hidden" name="pelicula" value="<?php  echo $pelicula ?> " />
+            <input type="hidden" name="usuario" value="<?php echo $usuario ?> " />
+             <br/>
+            <input type="submit" value="Descargar Entrada" name="enviar" class="btn-bClaro"/>
+          </form>
+
+          <?php
+
+
+      //  </span><a href='../controlador/pdfentrada.php?fila=" . ($fila + 1) . "&sala=" . $sala . "&pelicula=" .
+  //      $pelicula . "&dia=" . $dia.  "&silla=" . ($silla + 1) . "&sesion=" . $sesion . "&usuario=" . $usuario . "'>AQUÍ</a><br>";
+
+
         echo "<hr/>";
         echo "<span class='text-dark'>Pulsa aqui para recibir la entrada en tu email: </span>";
          ?>
-            <form name = "formulario" method="GET" action='../vista/indexComprarMas.php'>
+            <form name = "formulario" method="POST" action='../vista/indexComprarMas.php'>
 
 
             <!-- para pasar las variables con el formulario -->
@@ -168,12 +189,12 @@
         echo "<hr/>";
         echo "O si rellenas este formulario, te la enviaremos a este correo electronico:";
         ?>
-        		<form name = "formulario" method="GET" action='../vista/indexComprarMas.php'>
+        		<form name = "formulario" method="POST" action='../vista/indexComprarMas.php'>
 
-              TU E-MAIL: <input type="text" name="email" placeholder="tu email" value="<?php if(isset($_GET['email'])) echo $_GET['email']; ?>" required/>
+              TU E-MAIL: <input type="text" name="email" placeholder="tu email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" required/>
 
             <!-- para pasar las variables con el formulario -->
-               <input type="hidden" name="fila" value="<?php  echo ($fila + 1) ?> " />
+              <input type="hidden" name="fila" value="<?php  echo ($fila + 1) ?> " />
               <input type="hidden" name="silla" value="<?php  echo ($silla + 1) ?> " />
               <input type="hidden" name="sala" value="<?php  echo $sala ?> " />
               <input type="hidden" name="dia" value="<?php  echo $dia ?> " />
@@ -185,8 +206,24 @@
             </form>
             <?php
 
+              // para comprar mas entradas (volver  salas)
+              ?>
+              <form name = "formVuelta" method="POST" action='../vista/indexComEntrada.php'>
 
-        echo "<a href='../vista/indexComEntrada.php?usuario=" . $usuario . "&sesionActual=" . $sesion . "&peliculaActual=" . $pelicula ."&emailuser=". $emailuser . "&diaActual=" . $dia . "'><button class='btn-rClaro my-3'>COMPRAR MÁS ENTRADAS</button></a>";
+              <!-- para pasar las variables con el formulario -->
+                <input type="hidden" name="sesionActual" value="<?php  echo $sesion ?>" />
+                <input type="hidden" name="peliculaActual" value="<?php  echo $pelicula ?>" />
+                <input type="hidden" name="emailuser" value="<?php  echo $emailuser ?>" />
+                <input type="hidden" name="diaActual" value="<?php  echo $dia ?>" />
+                <input type="hidden" name="usuario" value="<?php echo $usuario ?>" />
+                <br/>
+                <input type="submit" value="COMPRAR MÁS ENTRADAS!" name="enviar" class="btn-success my-2"/>
+              </form>
+
+
+            <?php
+
+//        echo "<a href='../vista/indexComEntrada.php?usuario=" . $usuario . "&sesionActual=" . $sesion . "&peliculaActual=" . $pelicula ."&emailuser=". $emailuser . "&diaActual=" . $dia . "'><button class='btn-rClaro my-3'>COMPRAR MÁS ENTRADAS</button></a>";
 //  }
         ?>
     </body>

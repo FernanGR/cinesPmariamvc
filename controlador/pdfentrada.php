@@ -15,13 +15,13 @@
   $documento->SetTitle("Entrada Cine");
   $documento->AddPage('p','A5');
 
-  $fila = $_GET['fila'];
-  $silla = $_GET['silla'];
-  $sesion = $_GET['sesion'];
-  $sala = $_GET['sala'];
-  $peliculas = $_GET['pelicula'];
-  $usuario = $_GET['usuario'];
-  $dia1 = $_GET['dia'];
+  $fila = $_POST['fila'];
+  $silla = $_POST['silla'];
+  $sesion = $_POST['sesion'];
+  $sala = $_POST['sala'];
+  $peliculas = $_POST['pelicula'];
+  $usuario = $_POST['usuario'];
+  $dia = $_POST['dia'];
   $imgPeli = Img::listaImg();
 
 
@@ -59,7 +59,7 @@ $html = '
 </tr>
 <tr>
 <td style="border: 1px solid black;"><b>FECHA</b></td>
-<td style="border: 1px solid black;">Día: ' .$dia1. '<br>
+<td style="border: 1px solid black;">Día: ' .$dia. '<br>
 Hora: '. $sesion  . '</td>
 </tr>
 <tr>
@@ -70,7 +70,7 @@ Hora: '. $sesion  . '</td>
 <br/>
 
 <div align="center">
-<img  src="'. $imgPeli[$sala-1][1]. '" width="320" height="130" />
+<img  src="'. $imgPeli[(int)$sala-1][1]. '" width="320" height="130" />
 </div>
 <br/> ';
 

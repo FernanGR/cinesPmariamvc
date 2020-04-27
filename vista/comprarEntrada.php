@@ -21,32 +21,32 @@
   echo "<hr/>";
   $nsala = 1;
  //película
-if(isset($_GET['peliculaActual']))
+if(isset($_POST['peliculaActual']))
 {
-    $peliculaActual = $_GET['peliculaActual'];
+    $peliculaActual = $_POST['peliculaActual'];
     $numSala = Peliculas::encuentraSala($peliculaActual);
     echo "<h3><b class='text-success'>PELICULA:</b><span class='text-primary'> " . $peliculaActual . " (Sala " . $numSala[0][0] . ")</span>  <h3>";
     $nsala = $numSala[0][0];
  }
 else
 {
-    $_GET['peliculaActual'] = null;
+    $_POST['peliculaActual'] = null;
     $peliA = Peliculas::nombrePeliculas();
     $nsala = 1;
-  $peliculaActual = $peliA[0][0];
+    $peliculaActual = $peliA[0][0];
     echo "<h3><b class='text-success'>PELICULA:</b> <span class='text-primary'>" . $peliculaActual . " (Sala 1) </span>  <h3>";
 }
 
 //sesion
-  if(isset($_GET['sesionActual']))
+  if(isset($_POST['sesionActual']))
   {
 
-      $sesionActual = $_GET['sesionActual'];
+      $sesionActual = $_POST['sesionActual'];
       echo "<h3><b class='text-success'>SESIÓN: </b> <span class='text-primary'>" . $sesionActual . "</span>  <h3>";
   }
   else
   {
-      $_GET['sesionActual'] = null;
+      $_POST['sesionActual'] = null;
 
     $sessiones = Peliculas::sesionesPeliculas();
     $sesionActual = $sessiones[0][0];
@@ -54,14 +54,14 @@ else
   }
 
   //dia
-  if(isset($_GET['diaActual']))
+  if(isset($_POST['diaActual']))
   {
-      $diaActual = $_GET['diaActual'];
+      $diaActual = $_POST['diaActual'];
       echo "<h3 ><b class='text-success'>DÍA: </b> <span class='text-primary'>" . $diaActual . "</span>  <h3>";
   }
   else
   {
-      $_GET['diaActual'] = null;
+      $_POST['diaActual'] = null;
       $diaActual = $dias[date("w")];
       echo "<h3><b class='text-success'>DÍA: </b> <span class='text-primary'>" . $diaActual . "</span>  <h3>";
   }
@@ -73,9 +73,9 @@ else
 
   // menu para elegir pelicula, dia y sesión
 ?>
- <h2 class='text-primary'><b> Elija una opción: </b></h2>
+ <h2 class='text-primary'><b> ELIJA UNA OPCIÓN: </b></h2>
  <hr/>
-<form method="GET" action="indexComEntrada.php" class="text-success">
+<form method="POST" action="indexComEntrada.php" class="text-success">
 
   <?php
 
@@ -317,7 +317,7 @@ foreach($sesionesSelect as $sesPeli)
      </div>
      <div class="modal-body">
        <!-- formulario modal -->
-     <form role="formx"  action="indexComprada.php"  method="GET" class="credit-card-div">
+     <form role="formx"  action="indexComprada.php"  method="POST" class="credit-card-div">
        <div class="panel panel-default" >
         <div class="panel-heading">
 

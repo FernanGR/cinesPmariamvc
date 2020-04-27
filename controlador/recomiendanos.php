@@ -5,7 +5,7 @@
   require_once '../modelo/conexion.php';
 
 ?>
- 
+
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -71,7 +71,7 @@ try {
     $mail->Body    = 'Hola ' .$nombre. ', soy  ' . $tuNombre . '. <br/>Te recomiendo visitar la página web de los cines Pmaria: "www.CinesPmaria.org".
     <br/>Aqui encontraras información de todo sobre el cine, las películas y horarios para que vengas a disfrutar una buena tarde de cine.
     <br/>Visitanos!! Te esperamos!!
-    <br/><img src="../imagenes/logoCpmaria.jpg/>"';
+    <br/>';
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();

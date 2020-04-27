@@ -21,20 +21,20 @@ require_once '../Modelo/imagenesModelo.php';
   $documento->SetTitle("Entrada Cine");
   $documento->AddPage('p','A5');
 
-  $fila = $_GET['fila'];
-  $silla = $_GET['silla'];
-  $sesion = $_GET['sesion'];
-  $usuario = $_GET['usuario'];
-  $pelicula = $_GET['pelicula'];
-  $dia = $_GET['dia'];
-  $sala = $_GET['sala'];
-
-if (empty($_GET['email'])){
+  $fila = $_POST['fila'];
+  $silla = $_POST['silla'];
+  $sesion = $_POST['sesion'];
+  $usuario = $_POST['usuario'];
+  $pelicula = $_POST['pelicula'];
+  $dia = $_POST['dia'];
+  $sala = $_POST['sala'];
+/*
+if (empty($_POST['email'])){
      echo "Rellena el campo del email para poder enviarte la entrada. <br/>";
      echo "<a href='../vista/indexComprada.php?fila=" . ((int)$fila-1) . "&silla=" . ((int)$silla-1) . "&sesion=" . $sesion . "&sala=". $sala . "&pelicula=" . $pelicula ."&dia=" . $dia. "&usuario=" . $usuario . "'><h2>Volver atras</h2></a>";
    }
    else{
-
+*/
    $imgPeli = Img::listaImg();
 
    $html = '
@@ -108,7 +108,7 @@ try {
     $mail->setFrom('CinesPmaria@gmail.com', 'Cines Pmaria');
   //  $mail->addAddress('tibofgr@gmail.com', 'Nombre');     // Add a recipient
 
-  $mail->addAddress($_GET["email"], $usuario);     //para que capture del formulario el email al que enviarlo
+  $mail->addAddress($_POST["email"], $usuario);     //para que capture del formulario el email al que enviarlo
     //$mail->addAddress('mfornes@iesperemaria.com');               // Name is optional
     //$mail->addReplyTo('bb@', 'Correo de respuesta');
     //$mail->addCC('cc@example.com');
@@ -125,20 +125,36 @@ try {
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
-    echo '<h2 class="text-primary"><b>Entrada enviada!!</b></h2><br/>';
-    $cadena = "?diaActual=". $dia."&sesionActual=" . $sesion . "&peliculaActual=" . $pelicula ;
-    echo "<a href='../vista/indexComEntrada.php'><button class='btn-rClaro my-3'>COMPRAR MÁS ENTRADAS</button></a>";
+    echo '<h2 class="text-primary"><b>Entrada enviada!!</b></h2>';
+    //$cadena = "?diaActual=". $dia."&sesionActual=" . $sesion . "&peliculaActual=" . $pelicula ;
+    //   echo "<a href='../vista/indexComEntrada.php'><button class='btn-rClaro my-3'>COMPRAR MÁS ENTRADAS</button></a>";
 
-  //  echo "<a href='../vista/indexComEntrada.php?sesionActual=" . $sesion . "&peliculaActual=" . $pelicula . "&diaActual=" . $dia . "'><button class='btn-rClaro my-3'>COMPRAR MÁS ENTRADAS</button></a>";
+    ?>
+      <form name = "formVuelta" method="POST" action='../vista/indexComEntrada.php'>
+
+      <!-- para pasar las variables con el formulario -->
+        <input type="hidden" name="sesionActual" value="<?php  echo $sesion ?>" />
+        <input type="hidden" name="peliculaActual" value="<?php  echo $pelicula ?>" />
+        <input type="hidden" name="emailuser" value="<?php  echo $emailuser ?>" />
+        <input type="hidden" name="diaActual" value="<?php  echo $dia ?>" />
+        <input type="hidden" name="usuario" value="<?php echo $usuario ?>" />
+        <br/>
+        <input type="submit" value="COMPRAR MÁS ENTRADAS!" name="enviar" class="btn-success"/>
+      </form>
+      <?php
+
+//    echo "<a href='../vista/indexComEntrada.php?sesionActual=" . $sesion . "&peliculaActual=" . $pelicula . "&diaActual=" . $dia . "'><button class='btn-rClaro my-3'>COMPRAR MÁS ENTRADAS</button></a>";
+
+      echo "<a href='../vista/indexComEntrada.php'><button class='btn-rClaro p-2 m-1'><b>COMPRAR MÁS ENTRADAS</b></button></a>";
 
 
 
  } catch (Exception $e) {
     echo "Mensaje NO enviado. Mailer Error: {$mail->ErrorInfo}";
-    echo "<a href='../vista/indexComEntrada.php'><button class='btn-rClaro my-3'>Volver</button></a>";
+    echo "<a href='../vista/indexComEntrada.php'><button class='btn-rClaro p-2 m-2'>Volver</button></a>";
 
 }
 
-}
+
 
 ?>
