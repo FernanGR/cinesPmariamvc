@@ -155,7 +155,7 @@
             <input type="hidden" name="pelicula" value="<?php  echo $pelicula ?> " />
             <input type="hidden" name="usuario" value="<?php echo $usuario ?> " />
              <br/>
-            <input type="submit" value="Descargar Entrada" name="enviar" class="btn-bClaro"/>
+            <input type="submit" value="Descargar Entrada" name="enviar" class="btn-bClaro px-1"/>
           </form>
 
           <?php
@@ -173,16 +173,16 @@
 
             <!-- para pasar las variables con el formulario -->
 
-              <input type="hidden" name="fila" value="<?php  echo ($fila + 1) ?> " />
-              <input type="hidden" name="silla" value="<?php  echo ($silla + 1) ?> " />
-              <input type="hidden" name="sala" value="<?php  echo $sala ?> " />
-              <input type="hidden" name="dia" value="<?php  echo $dia ?> " />
-              <input type="hidden" name="sesion" value="<?php  echo $sesion ?> " />
-              <input type="hidden" name="pelicula" value="<?php  echo $pelicula ?> " />
-              <input type="hidden" name="usuario" value="<?php echo $usuario ?> " />
-              <input type="hidden" name="email" value="<?php echo $emailuser ?> " />
+              <input type="hidden" name="fila" value="<?php echo ($fila + 1) ?>" />
+              <input type="hidden" name="silla" value="<?php echo ($silla + 1) ?>" />
+              <input type="hidden" name="sala" value="<?php echo $sala ?>" />
+              <input type="hidden" name="dia" value="<?php echo $dia ?>" />
+              <input type="hidden" name="sesion" value="<?php echo $sesion ?>" />
+              <input type="hidden" name="pelicula" value="<?php echo $pelicula ?>" />
+              <input type="hidden" name="usuario" value="<?php echo $usuario ?>" />
+              <input type="hidden" name="email" value="<?php echo $emailuser ?>" />
 
-               <input type="submit" value="Enviar a tu email!" name="enviar" class="btn-bClaro"/>
+               <input type="submit" value="Enviar a tu email!" name="enviar" class="btn-bClaro px-1"/>
             </form>
              <?php
 
@@ -194,15 +194,15 @@
               TU E-MAIL: <input type="text" name="email" placeholder="tu email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" required/>
 
             <!-- para pasar las variables con el formulario -->
-              <input type="hidden" name="fila" value="<?php  echo ($fila + 1) ?> " />
-              <input type="hidden" name="silla" value="<?php  echo ($silla + 1) ?> " />
-              <input type="hidden" name="sala" value="<?php  echo $sala ?> " />
-              <input type="hidden" name="dia" value="<?php  echo $dia ?> " />
-              <input type="hidden" name="sesion" value="<?php  echo $sesion ?> " />
-              <input type="hidden" name="pelicula" value="<?php  echo $pelicula ?> " />
-              <input type="hidden" name="usuario" value="<?php echo $usuario ?> " />
+              <input type="hidden" name="fila" value="<?php  echo ($fila + 1) ?>" />
+              <input type="hidden" name="silla" value="<?php echo ($silla + 1) ?>" />
+              <input type="hidden" name="sala" value="<?php echo $sala ?>" />
+              <input type="hidden" name="dia" value="<?php echo $dia ?>" />
+              <input type="hidden" name="sesion" value="<?php echo $sesion ?>" />
+              <input type="hidden" name="pelicula" value="<?php echo $pelicula ?>" />
+              <input type="hidden" name="usuario" value="<?php echo $usuario ?>" />
               <br/>
-              <input type="submit" value="ENVIAR!" name="enviar" class="btn-bClaro"/>
+              <input type="submit" value="ENVIAR!" name="enviar" class="btn-bClaro px-1"/>
             </form>
             <?php
 
@@ -217,7 +217,7 @@
                 <input type="hidden" name="diaActual" value="<?php  echo $dia ?>" />
                 <input type="hidden" name="usuario" value="<?php echo $usuario ?>" />
                 <br/>
-                <input type="submit" value="COMPRAR MÁS ENTRADAS!" name="enviar" class="btn-success my-2"/>
+                <input type="submit" value="COMPRAR MÁS ENTRADAS!" name="enviar" class="btn-success my-2 p-1"/>
               </form>
 
 

@@ -1,6 +1,6 @@
 
   <section class="row">
-  <div class="col-12 text-center mb-3">
+  <div class="col-sm-12 text-center mb-3">
 
 <?php
 
@@ -11,7 +11,7 @@
   $emailuser = $userA[0][2];
 
     echo "<h1 class='text-success'><b>COMPRAR ENTRADA </b></h1>";
-  echo "</div>";   // fin titulo
+    echo "</div>";   // fin titulo
 
 //actuales
   echo "<div class='col-sm-12 col-md-5 my-3 ml-5  mx-auto'>"; //lado izquierdo- entrada actual
@@ -40,7 +40,6 @@ else
 //sesion
   if(isset($_POST['sesionActual']))
   {
-
       $sesionActual = $_POST['sesionActual'];
       echo "<h3><b class='text-success'>SESIÓN: </b> <span class='text-primary'>" . $sesionActual . "</span>  <h3>";
   }
@@ -48,8 +47,8 @@ else
   {
       $_POST['sesionActual'] = null;
 
-    $sessiones = Peliculas::sesionesPeliculas();
-    $sesionActual = $sessiones[0][0];
+      $sessiones = Peliculas::sesionesPeliculas();
+      $sesionActual = $sessiones[0][0];
       echo "<h3><b class='text-success'>SESIÓN:</b> <span class='text-primary'>" . $sesionActual . " </span> <h3>";
   }
 
@@ -75,25 +74,45 @@ else
 ?>
  <h2 class='text-primary'><b> ELIJA UNA OPCIÓN: </b></h2>
  <hr/>
+<?php
+/*
+        if(isset($_POST['peliculaActual']))
+        {
+            $peliculaActual = $_POST['peliculaActual'];
+            echo $peliculaActual;
+        }
+        if(isset($_POST['sesionActual']))
+        {
+            $sesionActual = $_POST['sesionActual'];
+            echo $sesionActual;
+        }
+        if(isset($_POST['diaActual']))
+        {
+            $diaActual = $_POST['diaActual'];
+            echo $diaActual;
+        }
+        */
+ ?>
+
 <form method="POST" action="indexComEntrada.php" class="text-success">
 
   <?php
 
-  foreach(Users::userActual($usuario) as $userA){
+  foreach(Users::userActual($usuario) as $userA){  // email actual del usuario
     $emailuser = $userA[2];
-
   }
 
     $nombrePelis = Peliculas::nombrePeliculas();
 
   // peliculas
       echo "<span class='h3 font-weight-bold'> Película </span>";
-       echo "<select name='peliculaActual'>";
+      echo "<select name='peliculaActual'>";
 
 
 
        foreach(Peliculas::nombrePeliculas() as $peliName)
        {
+          echo $peliName[0];
 
            if($peliculaActual == $peliName[0])
            {
@@ -193,14 +212,11 @@ foreach($sesionesSelect as $sesPeli)
       $peliculaCompra = Peliculas::dispoPeliculas($peliculaActual,$sesionActual,$diaActual);
 
       $sala = (int)$peliculaCompra[0][0];
-      $filaReal= 0;
-      $sillaReal = 0;
-     if($peliculaCompra[0][0] == 1 || $peliculaCompra[0][0] == 2){      // salas 1 o 2  ( 200 butacas)
+      if($peliculaCompra[0][0] == 1 || $peliculaCompra[0][0] == 2){      // salas 1 o 2  ( 200 butacas)
 
      for($fila = 0; $fila < 10; $fila++)
      {
-       $filaReal = $fila;
-        $f = $fila+1;
+         $f = $fila+1;
 /*        if($f <10){
            echo "<span class='text-success h3' > " . $f . "</span>&nbsp&nbsp ";
          }else {
@@ -208,8 +224,7 @@ foreach($sesionesSelect as $sesPeli)
          }*/
          for($silla = 0; $silla < 20; $silla++)
          {
-            $sillaReal = $silla;
-            if($silla == 5 || $silla == 15)     // dejar espacios vacios entre laterales y central
+             if($silla == 5 || $silla == 15)     // dejar espacios vacios entre laterales y central
             {
               echo "&nbsp";echo "&nbsp";echo "&nbsp";echo "&nbsp";
             }
@@ -217,7 +232,7 @@ foreach($sesionesSelect as $sesPeli)
              if($peliculaCompra[0][3][$posicionSilla] == "1")
              {
 
-               ?>
+           ?>
 
 
          <?php
@@ -235,7 +250,9 @@ foreach($sesionesSelect as $sesPeli)
                {
                    echo "&nbsp";
                }
+
                  echo "<img src='../imagenes/silla_ocupada.jpg'  title='ocupada'>";
+
              }
          }
          echo "<br>";
@@ -260,7 +277,6 @@ foreach($sesionesSelect as $sesPeli)
 
                ?>
 
-               <!-- MODAL entrada -->
 
                <?php
                /*
@@ -288,7 +304,9 @@ foreach($sesionesSelect as $sesPeli)
                {
                    echo "&nbsp";
                }
-                 echo "<img src='../imagenes/silla_ocupada.jpg' title='ocupada'>";
+
+                 echo "<img src='../imagenes/silla_ocupada.jpg' title='ocupada' class='mr-1'>";
+
               }
          }
          echo "<br>";
@@ -296,7 +314,7 @@ foreach($sesionesSelect as $sesPeli)
 
    }
    echo "<br>";
-  echo "<div>";
+  echo "</div>";
 
     echo " <img src='". $rutaFoto[$nsala-1][1]. "' width='950px' height='350px' class='col-lg-12 d-none d-md-block '/><br/>" ;    // imagen pelicula actual
 

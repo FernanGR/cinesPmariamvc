@@ -1,5 +1,5 @@
 
- <h2 class="text-success"><b> Añade sugerencia de horarios </b></h2>
+ <h2 class="text-success"><b> Añade una sugerencia</b></h2>
 
    <form name = "formulario" method="POST" action= '../controlador/comentHorario.php'>
 

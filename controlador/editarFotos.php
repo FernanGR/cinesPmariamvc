@@ -34,7 +34,7 @@
           <input type="hidden" name="sala" value="<?php echo $sala ?> "/>
           <label><h3 class="text-primary"><b> Elija una imagen</b></h3></label>
            <input type="file" name="img_up">
-          <input value="Cambiar" type="submit"  class="btn-bClaro">
+          <input value="Cambiar" type="submit"  class="btn-bClaro p-1">
         </form>
   <!--    </td></tr>    -->
 </div>

@@ -84,7 +84,7 @@
                   <a class="nav-link" href="indexEditPeli.php"><i class="fas fa-film pr-2"></i>Editar Peliculas</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="indexEditFotos.php"><i class="fas fa-image pr-2"></i>Editar Imagenes Cartelera</a>
+                  <a class="nav-link" href="indexEditFotos.php"><i class="fas fa-image pr-2"></i>Cambiar Cartelera</a>
                 </li>
 
 
@@ -225,7 +225,7 @@
                   <a class="nav-link" href="indexEditHorario.php"><i class="fas fa-user-clock pr-2"></i>Editar horarios</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="indexEditFotos.php"><i class="fas fa-image pr-2"></i>Editar Imagenes Cartelera</a>
+                  <a class="nav-link" href="indexEditFotos.php"><i class="fas fa-image pr-2"></i>Cambiar Cartelera</a>
                 </li>
 
                 <li class="nav-item">

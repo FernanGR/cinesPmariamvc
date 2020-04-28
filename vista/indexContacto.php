@@ -79,7 +79,7 @@
                   <a class="nav-link" href="indexEditPeli.php"><i class="fas fa-film pr-2"></i>Editar Peliculas</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="indexEditFotos.php"><i class="fas fa-image pr-2"></i>Editar Imagenes Cartelera</a>
+                  <a class="nav-link" href="indexEditFotos.php"><i class="fas fa-image pr-2"></i>Cambiar Cartelera</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="indexEditHorario.php"><i class="fas fa-user-clock pr-2"></i>Editar horarios</a>
@@ -182,7 +182,7 @@
                   Paseo Els Tolls, S/N,
                   03502 Benidorm, Alicante </p>
                   <h3 class="text-success"><b>Telefono</b></h3>
-                  <p class="text-primary">96 677 66 88</p>  
+                  <p class="text-primary">96 677 66 88</p>
                   <h3 class="text-success"><b>Email</b></h3>
                   <p class="text-primary">cinespmaria@gmail.com</p>
               </div>

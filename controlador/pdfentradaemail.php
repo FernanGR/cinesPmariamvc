@@ -133,19 +133,19 @@ try {
       <form name = "formVuelta" method="POST" action='../vista/indexComEntrada.php'>
 
       <!-- para pasar las variables con el formulario -->
-        <input type="hidden" name="sesionActual" value="<?php  echo $sesion ?>" />
-        <input type="hidden" name="peliculaActual" value="<?php  echo $pelicula ?>" />
-        <input type="hidden" name="emailuser" value="<?php  echo $emailuser ?>" />
-        <input type="hidden" name="diaActual" value="<?php  echo $dia ?>" />
+        <input type="hidden" name="sesionActual" value="<?php echo $sesion ?>" />
+        <input type="hidden" name="peliculaActual" value="<?php echo $pelicula ?>" />
+        <input type="hidden" name="emailuser" value="<?php echo $emailuser ?>" />
+        <input type="hidden" name="diaActual" value="<?php echo $dia ?>" />
         <input type="hidden" name="usuario" value="<?php echo $usuario ?>" />
         <br/>
-        <input type="submit" value="COMPRAR MÁS ENTRADAS!" name="enviar" class="btn-success"/>
+        <input type="submit" value="COMPRAR MÁS ENTRADAS!" name="enviar" class="btn-success p-1"/>
       </form>
       <?php
 
 //    echo "<a href='../vista/indexComEntrada.php?sesionActual=" . $sesion . "&peliculaActual=" . $pelicula . "&diaActual=" . $dia . "'><button class='btn-rClaro my-3'>COMPRAR MÁS ENTRADAS</button></a>";
 
-      echo "<a href='../vista/indexComEntrada.php'><button class='btn-rClaro p-2 m-1'><b>COMPRAR MÁS ENTRADAS</b></button></a>";
+    //  echo "<a href='../vista/indexComEntrada.php'><button class='btn-rClaro p-2 m-1'><b>COMPRAR MÁS ENTRADAS</b></button></a>";
 
 
 

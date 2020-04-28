@@ -1,4 +1,4 @@
- 
+
           <?php
          //session_start();
             $usuario = $_SESSION['usuario'];
@@ -17,5 +17,5 @@
             echo "<td> <input name=newEmail value =" . $userAct[0][2] . " style='width : 180px;'></td><br/>";
              ?>
              <br/>
-              <input type="submit" value="Editar Perfil" name="editarPerfil" class="btn-success"/>
+              <input type="submit" value="Actualizar Perfil" name="editarPerfil" class="btn-success"/>
           </form>
