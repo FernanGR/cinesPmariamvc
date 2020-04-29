@@ -215,8 +215,8 @@
   }else {   // si esta logueado, no sale carrousel. sale bienvenida
      echo "<div>";
      echo "<h1 class='text-center text-success h1'><b>¡Bienvenid@, " . $userName . "!</b></h1>";
-     echo "<h2 class='text-center text-primary'>Estamos encantados de tenerte de vuelta.</h2>";
-     echo "<h2  class='text-center text-primary'> Hoy es ".$dias[date("w")] . ".<h2>";
+     echo "<h2 class='text-center text-primary'>Estamos encantados de tenerte de vuelta!</h2>";
+     echo "<h2  class='text-center text-primary'> Hoy es ".$dias[date("w")] . "<h2>";
      echo "</div>";
   }
      ?>

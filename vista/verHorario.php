@@ -43,7 +43,7 @@
 
              if($empleados[4] == 1){ // para ver si esta activo
               if($empleados[0] == $empleadoActual){
-               echo "<tr class=' table-warning text-center'>";
+               echo "<tr class='table-primary text-center'>";
              }else{
                echo "<tr class='text-muted table-muted text-center'>";
          }
