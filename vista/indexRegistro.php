@@ -121,7 +121,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="indexContacto.php"><i class="fas fa-search-location pr-2"></i>Contacto</a>
               </li>
-                  <li class="nav-item">
+                  <li class="nav-item active">
                     <a class="nav-link" href="../vista/indexLogin.php"><i class="fas fa-sign-in-alt pr-2"></i>Login</a>
                   </li>
               <?php

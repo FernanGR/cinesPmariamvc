@@ -18,7 +18,7 @@
              <?php if(isset($_POST['registrar']) && empty($_POST['contraseña'])) echo "<span style='color:red'><--¡Debes introducir un password!</span>"; ?><br>
                Email:<input type="email" name="email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" required /><br>
                <?php if(isset($_POST['registrar']) && empty($_POST['email'])) echo "<span style='color:red'><--¡Debes introducir un email!</span>"; ?>
-             <input type="submit" value="Registrar Usuario" name="registrar" class="btn-success mt-2"/>
+             <input type="submit" value="Registrar Usuario" name="registrar" class="btn-success mt-2 px-1"/>
          </form>
 
         <br/>

@@ -54,7 +54,7 @@
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav text-center">
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="../index.php"><i class="fas fa-home pr-2"></i>Inicio</a>
               </li>
 
@@ -105,7 +105,7 @@
                  <li class="nav-item">
                    <a class="nav-link" href="indexCartelera.php"><i class="fas fa-video pr-2"></i>Cartelera</a>
                  </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                      <a class="nav-link" href="../vista/indexComEntrada.php"><i class="fas fa-ticket-alt pr-2"></i>Comprar Entrada</a>
                </li>
                 <?php

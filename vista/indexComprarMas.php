@@ -107,7 +107,7 @@
                  <li class="nav-item">
                    <a class="nav-link" href="indexCartelera.php"><i class="fas fa-video pr-2"></i>Cartelera</a>
                  </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                      <a class="nav-link" href="../vista/indexComEntrada.php"><i class="fas fa-ticket-alt pr-2"></i>Comprar Entrada</a>
                </li>
                 <?php

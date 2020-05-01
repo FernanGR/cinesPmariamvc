@@ -360,11 +360,11 @@ foreach($sesionesSelect as $sesPeli)
          <div class="row ">
                   <div class="col-md-3 col-sm-3 col-xs-3">
                       <span class="help-block text-muted small-font" > Mes cad.</span>
-                      <input type="text" class="form-control" placeholder="MM" pattern="[0-2]{2}" maxlength="2" required/>
+                      <input type="text" class="form-control" placeholder="MM" pattern="[0-1][0-2]" maxlength="2" required/>
                   </div>
              <div class="col-md-3 col-sm-3 col-xs-3">
                       <span class="help-block text-muted small-font" >  Año cad.</span>
-                      <input type="text" class="form-control" placeholder="YY" pattern="[0-9]{2}" maxlength="2" required/>
+                      <input type="text" class="form-control" placeholder="YY" pattern="[2-9][2-9]" maxlength="2" required/>
                   </div>
             <div class="col-md-3 col-sm-3 col-xs-3">
                    <span class="help-block text-muted small-font" >  CCV</span>

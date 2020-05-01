@@ -45,8 +45,9 @@
         header("Location:indexLogin.php");
       }
      ?>
-    <!-- navbar -->
-    <header class="sticky-top">
+
+     <!-- navbar  HEADER -->
+     <header class="sticky-top">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <a class="navbar-brand text-white" href="../index.php">
@@ -61,7 +62,6 @@
               <li class="nav-item">
                 <a class="nav-link" href="../index.php"><i class="fas fa-home pr-2"></i>Inicio</a>
               </li>
-
               <?php
                 if(!isset($rol)){
               ?>
@@ -110,7 +110,6 @@
                 <li class="nav-item">
                   <a class="nav-link" href="indexEditPerfil.php"><i class="fas fa-user-edit pr-2"></i>Editar perfil</a>
                 </li>
-
                 <?php
               }
               if($rol == "ROL_USER"){  //user
@@ -138,6 +137,7 @@
                     <a class="nav-link" href="../controlador/logout.php"><i class="fas fa-sign-out-alt pr-2"></i>Logout</a>
                   </li>
 
+
            <?php
               }
            ?>
@@ -145,6 +145,9 @@
           </div>
         </nav>
       </header>
+
+
+      <!-- MAIN -->
 
 <main class="mt-3 mx-5 container">
 

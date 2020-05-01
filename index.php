@@ -476,7 +476,7 @@ Recomiendanos
             <div class="font-weight-bold">
               <h4>Contacto </h4>
             </div>
-             Telf: 96 664 43 23 <br/>
+             Telf: 96 677 66 88 <br/>
             Correo Electrónico: <br/>
             cinespmaria@gmail.com
           </div>

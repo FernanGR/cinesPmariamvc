@@ -11,7 +11,7 @@
             <br/>
             Email:<input type="email" name="email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>" required/>
             <br/>
-              <input type="submit" value="Registrar Empleado" name="registrar" class="btn-success mt-2"/>
+              <input type="submit" value="Registrar Empleado" name="registrar" class="btn-success mt-2 px-1"/>
          </form>
 
 
