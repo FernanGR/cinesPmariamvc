@@ -3,7 +3,7 @@
    require_once '../modelo/conexion.php';
 
    $empleado = $_POST['user'];
-   Users::eliminarUser($empleado);
+   Users::eliminarEmp($empleado);
    header("Location:../vista/indexEditEmp.php");
 
  ?>

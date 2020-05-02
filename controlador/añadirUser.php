@@ -10,9 +10,9 @@
 
        $yaesta = 0;
 
-       $lista = Users::listaUsuarios();
+       $lista = Users::listaTodos();
        foreach ($lista as $user) {
-         if($user[0] == $usuario){
+         if(strcasecmp($user[0], $usuario) == 0){
            echo'<script type="text/javascript">
                  alert("El nombre de usuario ya esta en uso. \nElige otro.");
                  window.location.href="../vista/indexEditUsers.php";

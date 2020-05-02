@@ -46,6 +46,17 @@
 
     }
 
+    //elimina un empleado pasandole nombre de este por parametro
+    public static function eliminarEmp($emp){
+      $con = new Conexion();
+      $empleado = $con->ejecutarConsulta("SELECT * FROM usuarios WHERE usuario='$emp'");
+      $horario = $empleado[0][5];
+      $con->ejecutarActualizacion("DELETE FROM usuarios WHERE usuario='$emp'");
+      $con->ejecutarActualizacion("DELETE FROM horarios WHERE horario='$horario'");
+      $con->cerrarConexion();
+
+    }
+
     //  añade un empleado nuevo pasandole nombre, contraseña, email y rol. añade un nuevo horario a la bbdd horarios
     public static function añadirEmp($user,$pass,$email,$rol){
 
