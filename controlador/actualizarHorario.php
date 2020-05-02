@@ -1,7 +1,6 @@
 <?php
 
-      require_once '../Modelo/horarioModelo.php';
-
+      require_once '../modelo/horarioModelo.php';
 
        $empleado = $_POST['emp'];
        $lunes = $_POST['slunes'];

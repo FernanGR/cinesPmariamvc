@@ -1,8 +1,8 @@
 <?php
-  require_once 'Modelo/peliculaModelo.php';
+  require_once 'modelo/peliculaModelo.php';
   require_once 'modelo/conexion.php';
-  require_once 'Modelo/userModelo.php';
-  require_once 'Modelo/imagenesModelo.php';
+  require_once 'modelo/userModelo.php';
+  require_once 'modelo/imagenesModelo.php';
 
   //array con los dias
   $dias = array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado");

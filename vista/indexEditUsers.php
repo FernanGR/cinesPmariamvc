@@ -1,7 +1,7 @@
 <?php
-  require_once '../Modelo/peliculaModelo.php';
+  require_once '../modelo/peliculaModelo.php';
   require_once '../modelo/conexion.php';
-  require_once '../Modelo/userModelo.php';
+  require_once '../modelo/userModelo.php';
   //require_once '../model/imagenesModelo.php';
   ?>
 <!doctype html>

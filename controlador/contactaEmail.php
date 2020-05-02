@@ -1,7 +1,7 @@
 <?php
 
-  require_once '../Modelo/horarioModelo.php';
-  require_once '../Modelo/userModelo.php';
+  require_once '../modelo/horarioModelo.php';
+  require_once '../modelo/userModelo.php';
   require_once '../modelo/conexion.php';
 
 ?>
