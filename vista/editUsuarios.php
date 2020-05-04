@@ -61,7 +61,7 @@
 
 
             echo "<td> <input name=email value =" . $listauser[2] . "  class=' text-center'></td>";         //nuevo email
-            echo "<td> <input name=roll value =" . $listauser[3] .  "    class='w-100 text-center'> </td>" ;          //nuevo roll
+            echo "<td> <input name=roll value =" . $listauser[3] .  "  style='width : 100px;'   class='text-center'> </td>" ;          //nuevo roll
 
             echo "<td>";
              ?>

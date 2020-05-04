@@ -132,14 +132,14 @@
      <!-- MAIN -->
 
 
-<main class="mt-3 mx-5 container">
+<main class="mt-3 ">
 
 <!-- lado izquierda -->
 
 
   <!-- medio -->
 <div class="row">
-  <div class="col-12 mt-3 mx-5 text-sm-left text-md-center">
+  <div class="col-12 mt-3 text-sm-left text-md-center">
      <?php
          include("login.php");
      ?>

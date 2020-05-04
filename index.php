@@ -358,7 +358,24 @@ Recomiendanos
                 <label class="control-label" for="Correo">Dirección de Correo Electrónico</label>
                 <input type="email" class="form-control" id="Correo" name="Correo" placeholder="Introduzca su correo electrónico" required />
             </div>
+            <div class="form-group">
+              <label for="peli">¿Que película recomiendas?</label>
 
+              <select name="Peli">
+                 
+                <?php
+                for($i = 0; $i<6;$i++){
+                  ?>
+                    <option value="<?php echo  $infoPelis[$i][1] ?>"><?php echo  $infoPelis[$i][1] ?></option>
+
+                  <?php
+
+                   }
+
+                 ?>
+
+              </select>
+            </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-success" value="Enviar">
              </div>
@@ -390,9 +407,10 @@ Recomiendanos
 
          <?php
          for($i = 0; $i<6;$i++){      // cartelera actual
-
-           echo "<img src='vista/".$cartelera[$i][1]." 'class='img-fluid m-1' style='width:300px;height:400px' title='" . $infoPelis[$i][1]. "\nSesiones: 18.00-20.30-23.00'/>";
-
+           echo "<div class='imgPortada'>";
+           echo "<img src='vista/".$cartelera[$i][1]." 'class='img-fluid m-1 tip' style='width:300px;height:400px'  />";
+           echo "<span class='imgText'>" . $infoPelis[$i][1]. " <br> Sesiones: 18.00-20.30-23.00</span>";
+           echo "</div>";
         }
           ?>
 

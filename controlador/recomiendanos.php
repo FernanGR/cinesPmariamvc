@@ -28,7 +28,7 @@ session_start();
 $tuNombre = $_POST["tuNombre"];
 $nombre = $_POST["Nombre"];
 $correo = $_POST["Correo"];
-
+$peli = $_POST['Peli'];
 
 
 //$nombreEntrada = "/../entradas/entrada-" . $usuario . ".pdf";
@@ -67,8 +67,9 @@ try {
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Recomendacion Cine';
-    $mail->Body    = 'Hola ' .$nombre. ', soy  ' . $tuNombre . '. <br/>Te recomiendo visitar la página web de los cines Pmaria: "www.CinesPmaria.org".
+    $mail->Body  = 'Hola ' .$nombre. ', soy  ' . $tuNombre . '. <br/>Te recomiendo visitar la página web de los cines Pmaria: "www.CinesPmaria.org".
     <br/>Aqui encontraras información de todo sobre el cine, las películas y horarios para que vengas a disfrutar una buena tarde de cine.
+    <br/> Y bueno, una película que esta muy bien y he visto es: ' . $peli . '.
     <br/>Visitanos!! Te esperamos!!
     <br/>';
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';

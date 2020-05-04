@@ -9,7 +9,7 @@
             <?php if(isset($_POST['registrar']) && empty($_POST['contraseña'])) echo "<span style='color:red'><--¡Debes introducir un password!</span>"; ?><br>
               Email:<input type="email" name="email" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>"  required/>
               <?php if(isset($_POST['registrar']) && empty($_POST['email'])) echo "<span style='color:red'><--¡Debes introducir un email!</span>"; ?><br>
-            <input type="submit" value="Registrarme" name="registrar" class="btn-success"/>
+            <input type="submit" value="Registrarme" name="registrar" class="btn-success px-1"/>
         </form>
           <p>¿Ya estas registrado? Ve al <a href="<?php echo "indexLogin.php"; ?>">¡LOGIN!</a></p>
     </body>

@@ -140,9 +140,9 @@
       </header>
 
 
-<main class="mt-3 mx-5  container">
+<main class="mt-3 ">
 
-  <section class="row mt-3 mx-5">
+  <section class="row mt-3">
     <!-- lado izquierda -->
 
   <div class="col-md-1 d-none d-lg-block  mt-3 ">

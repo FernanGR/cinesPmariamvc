@@ -47,7 +47,7 @@
                 <label for="contraseña">Contraseña</label>
                 <input type="password" name="contraseña" value="<?php if(isset($_POST['contraseña'])) echo $_POST['contraseña']; ?>" required />
                 <?php if(isset($_POST['entrar']) && empty($_POST['contraseña'])) echo "<br/><span style='color:red'>¡Debes introducir tu contraseña!</span>"; ?><br>
-                <input type="submit" value="Entrar" name="entrar" class="btn-success"/><br>
+                <input type="submit" value="Entrar" name="entrar" class="btn-success px-1"/><br>
             </form>
             <p>¿Aún no te has registrado?<a href="<?php echo "indexRegistro.php"; ?>">¡Regístrate!</a></p>
 
