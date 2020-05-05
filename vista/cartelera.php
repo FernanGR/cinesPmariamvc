@@ -56,14 +56,18 @@
 
                 </div>
 
-
+                <script>
+                    var x = [];
+                    var y = [];
+                    var c = 1;
+                </script>
 
                 <div class="col-sm-12 col-md-6 mt-3">   <!-- imagen de película -->
                   <?php
                      echo "<img src='".$fotoPelis[$i][1]."' width=200px/><br/>";
                    ?>
                 </div>
-                <div class="col-sm-12 col-md-6 mt-3">   <!-- descripción de la película -->
+                <div class="col-sm-12 col-md-6 mt-3">   <!-- Valoración de la película -->
                   <?php
                      echo "<h3>".$infoPelis[$i][2]."</h3><br/>";
                      $cont = 0;
@@ -73,11 +77,79 @@
                      foreach($vPeli as $vPelicula){
                        $valoracion = $valoracion + (int)($vPelicula[2]);
                        $cont +=1;
+                        ?>
+                          <script>
+                              y.push('<?php echo (int)($vPelicula[2]) ?>');
+                              x.push(c++);
+                          </script>
+                        <?php
                      }
+
+
                      $valFinal = (double)($valoracion/$cont);
                      echo "<h4 class='text-blue'> Votos: " . $cont ."</h4>";
                      echo "<h4 class='text-blue'> Puntuacion: " . round($valFinal,1) ."</h4>";
+                     echo "<div class='valPeli'>";
+                     echo "<input type='button' class='btn-success px-1' value='+Info')>";
 
+                     ?>
+
+                      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                     <div style="width: 100px"></div>
+                      <div id="<?php echo $infoPelis[$i][2] ?>" class="histograma"  ></div>
+                   </div>
+                     <script>
+                           var histograma = [
+                             {
+                               x,
+                               y,
+                               type: 'bar',
+                           }
+                           ];
+                           var layout = {
+                             plot_bgcolor: " #eaffe0",
+                             paper_bgcolor: '#f4f6f6',
+                              autosize: false,
+                              width: 350,
+                              height: 350,
+                            title:{
+                                          fillcolor: '##A52A2A',
+                            text: '<b>Histograma de votos</b>',
+                            font: {
+                               family: 'Courier New, monospace',
+                               size: 18,
+                               color: ' #295af5  '
+                              }
+                            },
+                            xaxis: {
+
+                              title: {
+                                text: 'Núm. Votos',
+                                font: {
+                                  family: 'Courier New, monospace',
+                                  size: 12,
+                                  color: ' #0da51b  '
+                                }
+                              },
+                            },
+                            yaxis: {
+                              title: {
+                                text: 'Votos',
+                                font: {
+                                  family: 'Courier New, monospace',
+                                  size: 12,
+                                  color: ' #0da51b  '
+                                }
+                              }
+                            }
+                        };
+
+                           Plotly.newPlot('<?php echo $infoPelis[$i][2] ?>', histograma, layout );
+                           x = [];
+                           y = [];
+                     </script>
+                     <?php
+                          echo "</div>";
                    }else{
                      echo "<h4 class='text-blue'> Puntuacion: Sin Valorar</h4>";
 
