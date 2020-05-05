@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-03-2020 a las 21:51:46
+-- Tiempo de generación: 05-05-2020 a las 14:45:40
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
 
@@ -42,15 +42,25 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`usuario`, `contrasena`, `email`, `ROL`, `activo`, `horario`) VALUES
-('antonio', 'antonio', 'antonio@gmail.com', 'ROL_EMP', 1, 2),
-('benja', 'benja', 'benja@gmail.com', 'ROL_EMP', 1, 1),
-('e1', 'e1', 'e1@gmail.com', 'ROL_EMP', 1, 4),
-('e4', 'e4', 'e4@gmail.com', 'ROL_EMP', 1, 5),
-('ester', 'ester', 'ester@gmail.com', 'ROL_USER', 1, -1),
-('f', 'f', 'pogotib01@gmail.com', 'ROL_USER', 1, -1),
-('fer', 'fer', 'pogotib01@gmail.com', 'ROL_ADMIN', 1, -1),
-('tonin', 'tonin', 'tonin@gmail.com', 'ROL_EMP', 1, 3),
-('ximo', 'ximo', 'ximo@gmail.com', 'ROL_USER', 1, -1);
+('1', '1', '11@gmail.com', 'ROL_USER', 0, -1),
+('Adolfo', 'adolfo', 'ad@gmail.com', 'ROL_USER', 1, -1),
+('alfredo', 'alfredo', 'antoni@gmail.com', 'ROL_USER', 0, 0),
+('alonso', 'alonso', '12@gmail.com', 'ROL_USER', 1, -1),
+('Antonio', 'antonio', 'antoni@gmail.com', 'ROL_EMP', 1, 2),
+('Benja', 'benja', 'benja@gmail.com', 'ROL_EMP', 1, 1),
+('Fer', 'fer', 'cinespmaria@gmail.com', 'ROL_ADMIN', 1, -1),
+('Fran', 'fran', 'fran@gmail.com', 'ROL_EMP', 1, 8),
+('Javi', 'javi', 'javi@gmail.com', 'ROL_EMP', 1, 7),
+('Javier', 'javier', '11@gmail.com', 'ROL_USER', 0, 0),
+('jose', 'jose', '2@gmail.com', 'ROL_USER', 0, 0),
+('josema', 'josema', 'jose@gmail.com', 'ROL_USER', 1, -1),
+('Juan', 'juan', 'juan@gmail.com', 'ROL_EMP', 1, 4),
+('pak', 'pak', 'p@gmail.com', 'ROL_USER', 1, -1),
+('Raquel', 'raquel', 'w@gmail.com', 'ROL_USER', 0, -1),
+('ruben', 'ruben', '12@gmail.com', 'ROL_USER', 1, -1),
+('Samuel', 'samuel', 'swww@gmail.com', 'ROL_USER', 1, -1),
+('Spawn', 'spawn', 'spawn@gmail.com', 'ROL_EMP', 1, 6),
+('Tonin', 'tonin', 'pogotib02@gmail.com', 'ROL_EMP', 1, 3);
 
 --
 -- Índices para tablas volcadas
