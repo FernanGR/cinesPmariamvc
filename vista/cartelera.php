@@ -7,8 +7,7 @@
             $infoPelis = Peliculas::listaPeliculas();
             $fotoPelis = Img::listaImg();
 
-           //foreach (Peliculas::listaPeliculas() as $pelis) {
-           for($i = 0; $i<6;$i++){
+            for($i = 0; $i<6;$i++){
 
 
             ?>
@@ -94,9 +93,7 @@
 
                      ?>
 
-                      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-                     <div style="width: 100px"></div>
-                      <div id="<?php echo $infoPelis[$i][2] ?>" class="histograma"  ></div>
+                       <div id="<?php echo $infoPelis[$i][1] ?>" class="histograma"  ></div>
                    </div>
                      <script>
                            var histograma = [
@@ -107,7 +104,7 @@
                            }
                            ];
                            var layout = {
-                             plot_bgcolor: " #eaffe0",
+                             plot_bgcolor: " #f4f6f6",   // eaffe0
                              paper_bgcolor: '#f4f6f6',
                               autosize: false,
                               width: 350,
@@ -144,16 +141,17 @@
                             }
                         };
 
-                           Plotly.newPlot('<?php echo $infoPelis[$i][2] ?>', histograma, layout );
+                           Plotly.newPlot('<?php echo $infoPelis[$i][1] ?>', histograma, layout );
                            x = [];
                            y = [];
                      </script>
                      <?php
-                          echo "</div>";
+
                    }else{
                      echo "<h4 class='text-blue'> Puntuacion: Sin Valorar</h4>";
 
                    }
+                     echo "</div>";
                    ?>
 
                 </div>
@@ -162,30 +160,8 @@
 
 
 
-
-
-            <?php
-            /*
-            echo " <table>";
-            echo "<tr><td width='40%'>";
-            echo "<h1><b>Sala " .$infoPelis[$i][0]."</b></h1> ";
-            echo "</td><td style='text-align:left;'>";
-            echo "<h2><b>".$infoPelis[$i][1]."</b></h2> ";
-            echo "</td></tr>";
-            echo "<tr><td colspan='2' style='text-align:center;'>";
-            echo "<img src='".$fotoPelis[$i][1]."' width=200px/><br/>";
-            echo "</td></tr>";
-            echo "<tr><td colspan='2' style='text-align:center;'>";
-            echo "<h3>".$infoPelis[$i][2]."</h3><br/>";
-            echo "</td></tr>";
-            echo "</table>";
-*/
-             ?>
-
-
           <?php
 
-        //  echo "</td></tr>";
 
         }
 

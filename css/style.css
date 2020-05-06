@@ -143,13 +143,18 @@ textarea {
       display: none !important;
 }
 
+
+
 .histograma{
   opacity: 0;
   height: 0;
   transition: all 2s;
  }
 
+/*
 .valPeli:active .histograma {
   opacity:1;
   height: 320px;
 }
+
+*/

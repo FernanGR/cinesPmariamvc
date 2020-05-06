@@ -17,6 +17,24 @@ function init(){
 
 
   })
+
+
+
+
+  $(".valPeli").click(function(){
+    var actual = $(this);
+    var histog = actual.children().eq(1);
+
+    if(histog.css("opacity")==0){
+      histog.css("opacity","1");
+      histog.height(300);
+    }else{
+      histog.css("opacity","0");
+      histog.height(0);
+
+    }
+ 
+  })
 /*
       var imgButaca = document.getElementsByClassName("imgFS");
       imgButaca.addEventListener("click",function(e){
