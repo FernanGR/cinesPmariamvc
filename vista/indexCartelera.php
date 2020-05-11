@@ -247,10 +247,10 @@
       <img src="../imagenes/descuento102.jpg" class="img-fluid my-1">
     </li>
     <li>
-      <a href="https://www.facebook.com/Cines-PMaria-103042904552265/"><img src="../imagenes/facebook.jpg" class="img-fluid my-1"></a>
+      <a href="https://www.facebook.com/Cines-PMaria-103042904552265/" target="_blank"><img src="../imagenes/facebook.jpg" class="img-fluid my-1"></a>
     </li>
     <li>
-     <a href="https://www.instagram.com/pmariacines/"><img src="../imagenes/instagram.jpg" class="img-fluid my-1"></a>
+     <a href="https://www.instagram.com/pmariacines/" target="_blank"><img src="../imagenes/instagram.jpg" class="img-fluid my-1"></a>
     </li>
 
   </ul>

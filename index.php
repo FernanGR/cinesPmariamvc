@@ -362,7 +362,7 @@ Recomiendanos
               <label for="peli">¿Que película recomiendas?</label>
 
               <select name="Peli">
-                 
+
                 <?php
                 for($i = 0; $i<6;$i++){
                   ?>
@@ -453,10 +453,10 @@ Recomiendanos
       <img src="imagenes/descuento102.jpg" class="img-fluid my-1">
     </li>
     <li>
-      <a href="https://www.facebook.com/Cines-PMaria-103042904552265/"><img src="imagenes/facebook.jpg" class="img-fluid my-1"></a>
+      <a href="https://www.facebook.com/Cines-PMaria-103042904552265/" target="_blank"><img src="imagenes/facebook.jpg"  class="img-fluid my-1"></a>
     </li>
     <li>
-     <a href="https://www.instagram.com/pmariacines/"><img src="imagenes/instagram.jpg" class="img-fluid my-1"></a>
+     <a href="https://www.instagram.com/pmariacines/" target="_blank"><img src="imagenes/instagram.jpg"   class="img-fluid my-1"></a>
     </li>
 
   </ul>
@@ -503,8 +503,8 @@ Recomiendanos
               <h4>Siguenos</h4>
              </div>
             <ul class="list-unstyled">
-              <li><a class="text-white" href="https://www.facebook.com/Cines-PMaria-103042904552265/"><i class="fab fa-facebook-f pr-1"></i>Facebook</a></li>
-              <li><a class="text-white" href="https://www.instagram.com/pmariacines/"><i class="fab fa-instagram pr-1"></i>Instagram</a></li>
+              <li><a class="text-white" href="https://www.facebook.com/Cines-PMaria-103042904552265/" target="_blank"><i class="fab fa-facebook-f pr-1"></i>Facebook</a></li>
+              <li><a class="text-white" href="https://www.instagram.com/pmariacines/" target="_blank"><i class="fab fa-instagram pr-1"></i>Instagram</a></li>
 
             </ul>
            </div>

@@ -5,8 +5,9 @@
    $sala = $_POST['sala'];
    $nombre = $_POST['peli'];
    $descripcion = $_POST['descripcion'];
-
-   Peliculas::actualizarPelicula($sala,$nombre,$descripcion);
+   $trailer = $_POST['trailer'];
+   
+   Peliculas::actualizarPelicula($sala,$nombre,$descripcion, $trailer);
 
    header("Location:../vista/indexEditPeli.php");
 

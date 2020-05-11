@@ -6,7 +6,7 @@
     // devuelve sala nombre descripcion sin repetirse
     public static function listaPeliculas(){
       $con = new Conexion();
-      $cont = $con->ejecutarConsulta("SELECT DISTINCT sala,nombre,descripcion FROM peliculas");
+      $cont = $con->ejecutarConsulta("SELECT DISTINCT sala,nombre,descripcion,trailer FROM peliculas");
       $con->cerrarConexion();
 
       return $cont;
@@ -14,9 +14,9 @@
 
 
     // actualiza nombre y descripcion de la sala pasada como parametro
-    public static function actualizarPelicula($sala,$nombre, $descripcion){
+    public static function actualizarPelicula($sala,$nombre, $descripcion, $trailer){
       $con = new Conexion();
-      $con->ejecutarActualizacion("UPDATE peliculas SET nombre='$nombre', descripcion='$descripcion' WHERE sala = '$sala '");
+      $con->ejecutarActualizacion("UPDATE peliculas SET nombre='$nombre', descripcion='$descripcion', trailer='$trailer' WHERE sala = '$sala '");
       $con->cerrarConexion();
     }
 
@@ -73,7 +73,7 @@
 
     // resetea todo a 1 las disponibilidades
     public static function reseteoButacas(){                          // 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
-      $con = new Conexion();                                            
+      $con = new Conexion();
       $con->ejecutarActualizacion("UPDATE peliculas SET  disponibilidad='11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111' WHERE  sala = 1 or sala = 2");
       $con->ejecutarActualizacion("UPDATE peliculas SET  disponibilidad='1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111' WHERE  sala = 3 or sala = 4 or sala = 5 or sala = 6");
 

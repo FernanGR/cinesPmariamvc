@@ -31,7 +31,7 @@
                      <input type="hidden" name="pelicula" value="<?php  echo $infoPelis[$i][1] ?> " />
                      <input type="hidden" name="usuario" value="<?php  echo $_SESSION['usuario'] ?> " />
 
-                     <label for="puntua" class="text-info h3">Valoración </label>
+                     <label for="puntua" class="text-info h3">Valoración</label>
                      <select   name="puntuacion">
                        <option value="1">1</option>
                        <option value="2">2</option>
@@ -67,8 +67,10 @@
                    ?>
                 </div>
                 <div class="col-sm-12 col-md-6 mt-3">   <!-- Valoración de la película -->
-                  <?php
-                     echo "<h3>".$infoPelis[$i][2]."</h3><br/>";
+                    <?php
+                     echo "<h5 class='text-justify'>".$infoPelis[$i][2]."</h5><br/>";
+                    echo "<a href=" . $infoPelis[$i][3] ." target='_blank' class='btn btn-info mb-1' >Trailer</a>";
+
                      $cont = 0;
                      $valoracion = 0;
                      $vPeli = Puntuacion::puntuacionPeli($infoPelis[$i][1]);
@@ -89,7 +91,7 @@
                      echo "<h4 class='text-blue'> Votos: " . $cont ."</h4>";
                      echo "<h4 class='text-blue'> Puntuacion: " . round($valFinal,1) ."</h4>";
                      echo "<div class='valPeli'>";
-                     echo "<input type='button' class='btn-success px-1' value='+Info')>";
+                     echo "<input type='button' class='btn-success px-1' value='Estadisticas Valoración'>";
 
                      ?>
 
@@ -156,9 +158,6 @@
 
                 </div>
             </div>
-
-
-
 
           <?php
 
