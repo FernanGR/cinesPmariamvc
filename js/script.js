@@ -9,18 +9,15 @@ function init(){
     var f = actual.getAttribute("data-fila");
     var s = actual.getAttribute("data-silla");
 
-
     var fmodal = $("#fmodal");
     var smodal = $("#smodal");
     fmodal.val(f);
     smodal.val(s);
 
-
   })
 
 
-
-
+//histograma
   $(".valPeli").click(function(){
     var actual = $(this);
     var histog = actual.children().eq(1);
@@ -33,7 +30,7 @@ function init(){
       histog.height(0);
 
     }
- 
+
   })
 /*
       var imgButaca = document.getElementsByClassName("imgFS");

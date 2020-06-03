@@ -116,7 +116,6 @@
           $emailuser = $userA[2];
 
         }
-      //  $emailuser = $_GET['emailuser'];
 
         if($sala == 1 || $sala == 2){
           $sillaElegida = ($fila * 20) + $silla;

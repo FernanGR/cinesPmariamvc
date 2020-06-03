@@ -77,10 +77,10 @@
                    <a class="nav-link" href="vista/indexEditUsers.php"><i class="fas fa-user-edit pr-2"></i>Editar Usuarios</a>
              </li>
              <li class="nav-item">
-                  <a class="nav-link" href="vista/indexEditEmp.php"><i class="fas fa-user-edit pr-2"></i>Editar empleados</a>
+                  <a class="nav-link" href="vista/indexEditEmp.php"><i class="fas fa-user-edit pr-2"></i>Editar Empleados</a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" href="vista/indexEditHorario.php"><i class="fas fa-user-clock pr-2"></i>Editar horarios</a>
+               <a class="nav-link" href="vista/indexEditHorario.php"><i class="fas fa-user-clock pr-2"></i>Editar Horarios</a>
              </li>
              <li class="nav-item">
                  <a class="nav-link" href="vista/indexEditPeli.php"><i class="fas fa-film pr-2"></i>Editar Peliculas</a>
@@ -282,10 +282,10 @@
               <a class="nav-link" href="vista/indexEditUsers.php"><i class="fas fa-user-edit pr-2"></i>Editar Usuarios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="vista/indexEditEmp.php"><i class="fas fa-user-edit pr-2"></i>Editar empleados</a>
+              <a class="nav-link" href="vista/indexEditEmp.php"><i class="fas fa-user-edit pr-2"></i>Editar Empleados</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="vista/indexEditHorario.php"><i class="fas fa-user-clock pr-2"></i>Editar horarios</a>
+              <a class="nav-link" href="vista/indexEditHorario.php"><i class="fas fa-user-clock pr-2"></i>Editar Horarios</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="vista/indexEditPeli.php"><i class="fas fa-film pr-2"></i>Editar Peliculas</a>
@@ -408,7 +408,7 @@ Recomiendanos
          <?php
          for($i = 0; $i<6;$i++){      // cartelera actual
            echo "<div class='imgPortada'>";
-           echo "<img src='vista/".$cartelera[$i][1]." 'class='img-fluid m-1 tip' style='width:300px;height:400px'  />";
+           echo "<img src='vista/".$cartelera[$i][1]." 'class='img-fluid m-1 center-block' style='width:300px;height:400px'  />";
            echo "<span class='imgText'>" . $infoPelis[$i][1]. " <br> Sesiones: 18.00-20.30-23.00</span>";
            echo "</div>";
         }

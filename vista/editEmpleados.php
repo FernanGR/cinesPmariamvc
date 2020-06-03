@@ -1,7 +1,8 @@
 
     <body>
 
-
+      <div class="row">
+        <div class= "col-sm-12 col-md-6">
         <h2 class="text-success"><b> Añadir Nuevo Empleado </b></h2>
          <form autocomplete="off" method="POST" action= '../controlador/añadirEmp.php'>
 
@@ -13,9 +14,23 @@
             <br/>
               <input type="submit" value="Registrar Empleado" name="registrar" class="btn-success mt-2 px-1"/>
          </form>
+         <br/>
 
+       </div>
+       <div class= "col-sm-12 col-md-6">
+
+         <h2 class="text-success"><b> Mensaje a los empleados</b></h2>
+
+           <form name = "formulario" method="POST" action= '../controlador/alertEmpleados.php'>
+
+             <p><textarea name="comentario" placeholder="Envia mensaje a todos los empleados" rows="4" cols="50" required></textarea></p>
+             <input type="submit" value="Enviar mensaje" class="btn-success">
+           </form>
 
         <br/>
+      </div>
+      </div>
+
         <!--    <table style="border: 1px solid black;" width="95%">    -->
           <table class="table table-bordered table-hover table-sm text-center">
           <thead>

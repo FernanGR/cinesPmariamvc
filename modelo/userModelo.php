@@ -123,6 +123,23 @@
       $con->cerrarConexion();
       return $cont;
     }
+
+    // devuelve email de los usuario
+    public static function emailsUsers(){
+      $con = new Conexion();
+      $cont = $con->ejecutarConsulta("SELECT email from usuarios WHERE ROL = 'ROL_USER'");
+      $con->cerrarConexion();
+      return $cont;
+    }
+
+    // devuelve email de los empleados
+    public static function emailsEmp(){
+      $con = new Conexion();
+      $cont = $con->ejecutarConsulta("SELECT email from usuarios WHERE ROL = 'ROL_EMP'");
+      $con->cerrarConexion();
+      return $cont;
+    }
+
   }
 
 

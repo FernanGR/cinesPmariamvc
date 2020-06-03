@@ -328,12 +328,16 @@ foreach($sesionesSelect as $sesPeli)
  <div class="modal-dialog" role="document">
    <div class="modal-content">
      <div class="modal-header">
-       <h3 class="modal-title text-danger" id="myModalLabel">Pago con tarjeta</h3>
+       <h3 class="modal-title text-danger" id="myModalLabel">Pago con tarjeta</h3> </br>
        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
          <span aria-hidden="true">&times;</span>
-       </button>
+       </button></br>
+
      </div>
      <div class="modal-body">
+       <h3 class="text-muted" id="myModalLabel">Importe: 6.30€</h3>
+
        <!-- formulario modal -->
      <form role="formx"  action="indexComprada.php"  method="POST" class="credit-card-div">
        <div class="panel panel-default" >

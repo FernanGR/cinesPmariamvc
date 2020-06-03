@@ -7,7 +7,8 @@
 
         ?>
 
-
+        <div class="row">
+          <div class= "col-sm-12 col-md-6">
         <h2 class="text-success"><b> Añadir Nuevo Usuario </b></h2>
          <form  autocomplete="off" method="POST" action= '../controlador/añadirUser.php'>
            <input type="hidden" name=user value="<?php echo $user ?>" />
@@ -20,8 +21,22 @@
                <?php if(isset($_POST['registrar']) && empty($_POST['email'])) echo "<span style='color:red'><--¡Debes introducir un email!</span>"; ?>
              <input type="submit" value="Registrar Usuario" name="registrar" class="btn-success mt-2 px-1"/>
          </form>
+         <br/>
+
+       </div>
+       <div class= "col-sm-12 col-md-6">
+
+         <h2 class="text-success"><b> Mensaje a los usuarios</b></h2>
+
+           <form name = "formulario" method="POST" action= '../controlador/alertEmails.php'>
+
+             <p><textarea name="comentario" placeholder="Envia mensaje publicitario a todos los usuarios" rows="4" cols="50" required></textarea></p>
+             <input type="submit" value="Enviar mensaje" class="btn-success">
+           </form>
 
         <br/>
+      </div>
+      </div>
 
         <!--    <table style="border: 1px solid black;" width="95%">    -->
           <table class="table table-bordered table-hover table-sm text-center">
