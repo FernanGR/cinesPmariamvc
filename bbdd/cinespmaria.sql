@@ -3,9 +3,16 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-05-2020 a las 03:13:31
+-- Tiempo de generación: 09-06-2020 a las 23:10:24
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.3
+DROP DATABASE IF EXISTS cinespmaria;
+CREATE DATABASE IF NOT EXISTS cinespmaria
+CHARACTER SET = 'UTF8'
+COLLATE = 'utf8_spanish_ci';
+
+USE cinespmaria;
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -17,6 +24,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
+
 
 --
 -- Base de datos: `cinespmaria`
@@ -48,13 +56,9 @@ INSERT INTO `horarios` (`horario`, `lunes`, `martes`, `miercoles`, `jueves`, `vi
 (2, 'Libre', 'Bar', 'Puerta', 'Refuerzo', 'Puerta', 'Bar', 'Puerta'),
 (3, 'Bar', 'Refuerzo', 'Puerta', 'Libre', 'Puerta', 'Puerta', 'Refuerzo'),
 (4, 'Libre', 'Libre', 'Libre', 'Bar', 'Bar', 'Bar', 'Taquilla'),
-(5, 'Bar', 'Libre', 'Puerta', 'Puerta', 'Libre', 'Libre', 'Libre'),
 (6, 'Puerta', 'Puerta', 'Refuerzo', 'Taquilla', 'Libre', 'Libre', 'Libre'),
 (7, 'Puerta', 'Libre', 'Libre', 'Puerta', 'Puerta', 'Bar', 'Bar'),
-(8, 'Libre', 'Libre', 'Puerta', 'Puerta', 'Puerta', 'Bar', 'Bar'),
-(9, 'Libre', 'Libre', 'Libre', 'Libre', 'Libre', 'Libre', 'Libre'),
-(9, 'Libre', 'Libre', 'Libre', 'Libre', 'Libre', 'Libre', 'Libre'),
-(9, 'Libre', 'Libre', 'Libre', 'Libre', 'Libre', 'Libre', 'Libre');
+(8, 'Libre', 'Libre', 'Puerta', 'Puerta', 'Puerta', 'Refuerzo', 'Bar');
 
 -- --------------------------------------------------------
 
@@ -154,7 +158,7 @@ INSERT INTO `peliculas` (`sala`, `nombre`, `sesion`, `disponibilidad`, `dia`, `d
 (6, 'Minecraft The Movie', '18:00', '1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111', 'Miercoles', 'El malévolo Ender Dragon emprende un camino de destrucción, lo que lleva a una joven y a su grupo de aventureros poco probables a salir para salvar el Overworld.', 'https://www.youtube.com/watch?v=MmB9b5njVbA'),
 (6, 'Minecraft The Movie', '20:30', '1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111', 'Miercoles', 'El malévolo Ender Dragon emprende un camino de destrucción, lo que lleva a una joven y a su grupo de aventureros poco probables a salir para salvar el Overworld.', 'https://www.youtube.com/watch?v=MmB9b5njVbA'),
 (6, 'Minecraft The Movie', '23:00', '1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111', 'Miercoles', 'El malévolo Ender Dragon emprende un camino de destrucción, lo que lleva a una joven y a su grupo de aventureros poco probables a salir para salvar el Overworld.', 'https://www.youtube.com/watch?v=MmB9b5njVbA'),
-(1, 'Bloodshot', '18:00', '11111111111111111111111111011110111111111111111110100111111111111111101101111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111', 'Jueves', 'Ray Garrison (Vin Diesel), también conocido como Bloodshot, es resucitado por la compañía Rising Spirit Technologies a través del uso de nanotecnología. ', 'https://www.youtube.com/watch?v=zOeEPSR2OSM'),
+(1, 'Bloodshot', '18:00', '11111111111111111111111111011110111111111111111110100111111111111111101101111111111111111111111111111111111111111111111111111111111110111111111111111111111111111111111111111111111111111111111111111111', 'Jueves', 'Ray Garrison (Vin Diesel), también conocido como Bloodshot, es resucitado por la compañía Rising Spirit Technologies a través del uso de nanotecnología. ', 'https://www.youtube.com/watch?v=zOeEPSR2OSM'),
 (1, 'Bloodshot', '20:30', '11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111', 'Jueves', 'Ray Garrison (Vin Diesel), también conocido como Bloodshot, es resucitado por la compañía Rising Spirit Technologies a través del uso de nanotecnología. ', 'https://www.youtube.com/watch?v=zOeEPSR2OSM'),
 (1, 'Bloodshot', '23:00', '11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111', 'Jueves', 'Ray Garrison (Vin Diesel), también conocido como Bloodshot, es resucitado por la compañía Rising Spirit Technologies a través del uso de nanotecnología. ', 'https://www.youtube.com/watch?v=zOeEPSR2OSM'),
 (2, 'Joker', '18:00', '11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111', 'Jueves', 'Arthur Fleck (Phoenix) vive en Gotham con su madre, y su única motivación en la vida es hacer reír a la gente. Actúa haciendo de payaso en pequeños trabajos, pero tiene problemas mentales que hacen que la gente le vea como un bicho raro. Su gran sueño es actuar como cómico delante del público, pero una serie de trágicos acontecimientos le hará ir incrementando su ira contra una sociedad que le ignora. ', 'https://www.youtube.com/watch?v=EIyZqNbZQI8'),
@@ -197,7 +201,7 @@ INSERT INTO `peliculas` (`sala`, `nombre`, `sesion`, `disponibilidad`, `dia`, `d
 (2, 'Joker', '20:30', '00000000111111111111111111111011111111111111101110011110111111111111111111111111111111111111111111111111111111011111111111111100111111111111111111111111111111111111111111111111111111111111111111111110', 'Sabado', 'Arthur Fleck (Phoenix) vive en Gotham con su madre, y su única motivación en la vida es hacer reír a la gente. Actúa haciendo de payaso en pequeños trabajos, pero tiene problemas mentales que hacen que la gente le vea como un bicho raro. Su gran sueño es actuar como cómico delante del público, pero una serie de trágicos acontecimientos le hará ir incrementando su ira contra una sociedad que le ignora. ', 'https://www.youtube.com/watch?v=EIyZqNbZQI8'),
 (2, 'Joker', '23:00', '00011111111111111111111111111011111111111111100011111111111111111111111111111111111111111111111111111111111110111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111', 'Sabado', 'Arthur Fleck (Phoenix) vive en Gotham con su madre, y su única motivación en la vida es hacer reír a la gente. Actúa haciendo de payaso en pequeños trabajos, pero tiene problemas mentales que hacen que la gente le vea como un bicho raro. Su gran sueño es actuar como cómico delante del público, pero una serie de trágicos acontecimientos le hará ir incrementando su ira contra una sociedad que le ignora. ', 'https://www.youtube.com/watch?v=EIyZqNbZQI8'),
 (3, 'Aves de presa', '18:00', '1111111111111110111111111111111111111111111111111111111111111111111111111111111111111111111111111111', 'Sabado', 'Después de separarse de Joker, Harley Quinn y otras tres heroínas (Canario Negro, Cazadora y Renée Montoya) unen sus fuerzas para salvar a una niña (Cassandra Cain) del malvado rey del crimen Máscara Negra. ', 'https://www.youtube.com/watch?v=W_QkWlijBlM'),
-(3, 'Aves de presa', '20:30', '1111111111111111111111111111111111111111111111111111110001111101111011111111111111111111111111111111', 'Sabado', 'Después de separarse de Joker, Harley Quinn y otras tres heroínas (Canario Negro, Cazadora y Renée Montoya) unen sus fuerzas para salvar a una niña (Cassandra Cain) del malvado rey del crimen Máscara Negra. ', 'https://www.youtube.com/watch?v=W_QkWlijBlM'),
+(3, 'Aves de presa', '20:30', '1111111111111111111111011011111111111111111111111111110001111101111011111111111111111111111111111111', 'Sabado', 'Después de separarse de Joker, Harley Quinn y otras tres heroínas (Canario Negro, Cazadora y Renée Montoya) unen sus fuerzas para salvar a una niña (Cassandra Cain) del malvado rey del crimen Máscara Negra. ', 'https://www.youtube.com/watch?v=W_QkWlijBlM'),
 (3, 'Aves de presa', '23:00', '1111111111111111111111111011110111000111111110011111111111111111111111111111111111111111111111111111', 'Sabado', 'Después de separarse de Joker, Harley Quinn y otras tres heroínas (Canario Negro, Cazadora y Renée Montoya) unen sus fuerzas para salvar a una niña (Cassandra Cain) del malvado rey del crimen Máscara Negra. ', 'https://www.youtube.com/watch?v=W_QkWlijBlM'),
 (4, 'Bad Boys 3', '18:00', '1111111111111011111111110111111111111111111111111111111111111111110111111111111111111111111111111111', 'Sabado', 'En esta tercera entrega de la franquicia, los polícía Mike Lowrey (Will Smith) y Marcus Burnett (Martin Lawrence) vuelven a patrullar juntos en un último viaje.  ', 'https://www.youtube.com/watch?v=MjgBkC1y97w'),
 (4, 'Bad Boys 3', '20:30', '1111111111111101111110111111111111111111111110111111111111111111111111111111111111111111111111111111', 'Sabado', 'En esta tercera entrega de la franquicia, los polícía Mike Lowrey (Will Smith) y Marcus Burnett (Martin Lawrence) vuelven a patrullar juntos en un último viaje.  ', 'https://www.youtube.com/watch?v=MjgBkC1y97w'),
@@ -262,18 +266,16 @@ INSERT INTO `puntuacion` (`usuario`, `pelicula`, `valor`) VALUES
 ('pak ', 'Joker ', '8'),
 ('pak ', 'Toy Story 4 ', '9'),
 ('pak ', 'Minecraft The Movie ', '5'),
-('Samuel ', 'Bad Boys 3 ', '7'),
 ('xorbo ', 'Bloodshot ', '8'),
 ('alonso ', 'Bloodshot ', '5'),
-('alonso ', 'Bad Boys 3 ', '6'),
 ('ruben ', 'Bloodshot ', '7'),
 ('josema ', 'Bloodshot ', '7'),
 ('josema ', 'Joker ', '8'),
-('josema ', 'Bad Boys 3 ', '7'),
 ('josema ', 'Minecraft The Movie ', '5'),
 ('alex ', 'Bloodshot ', '6'),
 ('alex ', 'Joker ', '9'),
-('sara ', 'Joker ', '7');
+('sara ', 'Joker ', '7'),
+('jony ', 'Bloodshot ', '6');
 
 -- --------------------------------------------------------
 
@@ -296,16 +298,17 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`usuario`, `contrasena`, `email`, `ROL`, `activo`, `horario`) VALUES
 ('1', '1', '11@gmail.com', 'ROL_USER', 0, -1),
-('Adolfo', 'adolfo', 'ad@gmail.com', 'ROL_USER', 1, -1),
-('alex', 'alex', 'alex@gmail.com', 'ROL_USER', 1, -1),
-('alfredo', 'alfredo', 'antoni@gmail.com', 'ROL_USER', 0, 0),
+('Adolfo', 'adolfo', 'pogotib02@gmail.com', 'ROL_USER', 0, 0),
+('alex', 'alex', 'tibofgr@gmail.com', 'ROL_USER', 0, 0),
+('alfredo', 'alfredo', 'fernangarciarubio@gmail.com', 'ROL_USER', 0, 0),
 ('alonso', 'alonso', '12@gmail.com', 'ROL_USER', 1, -1),
 ('Antonio', 'antonio', 'antoni@gmail.com', 'ROL_EMP', 1, 2),
 ('Benja', 'benja', 'benja@gmail.com', 'ROL_EMP', 1, 1),
 ('Fer', 'fer', 'cinespmaria@gmail.com', 'ROL_ADMIN', 1, -1),
 ('Fran', 'fran', 'fran@gmail.com', 'ROL_EMP', 1, 8),
-('Javi', 'javi', 'javi@gmail.com', 'ROL_EMP', 1, 7),
+('Javi', 'javi', 'tibofgr@gmail.com', 'ROL_EMP', 1, 7),
 ('Javier', 'javier', '11@gmail.com', 'ROL_USER', 0, 0),
+('jony', 'jony', 'jony@gmail.com', 'ROL_USER', 1, -1),
 ('jose', 'jose', '2@gmail.com', 'ROL_USER', 0, 0),
 ('josema', 'josema', 'jose@gmail.com', 'ROL_USER', 1, -1),
 ('Juan', 'juan', 'juan@gmail.com', 'ROL_EMP', 1, 4),
